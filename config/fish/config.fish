@@ -9,6 +9,7 @@ set -x ALTERNATE_EDITOR ""
 set -x EDITOR "emacs"                  # $EDITOR should open in terminal
 set -x VISUAL "emacs"         # $VISUAL opens in GUI with non-daemon as alternate
 set -x GOPATH "/Users/danbarbarito/.go"
+set -x NVM_DIR "$HOME/.nvm"
 
 # Navigation
 function ..    ; cd .. ; end
@@ -43,7 +44,8 @@ function streamaudio ; rygel ; end
 function loginpanther ; ssh danielbarbarito@panther.adelphi.edu ; end
 function commitm ; curl -s http://whatthecommit.com/index.txt ; end
 function linkpanther ; sshfs danielbarbarito@panther.adelphi.edu:/home/da21066/ ~/.panther ; end
-function logincloud ; ssh barbz@107.175.2.186 ; end
+function loginvpn ; ssh barbz@107.175.2.186 ; end
+function linkvpn ; sshfs barbz@107.175.2.186:/home/barbz ~/.vpn ; end
 
 # Completions
 function make_completion --argument-names alias command
@@ -63,5 +65,8 @@ make_completion g 'git'
 # rbenv
 status --is-interactive; and . (rbenv init -|psub)
 
-#perlbrew
+# perlbrew
 . ~/perl5/perlbrew/etc/perlbrew.fish
+
+# nvm
+source ~/.config/fish/nvm-wrapper/nvm.fish
