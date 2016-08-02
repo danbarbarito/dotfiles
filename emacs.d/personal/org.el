@@ -17,3 +17,7 @@
 ;; org bindings
 (global-set-key (kbd "C-c g o") (lambda () (interactive) (dired "~/Dropbox/org")))
 (global-set-key (kbd "C-c c w") 'org-pomodoro)
+
+(setq org-agenda-files (list "~/Dropbox/org/work.org"
+                             "~/Dropbox/org/school.org"
+                             "~/Dropbox/org/home.org"))
