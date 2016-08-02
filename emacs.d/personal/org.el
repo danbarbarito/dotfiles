@@ -13,3 +13,7 @@
 ;;       '((?n "* %U %?" "~/org/inbox.org")))
 ;; (setq remember-annotation-functions '(org-remember-annotation))
 ;; (setq remember-handler-functions '(org-remember-handler))
+
+;; org bindings
+(global-set-key (kbd "C-c g o") (lambda () (interactive) (dired "~/Dropbox/org")))
+(global-set-key (kbd "C-c c w") 'org-pomodoro)

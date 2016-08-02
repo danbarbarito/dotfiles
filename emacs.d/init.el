@@ -1,5 +1,4 @@
 (setq custom-file "~/.emacs.d/personal/custom.el")
-(load custom-file 'noerror)
 
 (load "~/.emacs.d/personal/defuns")
 
@@ -49,7 +48,7 @@
 (package 'auto-complete)
 (package 'redo+)
 (package 'web-mode)
-(package 'org-trello)
+(package 'org-pomodoro)
 
 
 ;; submodule managed
@@ -94,3 +93,5 @@
 (personal 'theme)
 (personal 'utf-8)
 (personal 'zoom)
+
+(load custom-file 'noerror)
