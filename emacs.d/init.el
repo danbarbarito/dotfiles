@@ -15,6 +15,7 @@
 (package 'bundler)
 (package 'coffee-mode)
 (package 'csv-mode)
+(package 'dired+)
 (package 'dired-details+)
 (package 'dropdown-list)
 (package 'expand-region)
@@ -48,6 +49,7 @@
 (package 'auto-complete)
 (package 'redo+)
 (package 'web-mode)
+(package 'org-trello)
 
 
 ;; submodule managed
