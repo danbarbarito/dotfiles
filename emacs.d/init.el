@@ -49,6 +49,7 @@
 (package 'redo+)
 (package 'web-mode)
 (package 'org-pomodoro)
+(package 'go-mode)
 
 
 ;; submodule managed

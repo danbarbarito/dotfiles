@@ -63,3 +63,5 @@
 (windmove-default-keybindings 'meta)
 
 (global-set-key (kbd "C-M-y") 'browse-kill-ring)
+
+(global-set-key (kbd "C-x C-b") 'ibuffer)
