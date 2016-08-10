@@ -50,6 +50,7 @@
 (package 'web-mode)
 (package 'org-pomodoro)
 (package 'go-mode)
+(package 'scss-mode)
 
 
 ;; submodule managed

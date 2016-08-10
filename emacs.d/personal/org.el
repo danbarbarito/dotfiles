@@ -21,3 +21,17 @@
 (setq org-agenda-files (list "~/Dropbox/org/work.org"
                              "~/Dropbox/org/school.org"
                              "~/Dropbox/org/home.org"))
+
+(setq org-agenda-custom-commands
+      '(("h" "Daily habits"
+         ((agenda ""))
+         ((org-agenda-show-log t)
+          (org-agenda-ndays 7)
+          (org-agenda-log-mode-items '(state))
+          (org-agenda-skip-function '(org-agenda-skip-entry-if 'notregexp ":DAILY:"))))
+        ;; other commands here
+        ))
+
+;; kanban
+
+(require 'kanban)
