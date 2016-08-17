@@ -10,9 +10,7 @@
 (global-set-key (kbd "S-C-<up>") 'enlarge-window)
 
 ;; Find stuff
-(global-set-key [(f2)]              'helm-do-grep-ag)
-(global-set-key [(shift f2)]        'occur)
-(global-set-key [(control f2)] 'ag-dired-regexp)
+(global-set-key (kbd "C-c f") 'helm-do-grep-ag)
 
 ;; Keyboard macros
 (global-set-key [(shift f4)] 'kmacro-start-macro-or-insert-counter)
@@ -23,8 +21,8 @@
 (global-set-key [(control f5)] 'revbufs)
 
 ;; Query Replace
-(global-set-key [(f6)]         'query-replace)
-(global-set-key [(control f6)] 'query-replace-regexp)
+(global-set-key (kbd "C-S-s") 'replace-string)
+(global-set-key (kbd "C-M-S-s") 'replace-regexp)
 
 ;; Indenting and alignment
 (global-set-key [(f8)]         'indent-region)
