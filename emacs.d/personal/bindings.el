@@ -4,35 +4,35 @@
 ;; http://xahlee.org/emacs/keyboard_shortcuts.html
 
 ;; Window manipulation
-(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "S-C-<left>")  'shrink-window-horizontally)
 (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
-(global-set-key (kbd "S-C-<down>") 'shrink-window)
-(global-set-key (kbd "S-C-<up>") 'enlarge-window)
+(global-set-key (kbd "S-C-<down>")  'shrink-window)
+(global-set-key (kbd "S-C-<up>")    'enlarge-window)
 
 ;; Find stuff
-(global-set-key (kbd "C-c f") 'helm-do-grep-ag)
+(global-set-key (kbd "C-c f")       'helm-do-grep-ag)
 
 ;; Keyboard macros
-(global-set-key [(shift f4)] 'kmacro-start-macro-or-insert-counter)
-;; (global-set-key [(f4)]    'kmacro-end-or-call-macro)  ;; already defined
+(global-set-key [(shift f4)]        'kmacro-start-macro-or-insert-counter)
+;; (global-set-key [(f4)]           'kmacro-end-or-call-macro)  ;; already defined
 
 ;; Refresh-like
-(global-set-key [(f5)]         'revert-buffer)
-(global-set-key [(control f5)] 'revbufs)
+(global-set-key [(f5)]              'revert-buffer)
+(global-set-key [(control f5)]      'revbufs)
 
 ;; Query Replace
-(global-set-key (kbd "C-S-s") 'replace-string)
-(global-set-key (kbd "C-M-S-s") 'replace-regexp)
+(global-set-key (kbd "C-S-s")       'replace-string)
+(global-set-key (kbd "C-M-S-s")     'replace-regexp)
 
 ;; Indenting and alignment
-(global-set-key [(f8)]         'indent-region)
-(global-set-key [(control f8)] 'align)
-(global-set-key [(shift f8)]   'align-current)
-(global-set-key [(meta f8)]    'align-regexp)
+(global-set-key [(f8)]              'indent-region)
+(global-set-key [(control f8)]      'align)
+(global-set-key [(shift f8)]        'align-current)
+(global-set-key [(meta f8)]         'align-regexp)
 
 ;; Version control and change related
-(global-set-key [(control f9)] 'magit-status)
-(global-set-key [(f9)]         'magit-status)
+(global-set-key [(f2)]              'magit-status)
+(global-set-key [(control f2)]      'magit-status)
 
 ;; map the window manipulation keys to meta 0, 1, 2, o
 (global-set-key (kbd "M-3") 'split-window-horizontally) ; was digit-argument

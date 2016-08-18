@@ -1,7 +1,6 @@
 ;;; Fonts
 
-;; (set-frame-font "Roboto Mono Medium for Powerline-10" t t)
-(set-frame-font "Ubuntu Mono-12" t t)
+(set-frame-font "Roboto Mono Medium for Powerline-10" t t)
 
 ;; To change a font size globally:
 ;; (set-face-attribute 'default nil :height 360)

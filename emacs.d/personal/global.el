@@ -50,9 +50,6 @@
 (setq truncate-lines t)
 (setq truncate-partial-width-windows nil)
 
-;; For emacsclient
-(server-start)
-
 ;; Trailing whitespace is unnecessary
 (defvar whitespace-cleanup-on-save t)
 ;; (setq whitespace-cleanup-on-save nil)

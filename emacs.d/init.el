@@ -1,6 +1,8 @@
 (setq custom-file "~/.emacs.d/personal/custom.el")
+(load custom-file 'noerror)
 
 (load "~/.emacs.d/personal/defuns")
+
 
 ;; elpa managed
 ;; ------------------
@@ -95,5 +97,3 @@
 (personal 'theme)
 (personal 'utf-8)
 (personal 'zoom)
-
-(load custom-file 'noerror)
