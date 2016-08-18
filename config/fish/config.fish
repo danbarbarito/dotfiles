@@ -1,16 +1,6 @@
 # Get rid of stupid greeting
 set fish_greeting
 
-# PATH
-set -gx PATH ~/bin $PATH
-
-# Environment
-set -x ALTERNATE_EDITOR ""
-set -x EDITOR "emacs"                  # $EDITOR should open in terminal
-set -x VISUAL "emacs"         # $VISUAL opens in GUI with non-daemon as alternate
-set -x GOPATH "/Users/danbarbarito/.go"
-set -x NVM_DIR "$HOME/.nvm"
-
 # Navigation
 function ..    ; cd .. ; end
 function ...   ; cd ../.. ; end
@@ -19,7 +9,6 @@ function ..... ; cd ../../../.. ; end
 function l     ; tree --dirsfirst -aFCNL 1 $argv ; end
 function ll    ; tree --dirsfirst -ChFupDaLg 1 $argv ; end
 
-# Utilities
 function a        ; command ag --ignore=.git --ignore=log --ignore=tags --ignore=tmp --ignore=vendor --ignore=spec/vcr $argv ; end
 function b        ; bundle exec $argv ; end
 function c        ; pygmentize -O style=monokai -f console256 -g $argv ; end
@@ -46,17 +35,29 @@ function commitm ; curl -s http://whatthecommit.com/index.txt ; end
 function linkpanther ; sshfs danielbarbarito@panther.adelphi.edu:/home/da21066/ ~/.panther ; end
 function loginvpn ; ssh barbz@107.175.2.186 ; end
 function linkvpn ; sshfs barbz@107.175.2.186:/home/barbz ~/.vpn ; end
+function emacs ; ec ; end
+function cdd ; cd ~/.dotfiles ; end
+function cde ; cd ~/.dotfiles/emacs.d ; end
+
+# PATH
+set -gx PATH ~/.bin $PATH
+
+# Environment
+set -x EDITOR "emacs"                  # $EDITOR should open in terminal
+set -x VISUAL "emacs"         # $VISUAL opens in GUI with non-daemon as alternate
+set -x GOPATH "/Users/danbarbarito/.go"
+set -x NVM_DIR "$HOME/.nvm"
 
 # Completions
 function make_completion --argument-names alias command
-    echo "
-    function __alias_completion_$alias
-        set -l cmd (commandline -o)
-        set -e cmd[1]
-        complete -C\"$command \$cmd\"
-    end
-    " | .
-    complete -c $alias -a "(__alias_completion_$alias)"
+  echo "
+  function __alias_completion_$alias
+    set -l cmd (commandline -o)
+    set -e cmd[1]
+    complete -C\"$command \$cmd\"
+  end
+  " | .
+  complete -c $alias -a "(__alias_completion_$alias)"
 end
 
 make_completion b 'bundle exec'
@@ -70,3 +71,6 @@ status --is-interactive; and . (rbenv init -|psub)
 
 # nvm
 source ~/.config/fish/nvm-wrapper/nvm.fish
+
+# virtualfish
+eval (python -m virtualfish)
