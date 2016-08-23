@@ -60,6 +60,11 @@
 ;; Window navigation
 (windmove-default-keybindings 'meta)
 
+;; Kill ring
 (global-set-key (kbd "C-M-y") 'browse-kill-ring)
 
+;; Buffers
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+
+;; Terminal
+(global-set-key (kbd "C-x t") 'eshell)

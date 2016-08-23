@@ -10,6 +10,8 @@
  '(helm-ag-insert-at-point (quote symbol))
  '(helm-ff-guess-ffap-filenames nil)
  '(helm-ff-guess-ffap-urls t)
+ '(standard-indent 2)
+ '(web-mode-code-indent-offset 2)
  '(web-mode-markup-indent-offset 2))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
