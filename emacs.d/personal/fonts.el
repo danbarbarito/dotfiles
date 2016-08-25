@@ -1,6 +1,6 @@
 ;;; Fonts
 
-(set-frame-font "Roboto Mono Medium for Powerline-10" t t)
+(setq default-frame-alist '((font . "Roboto Mono Medium for Powerline-10")))
 
 ;; To change a font size globally:
 ;; (set-face-attribute 'default nil :height 360)

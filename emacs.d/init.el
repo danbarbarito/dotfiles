@@ -77,7 +77,6 @@
 (personal 'dired)
 (personal 'disabled)
 (personal 'flymake)
-(personal 'fonts)
 (personal 'global)
 (personal 'grep)
 (personal 'javascript)
@@ -97,3 +96,4 @@
 (personal 'theme)
 (personal 'utf-8)
 (personal 'zoom)
+(personal 'fonts)
