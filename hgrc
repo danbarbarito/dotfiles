@@ -1,0 +1,11 @@
+[ui]
+username = danbarbarito <dan@barbarito.me>
+
+[pager]
+pager = LESS='FRX' less
+
+[extensions]
+hgext.bookmarks =
+hggit =
+color =
+pager =

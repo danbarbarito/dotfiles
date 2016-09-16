@@ -21,3 +21,5 @@
             (define-key dired-mode-map
               (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)
             ))
+
+(setq dired-omit-files "^\\(?:\\..*\\|.*~\\)$")

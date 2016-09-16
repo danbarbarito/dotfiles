@@ -45,8 +45,6 @@ function emax         ; emacsclient -nw $argv ; end
 set -gx PATH ~/.bin $PATH
 
 # Environment
-set -x EDITOR "emacs" # $EDITOR should open in terminal
-set -x VISUAL "emacs" # $VISUAL opens in GUI with non-daemon as alternate
 set -x GOPATH "/Users/danbarbarito/.go"
 set -x NVM_DIR "$HOME/.nvm"
 

@@ -32,7 +32,7 @@
 
 ;; Version control and change related
 (global-set-key [(f2)]              'magit-status)
-(global-set-key [(control f2)]      'magit-status)
+(global-set-key [(control f2)]      'monky-status)
 
 ;; map the window manipulation keys to meta 0, 1, 2, o
 (global-set-key (kbd "M-3") 'split-window-horizontally) ; was digit-argument
