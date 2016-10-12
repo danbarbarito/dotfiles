@@ -54,6 +54,8 @@
 (package 'go-mode)
 (package 'scss-mode)
 (package 'perl-mode)
+(package 'perl6-mode)
+(package 'flycheck)
 (package 'monky)
 
 

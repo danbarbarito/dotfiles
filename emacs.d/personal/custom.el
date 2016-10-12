@@ -12,6 +12,7 @@
  '(helm-ff-guess-ffap-filenames nil)
  '(helm-ff-guess-ffap-urls nil)
  '(helm-find-file-ignore-thing-at-point t)
+ '(perl6-indent-offset 2)
  '(standard-indent 2)
  '(web-mode-code-indent-offset 2)
  '(web-mode-markup-indent-offset 2))

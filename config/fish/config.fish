@@ -43,6 +43,7 @@ function emax         ; emacsclient -nw $argv ; end
 
 # PATH
 set -gx PATH ~/.bin $PATH
+set -gx PATH /usr/local/Cellar/rakudo-star/2016.07/share/perl6/site/bin $PATH
 
 # Environment
 set -x GOPATH "/Users/danbarbarito/.go"

@@ -1,0 +1,6 @@
+#!/bin/bash
+# Script to copy the RSSOwl feed file onto barbarito.me
+
+cd ~/Projects/barbarito.me
+cp ~/.rssowl2/backup.opml static/feeds.opml
+hugo-deploy
