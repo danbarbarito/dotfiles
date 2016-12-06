@@ -41,13 +41,17 @@ function cde          ; cd ~/.dotfiles/emacs.d ; end
 function emacs        ; emacsclient -c $argv ; end # Make sure `emacs --daemon` is running on startup
 function emax         ; emacsclient -nw $argv ; end
 
-# PATH
-set -gx PATH ~/.bin $PATH
-set -gx PATH /usr/local/Cellar/rakudo-star/2016.07/share/perl6/site/bin $PATH
-
 # Environment
 set -x GOPATH "/Users/danbarbarito/.go"
 set -x NVM_DIR "$HOME/.nvm"
+set -x ANDROID_HOME "/usr/local/Cellar/android-sdk/24.4.1_1"
+
+launchctl setenv GOPATH $HOME/.go
+
+# PATH
+set -gx PATH ~/.bin $PATH
+set -gx PATH ~/.rakudobrew/bin $PATH
+set -gx PATH $ANDROID_HOME/tools $PATH
 
 # OS specific
 switch (uname)

@@ -1,3 +1,5 @@
 [user]
 	email = danielbarbarito@mail.adelphi.edu
 	name = Dan Barbarito
+[push]
+	default = simple
