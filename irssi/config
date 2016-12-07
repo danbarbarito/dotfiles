@@ -2,7 +2,7 @@ servers = (
   { address = "irc.dal.net"; chatnet = "DALnet"; port = "6667"; },
   { address = "irc.efnet.org"; chatnet = "EFNet"; port = "6667"; },
   { address = "irc.esper.net"; chatnet = "EsperNet"; port = "6667"; },
-  {
+  { 
     address = "chat.freenode.net";
     chatnet = "Freenode";
     port = "6667";
@@ -21,14 +21,14 @@ servers = (
   },
   { address = "irc.netfuze.net"; chatnet = "NetFuze"; port = "6667"; },
   { address = "irc.oftc.net"; chatnet = "OFTC"; port = "6667"; },
-  {
+  { 
     address = "irc.quakenet.org";
     chatnet = "QuakeNet";
     port = "6667";
   },
   { address = "irc.rizon.net"; chatnet = "Rizon"; port = "6667"; },
   { address = "silc.silcnet.org"; chatnet = "SILC"; port = "706"; },
-  {
+  { 
     address = "irc.undernet.org";
     chatnet = "Undernet";
     port = "6667";
@@ -42,7 +42,7 @@ chatnets = {
     max_msgs = "20";
     max_whois = "30";
   };
-  EFNet = {
+  EFNet = { 
     type = "IRC";
     max_kicks = "1";
     max_msgs = "4";
@@ -56,7 +56,7 @@ chatnets = {
   };
   Freenode = {
     type = "IRC";
-    autosendcmd = "/msg nickserv identify b4rbz $FREENODE_PASSWORD; wait 200";
+    autosendcmd = "/msg nickserv identify b4rbz $FREENODE_PASSWORD; wait 10000";
     max_kicks = "1";
     max_msgs = "4";
     max_whois = "1";
@@ -67,7 +67,7 @@ chatnets = {
     max_msgs = "1";
     max_whois = "1";
   };
-  IRCnet = {
+  IRCnet = { 
     type = "IRC";
     max_kicks = "1";
     max_msgs = "1";
@@ -92,7 +92,7 @@ chatnets = {
     max_msgs = "1";
     max_whois = "1";
   };
-  Rizon = {
+  Rizon = { 
     type = "IRC";
     max_kicks = "1";
     max_msgs = "1";
@@ -113,14 +113,13 @@ channels = (
   { name = "#startups"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#go-nuts"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#web"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#/r/ADHD"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#git"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#programming"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#javascript"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#css"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#reactjs"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#bitcoin"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#emberjs"; chatnet = "Freenode"; autojoin = "Yes"; },
+  { name = "#emberjs"; chatnet = "Freenode"; autojoin = "Yes"; }
 );
 
 aliases = {
@@ -376,10 +375,16 @@ statusbar = {
   };
 };
 settings = {
-  core = {
+  core = { 
     real_name = "Barbz";
     user_name = "b4rbz";
     nick = "Derderderd";
   };
   "fe-text" = { actlist_sort = "refnum"; };
+  "fe-common/core" = {
+    bell_beeps = "yes";
+    beep_msg_level = "MSGS NOTICES INVITES DCC DCCMSGS HILIGHT";
+  };
 };
+ignores = ( { level = "JOINS PARTS QUITS NICKS"; } );
+hilights = ( { text = "Derderderd"; nick = "yes"; word = "yes"; } );
