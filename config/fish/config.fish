@@ -24,7 +24,6 @@ function ip           ; curl -s http://checkip.dyndns.com/ | sed 's/[^0-9\.]//g'
 function localip      ; ipconfig getifaddr en0 ; end
 function lookbusy     ; cat /dev/urandom | hexdump -C | grep --color "ca fe" ; end
 function mp           ; nvim $argv ; end
-function rkt          ; racket -il xrepl $argv ; end
 function t            ; command tree -C $argv ; end
 function tmux         ; command tmux -2 $argv ; end
 function tunnel       ; ssh -D 8080 -C -N $argv ; end
@@ -45,6 +44,7 @@ function emax         ; emacsclient -nw $argv ; end
 set -x GOPATH "/Users/danbarbarito/.go"
 set -x NVM_DIR "$HOME/.nvm"
 set -x ANDROID_HOME "/usr/local/Cellar/android-sdk/24.4.1_1"
+source ~/.freenode.env
 
 launchctl setenv GOPATH $HOME/.go
 
