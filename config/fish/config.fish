@@ -9,6 +9,7 @@ function ..... ; cd ../../../.. ; end
 function l     ; tree --dirsfirst -aFCNL 1 $argv ; end
 function ll    ; tree --dirsfirst -ChFupDaLg 1 $argv ; end
 
+
 # Utilities
 function a            ; command ag --ignore=.git --ignore=log --ignore=tags --ignore=tmp --ignore=vendor --ignore=spec/vcr $argv ; end
 function b            ; bundle exec $argv ; end
@@ -40,12 +41,6 @@ function cde          ; cd ~/.dotfiles/emacs.d ; end
 function emacs        ; emacsclient -c $argv ; end # Make sure `emacs --daemon` is running on startup
 function emax         ; emacsclient -nw $argv ; end
 
-# Environment
-set -x GOPATH "/Users/danbarbarito/.go"
-set -x NVM_DIR "$HOME/.nvm"
-set -x ANDROID_HOME "/usr/local/Cellar/android-sdk/24.4.1_1"
-source ~/.freenode.env
-
 launchctl setenv GOPATH $HOME/.go
 
 # PATH
@@ -59,6 +54,13 @@ switch (uname)
     # Add emacs path to $PATH
     set -gx PATH /Applications/Emacs.app/Contents/MacOS/bin/  $PATH
 end
+
+# Environment
+set -x GOPATH "/Users/danbarbarito/.go"
+set -x NVM_DIR "$HOME/.nvm"
+set -x ANDROID_HOME "/usr/local/Cellar/android-sdk/24.4.1_1"
+set -x EDITOR "micro" 
+source ~/.freenode.env
 
 # Completions
 function make_completion --argument-names alias command

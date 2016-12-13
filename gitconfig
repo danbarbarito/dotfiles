@@ -3,3 +3,5 @@
 	name = Dan Barbarito
 [push]
 	default = simple
+[core]
+	editor = micro
