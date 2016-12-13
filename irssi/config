@@ -149,6 +149,7 @@ aliases = {
   K = "KICK";
   KB = "KICKBAN";
   KN = "KNOCKOUT";
+  L = "WINDOW LAST";
   LAST = "LASTLOG";
   LEAVE = "PART";
   M = "MSG";
