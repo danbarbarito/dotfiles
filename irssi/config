@@ -2,7 +2,7 @@ servers = (
   { address = "irc.dal.net"; chatnet = "DALnet"; port = "6667"; },
   { address = "irc.efnet.org"; chatnet = "EFNet"; port = "6667"; },
   { address = "irc.esper.net"; chatnet = "EsperNet"; port = "6667"; },
-  {
+  { 
     address = "chat.freenode.net";
     chatnet = "Freenode";
     port = "6667";
@@ -21,14 +21,14 @@ servers = (
   },
   { address = "irc.netfuze.net"; chatnet = "NetFuze"; port = "6667"; },
   { address = "irc.oftc.net"; chatnet = "OFTC"; port = "6667"; },
-  {
+  { 
     address = "irc.quakenet.org";
     chatnet = "QuakeNet";
     port = "6667";
   },
   { address = "irc.rizon.net"; chatnet = "Rizon"; port = "6667"; },
   { address = "silc.silcnet.org"; chatnet = "SILC"; port = "706"; },
-  {
+  { 
     address = "irc.undernet.org";
     chatnet = "Undernet";
     port = "6667";
@@ -42,7 +42,7 @@ chatnets = {
     max_msgs = "20";
     max_whois = "30";
   };
-  EFNet = {
+  EFNet = { 
     type = "IRC";
     max_kicks = "1";
     max_msgs = "4";
@@ -67,7 +67,7 @@ chatnets = {
     max_msgs = "1";
     max_whois = "1";
   };
-  IRCnet = {
+  IRCnet = { 
     type = "IRC";
     max_kicks = "1";
     max_msgs = "1";
@@ -92,7 +92,7 @@ chatnets = {
     max_msgs = "1";
     max_whois = "1";
   };
-  Rizon = {
+  Rizon = { 
     type = "IRC";
     max_kicks = "1";
     max_msgs = "1";
@@ -119,7 +119,8 @@ channels = (
   { name = "#css"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#reactjs"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#bitcoin"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#emberjs"; chatnet = "Freenode"; autojoin = "Yes"; }
+  { name = "#emberjs"; chatnet = "Freenode"; autojoin = "Yes"; },
+  { name = "#mongodb"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#politics"; chatnet = "EFNet"; autojoin = "Yes"; }
 );
 
@@ -377,7 +378,7 @@ statusbar = {
   };
 };
 settings = {
-  core = {
+  core = { 
     real_name = "Barbz";
     user_name = "b4rbz";
     nick = "Derderderd";
@@ -389,10 +390,14 @@ settings = {
     autolog = "yes";
   };
 };
-ignores = ( { level = "JOINS PARTS QUITS NICKS"; } );
+ignores = (
+  { level = "JOINS PARTS QUITS NICKS"; },
+  { mask = "gribble"; level = "ALL"; }
+);
 hilights = ( { text = "Derderderd"; nick = "no"; word = "yes"; } );
 windows = {
   1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
   2 = { name = "hilight"; };
 };
 mainwindows = { 1 = { first_line = "1"; lines = "44"; }; };
+logs = { };
