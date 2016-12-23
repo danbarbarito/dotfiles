@@ -108,20 +108,21 @@ chatnets = {
 };
 
 channels = (
-  { name = "#ruby"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#RubyOnRails"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#startups"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#go-nuts"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#web"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#git"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#programming"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#javascript"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#css"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#reactjs"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#bitcoin"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#emberjs"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#mongodb"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#politics"; chatnet = "EFNet"; autojoin = "Yes"; }
+  { name = "#ruby"; chatnet = "Freenode"; autojoin = "No"; },
+  { name = "#RubyOnRails"; chatnet = "Freenode"; autojoin = "No"; },
+  { name = "#startups"; chatnet = "Freenode"; autojoin = "No"; },
+  { name = "#go-nuts"; chatnet = "Freenode"; autojoin = "No"; },
+  { name = "#web"; chatnet = "Freenode"; autojoin = "No"; },
+  { name = "#git"; chatnet = "Freenode"; autojoin = "No"; },
+  { name = "#programming"; chatnet = "Freenode"; autojoin = "No"; },
+  { name = "#javascript"; chatnet = "Freenode"; autojoin = "No"; },
+  { name = "#css"; chatnet = "Freenode"; autojoin = "No"; },
+  { name = "#reactjs"; chatnet = "Freenode"; autojoin = "No"; },
+  { name = "#bitcoin"; chatnet = "Freenode"; autojoin = "No"; },
+  { name = "#emberjs"; chatnet = "Freenode"; autojoin = "No"; },
+  { name = "#mongodb"; chatnet = "Freenode"; autojoin = "No"; },
+  { name = "##reddit-christianity"; chatnet = "Freenode"; autojoin = "No"; },
+  { name = "#politics"; chatnet = "EFNet"; autojoin = "No"; }
 );
 
 aliases = {
@@ -325,7 +326,6 @@ statusbar = {
         window = { };
         window_empty = { };
         lag = { priority = "-1"; };
-        act = { priority = "10"; };
         more = { priority = "-1"; alignment = "right"; };
         barend = { priority = "100"; alignment = "right"; };
       };
@@ -375,6 +375,27 @@ statusbar = {
         topicbarend = { priority = "100"; alignment = "right"; };
       };
     };
+    awl_0 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_0 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+    awl_1 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_1 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+    awl_2 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_2 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
   };
 };
 settings = {
@@ -388,6 +409,11 @@ settings = {
     bell_beeps = "yes";
     beep_msg_level = "MSGS INVITES DCC DCCMSGS HILIGHT";
     autolog = "yes";
+  };
+  "perl/core/scripts" = {
+    awl_shared_sbar = "OFF";
+    awl_viewer = "no";
+    awl_block = "-14";
   };
 };
 ignores = (
