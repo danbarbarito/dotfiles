@@ -1,4 +1,5 @@
 *~
+*.log
 emacs.d/ido.last
 emacs.d/places
 emacs.d/projectile-bookmarks.eld
@@ -6,3 +7,4 @@ emacs.d/recentf
 emacs.d/elpa
 emacs.d/backups
 emacs.d/auto-save-list
+weechat/logs
