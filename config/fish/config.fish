@@ -60,8 +60,7 @@ set -x GOPATH "/Users/danbarbarito/.go"
 set -x NVM_DIR "$HOME/.nvm"
 set -x ANDROID_HOME "/usr/local/Cellar/android-sdk/24.4.1_1"
 set -x EDITOR "micro"
-set -x PERL_LWP_SSL_VERIFY_HOSTNAME 0 
-source ~/.freenode.env
+set -x PERL_LWP_SSL_VERIFY_HOSTNAME 0
 
 # Completions
 function make_completion --argument-names alias command
