@@ -8,3 +8,5 @@ emacs.d/elpa
 emacs.d/backups
 emacs.d/auto-save-list
 weechat/logs
+atom/packages
+atom/storage
