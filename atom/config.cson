@@ -5,6 +5,11 @@
   "atom-beautify":
     general:
       _analyticsUserId: "15bb292e-fc84-4309-8618-8b7b8615acea"
+  "autocomplete-plus":
+    fileBlacklist: [
+      "*.md"
+      "*.txt"
+    ]
   "autocomplete-ruby":
     rsensePath: "/Users/danbarbarito/.rbenv/shims/rsense"
   "color-picker":
@@ -24,8 +29,14 @@
         "BUCK"
       ]
     disabledPackages: [
-      "tree-view"
       "linter"
+      "tree-view"
+    ]
+    ignoredNames: [
+      "*/dist/**/*"
+      "*/node_modules/**/*"
+      "*/bower_components/**/*"
+      "*/tmp/**/*"
     ]
     packagesWithKeymapsDisabled: [
       "color-picker"
@@ -34,7 +45,7 @@
     telemetryConsent: "limited"
     themes: [
       "one-dark-ui"
-      "base16-tomorrow-dark-theme"
+      "atom-dark-syntax"
     ]
   editor:
     fontSize: 9
@@ -59,6 +70,7 @@
   nuclide:
     "nuclide-code-format":
       formatOnSave: true
+    "nuclide-file-tree": {}
     "nuclide-flow":
       warnOnNotInstalled: false
     "nuclide-home":
