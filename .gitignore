@@ -1,5 +1,6 @@
 *~
 *.log
+logs/
 emacs.d/ido.last
 emacs.d/places
 emacs.d/projectile-bookmarks.eld
