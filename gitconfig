@@ -1,7 +1,6 @@
 [user]
-	email = danielbarbarito@mail.adelphi.edu
 	name = Dan Barbarito
-	email = =
+	email = danielbarbarito@mail.adelphi.edu
 [push]
 	default = simple
 [core]
