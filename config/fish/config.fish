@@ -34,8 +34,8 @@ function streamaudio  ; rygel ; end
 function loginpanther ; ssh danielbarbarito@panther.adelphi.edu ; end
 function commitm      ; curl -s http://whatthecommit.com/index.txt ; end
 function linkpanther  ; sshfs danielbarbarito@panther.adelphi.edu:/home/da21066/ ~/.panther ; end
-function loginvpn     ; ssh barbz@107.175.2.186 ; end
-function linkvpn      ; sshfs barbz@107.175.2.186:/home/barbz ~/.vpn ; end
+function loginvps     ; ssh barbz@107.175.2.186 ; end
+function linkvps      ; sshfs barbz@107.175.2.186:/home/barbz ~/.vps ; end
 function cdd          ; cd ~/.dotfiles ; end
 function cde          ; cd ~/.dotfiles/emacs.d ; end
 function emacs        ; emacsclient -c $argv ; end # Make sure `emacs --daemon` is running on startup
