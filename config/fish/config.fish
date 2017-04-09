@@ -25,7 +25,6 @@ function ip           ; curl -s http://checkip.dyndns.com/ | sed 's/[^0-9\.]//g'
 function localip      ; ipconfig getifaddr en0 ; end
 function lookbusy     ; cat /dev/urandom | hexdump -C | grep --color "ca fe" ; end
 function mp           ; nvim $argv ; end
-function t            ; command tree -C $argv ; end
 function tmux         ; command tmux -2 $argv ; end
 function tunnel       ; ssh -D 8080 -C -N $argv ; end
 function view         ; nvim -R $argv ; end
