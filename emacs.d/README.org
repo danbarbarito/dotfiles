@@ -565,8 +565,6 @@ C-c C-d
 #+END_SRC
 
 See the [[http://ternjs.net/][project homepage]] for more info.
-
-
 ** textmate
 #+BEGIN_SRC emacs-lisp
     (require 'textmate)
@@ -613,6 +611,10 @@ Also Emacs should be able to kill processes without asking ([[(process-query)][l
 ** ditaa
 #+BEGIN_SRC emacs-lisp
   (setq org-ditaa-jar-path "/usr/local/Cellar/ditaa/0.9/libexec/ditaa0_9.jar")
+#+END_SRC
+** go
+#+BEGIN_SRC emacs-lisp
+
 #+END_SRC
 * Key Bindings
 - State "IN PROGRESS" from ""           [2015-03-09 Mon 21:46]
