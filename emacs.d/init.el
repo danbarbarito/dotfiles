@@ -11,3 +11,4 @@
       vc-follow-symlinks nil)
 
 (org-babel-load-file "~/.emacs.d/README.org")
+(put 'dired-find-alternate-file 'disabled nil)
