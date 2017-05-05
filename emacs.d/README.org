@@ -78,13 +78,14 @@ more themes here
 - =emacsclient=  [[(server)]]
 - Meta key =Command= [[(meta-key)]]
 #+BEGIN_SRC emacs-lisp -n -r
-  (server-start) ;(ref:server)
+  (if (and (fboundp 'server-running-p) 
+         (not (server-running-p)))
+   (server-start)) ;(ref:server)
   (global-superword-mode 1)
   (when (eq system-type 'darwin)
     (setq mac-option-modifier 'alt)
     (setq mac-command-modifier 'meta)); (ref:meta-key)
   (tool-bar-mode -1)
-  (scroll-bar-mode -1)
   (setq inhibit-startup-message t)
   (delete-selection-mode 1) ; delete selection when paste
   (global-auto-revert-mode 1)  ;auto revert buffers when changed on dis

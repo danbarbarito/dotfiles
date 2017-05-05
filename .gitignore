@@ -11,3 +11,4 @@ emacs.d/auto-save-list
 weechat/logs
 atom/packages
 atom/storage
+.cask

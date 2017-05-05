@@ -38,6 +38,10 @@ function linkvps      ; sshfs barbz@107.175.2.186:/home/barbz ~/.vps ; end
 function cdd          ; cd ~/.dotfiles ; end
 function cde          ; cd ~/.dotfiles/emacs.d ; end
 
+# Text
+function e        ; emacsclient -t -a "" $argv; end
+function emacs        ; emacsclient -t -a "" $argv; end
+
 launchctl setenv GOPATH $HOME/.go
 
 # PATH
@@ -54,7 +58,9 @@ end
 set -x GOPATH "/Users/danbarbarito/.go"
 set -x NVM_DIR "$HOME/.nvm"
 set -x ANDROID_HOME "/usr/local/Cellar/android-sdk/24.4.1_1"
-set -x EDITOR "micro"
+set -x ALTERNATE_EDITOR "emacs"
+set -x EDITOR "emacs"
+set -x VISUAL_EDITOR "emacs"
 set -x PERL_LWP_SSL_VERIFY_HOSTNAME 0
 
 # Completions
