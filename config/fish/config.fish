@@ -83,3 +83,5 @@ source ~/.config/fish/nvm-wrapper/nvm.fish
 
 # virtualfish
 eval (python -m virtualfish)
+
+test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
