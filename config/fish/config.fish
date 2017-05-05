@@ -37,8 +37,6 @@ function loginvps     ; ssh barbz@107.175.2.186 ; end
 function linkvps      ; sshfs barbz@107.175.2.186:/home/barbz ~/.vps ; end
 function cdd          ; cd ~/.dotfiles ; end
 function cde          ; cd ~/.dotfiles/emacs.d ; end
-function emacs        ; emacsclient -c $argv ; end # Make sure `emacs --daemon` is running on startup
-function emax         ; emacsclient -nw $argv ; end
 
 launchctl setenv GOPATH $HOME/.go
 
@@ -50,8 +48,6 @@ set -gx PATH $ANDROID_HOME/tools $PATH
 # OS specific
 switch (uname)
   case Darwin
-    # Add emacs path to $PATH
-    set -gx PATH /Applications/Emacs.app/Contents/MacOS/bin/  $PATH
 end
 
 # Environment
