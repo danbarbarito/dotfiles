@@ -22,6 +22,7 @@ tomorrow theme eighties
 more themes here
 
 [[http://emacsthemes.caisah.info/installed-emacs-themes/]]
+
 * Fonts
 
 #+BEGIN_SRC emacs-lisp
@@ -29,21 +30,22 @@ more themes here
   ;;      (set-fontset-font t 'han '("PingFang SC"))
   (require 'unicode-fonts)
   (unicode-fonts-setup)
-  (set-default-font "Monaco-14:width=condensed:weight=light")
+  (set-default-font "Monaco-12:width=condensed:weight=light")
 
-  (defun darwin-set-emoji-font (frame)
-    "Adjust the font settings of FRAME so Emacs NS/Cocoa can display emoji properly."
-    (if (eq system-type 'darwin)
-        (set-fontset-font t 'symbol (font-spec :family "Apple Color Emoji") frame 'prepend)))
-  ;; For when emacs is started with Emacs.app
-  (darwin-set-emoji-font nil)
-  ;; Hook for when a cocoa frame is created with emacsclient
-  ;; see https://www.gnu.org/software/emacs/manual/html_node/elisp/Creating-Frames.html
-  (add-hook 'after-make-frame-functions 'darwin-set-emoji-font)
+  ;; (defun darwin-set-emoji-font (frame)
+  ;;   "Adjust the font settings of FRAME so Emacs NS/Cocoa can display emoji properly."
+  ;;   (if (eq system-type 'darwin)
+  ;;       (set-fontset-font t 'symbol (font-spec :family "Apple Color Emoji") frame 'prepend)))
+  ;; ;; For when emacs is started with Emacs.app
+  ;; (darwin-set-emoji-font nil)
+  ;; ;; Hook for when a cocoa frame is created with emacsclient
+  ;; ;; see https://www.gnu.org/software/emacs/manual/html_node/elisp/Creating-Frames.html
+  ;; (add-hook 'after-make-frame-functions 'darwin-set-emoji-font)
 
 
 
-  (defun my-add-pretty-lambda ()
+   (defun my-add-
+      pretty-lambda ()
     "make some word or string show as pretty Unicode symbols"
     (setq prettify-symbols-alist
           '(
@@ -180,6 +182,7 @@ document
 
 ** IN PROGRESS helm
 - State "IN PROGRESS" from ""           [2015-03-09 Mon 21:46]
+
 this is worth reading when you just start using helm [[http://tuhdo.github.io/helm-intro.html]]
 
 helm
@@ -438,16 +441,16 @@ Got most of that from [[https://github.com/magnars/.emacs.d/blob/master/setup-js
 *** TODO Agenda
 #+BEGIN_SRC emacs-lisp
   ;; create the file for the agendas if it doesn't exist
-  (appt-activate 1)              ; activate appt (appointment notification)
+  (appt-activate 0)              ; activate appt (appointment notification)
 
   (org-agenda-to-appt)           ; add appointments on startup
 
   ;; add new appointments when saving the org buffer, use 'refresh argument to do it properly
-  (defun my-org-agenda-to-appt-refresh () (org-agenda-to-appt 'refresh))
-  (defun my-org-mode-hook ()
-    (add-hook 'after-save-hook 'my-org-agenda-to-appt-refresh nil 'make-it-local))
-  (add-hook 'org-mode-hook 'my-org-mode-hook)
-  (add-hook 'org-mode-hook (lambda ()
+  ;; (defun my-org-agenda-to-appt-refresh () (org-agenda-to-appt 'refresh))
+  ;; (defun my-org-mode-hook ()
+  ;;   (add-hook 'after-save-hook 'my-org-agenda-to-appt-refresh nil 'make-it-local))
+  ;; (add-hook 'org-mode-hook 'my-org-mode-hook)
+   (add-hook 'org-mode-hook (lambda ()
                              (visual-line-mode 1)))
   (require 'notifications)
   (defun my-appt-disp-window-function (min-to-app new-time msg)
@@ -650,7 +653,8 @@ Also Emacs should be able to kill processes without asking ([[(process-query)][l
    ("C-c h x" . helm-register)
    ("M-x" . helm-M-x)
    ("C-x b" . helm-mini)
-   ("M-y" . helm-show-kill-ring))
+   ("M-y" . helm-show-kill-ring)
+   ("C-x C-f" . helm-find-files))
   (bind-keys
    :map helm-map
    ("<tab>" . helm-execute-persistent-action) ; rebind tab to run persistent action
