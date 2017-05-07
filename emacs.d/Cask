@@ -110,6 +110,7 @@
 (depends-on "smartrep")
 (depends-on "smex")
 (depends-on "spinner")
+(depends-on "stylus-mode")
 (depends-on "tern")
 (depends-on "textmate")
 (depends-on "ucs-utils")
