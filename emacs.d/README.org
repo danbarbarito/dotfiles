@@ -103,6 +103,24 @@ more themes here
    electric-pair-mode nil
    )
   (electric-indent-mode t)
+;; disable lockfiles
+;; see http://www.gnu.org/software/emacs/manual/html_node/emacs/Interlocking.html
+(setq create-lockfiles nil)
+
+;; store all backup files in the tmp dir
+;; http://www.gnu.org/software/emacs/manual/html_node/emacs/Backup-Names.html
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+
+;; store all autosave files in the tmp dir
+;; http://www.gnu.org/software/emacs/manual/html_node/emacs/Auto-Save-Files.html
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
+;; autosave the undo-tree history
+(setq undo-tree-history-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq undo-tree-auto-save-history t)
 #+END_SRC
 
 * User Settings
@@ -699,6 +717,7 @@ Also Emacs should be able to kill processes without asking ([[(process-query)][l
    ("M-k" . delete-other-windows)
    ("<f7>" . toggle-window-split)
    ("C-c c" . deft)
+   ("C-S-s" . replace-string)
    ("C-x t" . org-capture)
    ("C-c a" (lambda () (interactive) (org-agenda nil "n"))))
 #+END_SRC  
