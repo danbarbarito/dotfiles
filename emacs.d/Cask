@@ -117,7 +117,6 @@
 (depends-on "unicode-fonts")
 (depends-on "use-package")
 (depends-on "visual-regexp")
-(depends-on "web-beautify")
 (depends-on "web-mode")
 (depends-on "with-editor")
 (depends-on "yaml-mode")

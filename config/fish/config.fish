@@ -37,6 +37,7 @@ function loginvps     ; ssh barbz@107.175.2.186 ; end
 function linkvps      ; sshfs barbz@107.175.2.186:/home/barbz ~/.vps ; end
 function cdd          ; cd ~/.dotfiles ; end
 function cde          ; cd ~/.dotfiles/emacs.d ; end
+function mm           ; mpv --no-video --ytdl-format=bestaudio ytdl://ytsearch10:"$argv" ; end
 
 # Text
 function e        ; emacsclient -t -a "" $argv; end
