@@ -3,21 +3,22 @@
 ;;      (set-fontset-font t 'han '("PingFang SC"))
 (require 'unicode-fonts)
 (unicode-fonts-setup)
-(set-default-font "Monaco-14:width=condensed:weight=light")
+(set-default-font "Monaco-12:width=condensed:weight=light")
 
-(defun darwin-set-emoji-font (frame)
-  "Adjust the font settings of FRAME so Emacs NS/Cocoa can display emoji properly."
-  (if (eq system-type 'darwin)
-      (set-fontset-font t 'symbol (font-spec :family "Apple Color Emoji") frame 'prepend)))
-;; For when emacs is started with Emacs.app
-(darwin-set-emoji-font nil)
-;; Hook for when a cocoa frame is created with emacsclient
-;; see https://www.gnu.org/software/emacs/manual/html_node/elisp/Creating-Frames.html
-(add-hook 'after-make-frame-functions 'darwin-set-emoji-font)
+;; (defun darwin-set-emoji-font (frame)
+;;   "Adjust the font settings of FRAME so Emacs NS/Cocoa can display emoji properly."
+;;   (if (eq system-type 'darwin)
+;;       (set-fontset-font t 'symbol (font-spec :family "Apple Color Emoji") frame 'prepend)))
+;; ;; For when emacs is started with Emacs.app
+;; (darwin-set-emoji-font nil)
+;; ;; Hook for when a cocoa frame is created with emacsclient
+;; ;; see https://www.gnu.org/software/emacs/manual/html_node/elisp/Creating-Frames.html
+;; (add-hook 'after-make-frame-functions 'darwin-set-emoji-font)
 
 
 
-(defun my-add-pretty-lambda ()
+ (defun my-add-
+    pretty-lambda ()
   "make some word or string show as pretty Unicode symbols"
   (setq prettify-symbols-alist
         '(
@@ -36,39 +37,43 @@
           (">=>" . ?⟾)
           )))
 
-(add-hook 'clojure-mode-hook 'my-add-pretty-lambda)
-(add-hook 'haskell-mode-hook 'my-add-pretty-lambda)
-(add-hook 'js2-mode-hook 'my-add-pretty-lambda)
-(add-hook 'javascript-mode-hook 'my-add-pretty-lambda)
-(add-hook 'coffee-mode-hook 'my-add-pretty-lambda)
+;; (add-hook 'clojure-mode-hook 'my-add-pretty-lambda)
+;; (add-hook 'haskell-mode-hook 'my-add-pretty-lambda)
+;; (add-hook 'js2-mode-hook 'my-add-pretty-lambda)
+;; (add-hook 'javascript-mode-hook 'my-add-pretty-lambda)
+;; (add-hook 'coffee-mode-hook 'my-add-pretty-lambda)
 
-(global-prettify-symbols-mode 1)
+;; (global-prettify-symbols-mode 1)
 
-(server-start) ;
-(global-superword-mode 1)
-(when (eq system-type 'darwin)
-  (setq mac-option-modifier 'alt)
-  (setq mac-command-modifier 'meta)); 
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
-(setq inhibit-startup-message t)
-(delete-selection-mode 1) ; delete selection when paste
-(keyboard-translate ?\C-h ?\C-?); 
-(global-auto-revert-mode 1)  ;auto revert buffers when changed on dis
-(global-diff-hl-mode)
-(add-hook 'local-write-file-hooks
-          (lambda ()
-            (delete-trailing-whitespace)
-            nil))
-(setq-default
- make-backup-files nil ; stop creating those backup~ file
- auto-save-default nil
+(if (and (fboundp 'server-running-p) 
+         (not (server-running-p)))
+   (server-start)) ;
+  (global-superword-mode 1)
+  (when (eq system-type 'darwin)
+    (setq mac-option-modifier 'alt)
+    (setq mac-command-modifier 'meta)); 
+  (tool-bar-mode -1)
+  (setq inhibit-startup-message t)
+  (delete-selection-mode 1) ; delete selection when paste
+  (global-auto-revert-mode 1)  ;auto revert buffers when changed on dis
+  (global-diff-hl-mode)
+  (add-hook 'local-write-file-hooks
+            (lambda ()
+              (delete-trailing-whitespace)
+              nil))
+  (setq-default
+   make-backup-files nil ; stop creating those backup~ file
+   auto-save-default nil
 
- indent-tabs-mode nil                   ;use spaces instead of tabs
- c-hungry-delete-key t                  ;delete more than one space
- electric-pair-mode nil
- )
-(electric-indent-mode t)
+   indent-tabs-mode nil                   ;use spaces instead of tabs
+   c-hungry-delete-key t                  ;delete more than one space
+   electric-pair-mode nil
+   )
+  (electric-indent-mode t)
+(setq backup-directory-alist `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
+(setq create-lockfiles nil)
+(global-linum-mode 1)
 
 (when (file-readable-p ".user.el") (load ".user.el"))
 
@@ -86,20 +91,22 @@
 
 (require 'company)
 (require 'company-tern)
+(require 'company-go)
 ;; (require 'company-ispell)
 (add-to-list 'company-backends 'company-tern)
+(add-to-list 'company-backends 'company-go)
 (add-to-list 'company-backends 'company-yasnippet t)
 (add-to-list 'company-backends 'company-robe)
 ;; (add-to-list 'company-backends 'company-ispell)
 ;; not always down case
-(setq company-dabbrev-downcase nil)
+(setq company-dabbrev-downcase 1)
 (setq company-tooltip-align-annotations t)
 (setq company-idle-delay 0.1)
 (global-company-mode)
 
 (setq
  deft-extension "org"
- deft-directory "~/Develop/blog/org"
+ deft-directory "~/Dropbox/Notes/"
  deft-text-mode 'org-mode
  deft-recursive t
  deft-use-filename-as-title nil
@@ -213,7 +220,7 @@
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 
 (setq org-startup-folded 'nofold)
-(setq org-startup-indented t)
+(setq org-startup-indented f)
 (setq org-startup-with-inline-images t)
 (setq org-startup-truncated t)
 (setq org-refile-targets '((org-agenda-files :maxlevel . 5)))
@@ -288,16 +295,16 @@
 (setq org-deck-postamble "<p>%t - %a</p>")
 
 ;; create the file for the agendas if it doesn't exist
-(appt-activate 1)              ; activate appt (appointment notification)
+(appt-activate 0)              ; activate appt (appointment notification)
 
 (org-agenda-to-appt)           ; add appointments on startup
 
 ;; add new appointments when saving the org buffer, use 'refresh argument to do it properly
-(defun my-org-agenda-to-appt-refresh () (org-agenda-to-appt 'refresh))
-(defun my-org-mode-hook ()
-  (add-hook 'after-save-hook 'my-org-agenda-to-appt-refresh nil 'make-it-local))
-(add-hook 'org-mode-hook 'my-org-mode-hook)
-(add-hook 'org-mode-hook (lambda ()
+;; (defun my-org-agenda-to-appt-refresh () (org-agenda-to-appt 'refresh))
+;; (defun my-org-mode-hook ()
+;;   (add-hook 'after-save-hook 'my-org-agenda-to-appt-refresh nil 'make-it-local))
+;; (add-hook 'org-mode-hook 'my-org-mode-hook)
+ (add-hook 'org-mode-hook (lambda ()
                            (visual-line-mode 1)))
 (require 'notifications)
 (defun my-appt-disp-window-function (min-to-app new-time msg)
@@ -372,10 +379,14 @@
 (editorconfig-mode 1)
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 
 (yas-global-mode 1)
 
 (setq org-ditaa-jar-path "/usr/local/Cellar/ditaa/0.9/libexec/ditaa0_9.jar")
+
+(require 'go-autocomplete)
 
 (bind-keys
  :map smartparens-mode-map
@@ -405,12 +416,13 @@
  ("C-c h x" . helm-register)
  ("M-x" . helm-M-x)
  ("C-x b" . helm-mini)
- ("M-y" . helm-show-kill-ring))
+ ("M-y" . helm-show-kill-ring)
+ ("C-x C-f" . helm-find-files))
 (bind-keys
  :map helm-map
  ("<tab>" . helm-execute-persistent-action) ; rebind tab to run persistent action
  ("C-i" . helm-execute-persistent-action) ; make TAB works in terminal
- ("C-z" . helm-select-action) ; list actions using C-z
+ ("C-c c-z" . helm-select-action) ; list actions using C-z
  )
 
 (bind-keys
@@ -435,6 +447,7 @@
  ("M-k" . delete-other-windows)
  ("<f7>" . toggle-window-split)
  ("C-c c" . deft)
+ ("C-S-s" . replace-string)
  ("C-x t" . org-capture)
  ("C-c a" (lambda () (interactive) (org-agenda nil "n"))))
 

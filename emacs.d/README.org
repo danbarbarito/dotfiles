@@ -78,35 +78,35 @@ more themes here
 - =emacsclient=  [[(server)]]
 - Meta key =Command= [[(meta-key)]]
 #+BEGIN_SRC emacs-lisp -n -r
-  (if (and (fboundp 'server-running-p) 
-         (not (server-running-p)))
-   (server-start)) ;(ref:server)
-  (global-superword-mode 1)
-  (when (eq system-type 'darwin)
-    (setq mac-option-modifier 'alt)
-    (setq mac-command-modifier 'meta)); (ref:meta-key)
-  (tool-bar-mode -1)
+    (if (and (fboundp 'server-running-p) 
+           (not (server-running-p)))
+     (server-start)) ;(ref:server)
+    (global-superword-mode 1)
+    (when (eq system-type 'darwin)
+      (setq mac-option-modifier 'alt)
+      (setq mac-command-modifier 'meta)); (ref:meta-key)
+    (tool-bar-mode -1)
   (setq inhibit-startup-message t)
-  (delete-selection-mode 1) ; delete selection when paste
-  (global-auto-revert-mode 1)  ;auto revert buffers when changed on dis
-  (global-diff-hl-mode)
-  (add-hook 'local-write-file-hooks
-            (lambda ()
-              (delete-trailing-whitespace)
-              nil))
-  (setq-default
-   make-backup-files nil ; stop creating those backup~ file
-   auto-save-default nil
+    (delete-selection-mode 1) ; delete selection when paste
+    (global-auto-revert-mode 1)  ;auto revert buffers when changed on dis
+    (global-diff-hl-mode)
+    (add-hook 'local-write-file-hooks
+              (lambda ()
+                (delete-trailing-whitespace)
+                nil))
+    (setq-default
+     make-backup-files nil ; stop creating those backup~ file
+     auto-save-default nil
 
-   indent-tabs-mode nil                   ;use spaces instead of tabs
-   c-hungry-delete-key t                  ;delete more than one space
-   electric-pair-mode nil
-   )
-  (electric-indent-mode t)
-(setq backup-directory-alist `((".*" . ,temporary-file-directory)))
-(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
-(setq create-lockfiles nil)
-(global-linum-mode 1)
+     indent-tabs-mode nil                   ;use spaces instead of tabs
+     c-hungry-delete-key t                  ;delete more than one space
+     electric-pair-mode nil
+     )
+    (electric-indent-mode t)
+  (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
+  (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
+  (setq create-lockfiles nil)
+  (global-linum-mode 1)
 #+END_SRC
 
 * User Settings
@@ -346,8 +346,8 @@ Got most of that from [[https://github.com/magnars/.emacs.d/blob/master/setup-js
 
   (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 
-  (setq org-startup-folded 'nofold)
-  (setq org-startup-indented t)
+  (setq org-startup-folded t)
+  (setq org-startup-indented nil)
   (setq org-startup-with-inline-images t)
   (setq org-startup-truncated t)
   (setq org-refile-targets '((org-agenda-files :maxlevel . 5)))
@@ -496,6 +496,7 @@ Got most of that from [[https://github.com/magnars/.emacs.d/blob/master/setup-js
 #+END_SRC
 
 ** smartparens
+
 #+BEGIN_SRC emacs-lisp
   (require 'smartparens-config)
   (smartparens-global-mode t)
@@ -509,8 +510,6 @@ Got most of that from [[https://github.com/magnars/.emacs.d/blob/master/setup-js
 
 #+RESULTS:
 | turn-on-smartparens-strict-mode |
-
-
 ** sequential-command
 #+BEGIN_SRC emacs-lisp
   (require 'sequential-command)
