@@ -6,6 +6,7 @@
 (depends-on "adoc-mode")
 (depends-on "ag")
 (depends-on "async")
+(depends-on "auto-indent-mode")
 (depends-on "back-button")
 (depends-on "bind-key")
 (depends-on "buffer-move")
