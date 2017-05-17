@@ -502,10 +502,6 @@ Got most of that from [[https://github.com/magnars/.emacs.d/blob/master/setup-js
   (smartparens-global-mode t)
 
   (show-smartparens-global-mode t)
-
-  (add-hook 'clojure-mode-hook 'turn-on-smartparens-strict-mode)
-  (add-hook 'prog-mode-hook 'turn-on-smartparens-strict-mode)
-  (add-hook 'markdown-mode-hook 'turn-on-smartparens-strict-mode)
 #+END_SRC
 
 #+RESULTS:
@@ -609,6 +605,8 @@ Also Emacs should be able to kill processes without asking ([[(process-query)][l
   (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+  (setq web-mode-content-types-alist
+        '(("jsx" . "\\.js[x]?\\'")))
 #+END_SRC
 
 ** yasnippet
