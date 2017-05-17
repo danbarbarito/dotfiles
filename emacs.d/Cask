@@ -96,6 +96,7 @@
 (depends-on "projectile")
 (depends-on "queue")
 (depends-on "rainbow-mode")
+(depends-on "redo+")
 (depends-on "request")
 (depends-on "request-deferred")
 (depends-on "rich-minority")

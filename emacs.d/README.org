@@ -628,10 +628,10 @@ Also Emacs should be able to kill processes without asking ([[(process-query)][l
   (require 'magit)
   (global-set-key (kbd "C-x g") 'magit-status)
 #+END_SRC
-** auto-indent
+** redo+
 #+BEGIN_SRC emacs-lisp
-  (require 'auto-indent-mode)
-  (auto-indent-global-mode)
+  (require 'redo+)
+  (global-set-key (kbd "C-?") 'redo)
 #+END_SRC
 * Key Bindings
 - State "IN PROGRESS" from ""           [2015-03-09 Mon 21:46]
