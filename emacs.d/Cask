@@ -69,6 +69,7 @@
 (depends-on "key-chord")
 (depends-on "let-alist")
 (depends-on "list-utils")
+(depends-on "lorem-ipsum")
 (depends-on "lua-mode")
 (depends-on "magit")
 (depends-on "magit-popup")

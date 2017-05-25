@@ -30,7 +30,8 @@ more themes here
   ;;      (set-fontset-font t 'han '("PingFang SC"))
   (require 'unicode-fonts)
   (unicode-fonts-setup)
-  (set-default-font "Monaco-12:width=condensed:weight=light")
+  ;; (set-default-font "Monaco-12:width=normal:weight=light")
+  (set-default-font "Andale Mono-12:width=normal:weight=light")
 
   ;; (defun darwin-set-emoji-font (frame)
   ;;   "Adjust the font settings of FRAME so Emacs NS/Cocoa can display emoji properly."
