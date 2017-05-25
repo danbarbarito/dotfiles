@@ -202,12 +202,12 @@ helm
   (global-set-key (kbd "C-c h") 'helm-command-prefix)
   (global-unset-key (kbd "C-x c"))
   (setq projectile-completion-system 'helm
-        helm-M-x-fuzzy-match t
-        helm-buffers-fuzzy-matching t
-        helm-recentf-fuzzy-match t
-        helm-ag-fuzzy-match t ;(ref: ag-fuzzy-match)
+        helm-M-x-fuzzy-match nil
+        helm-buffers-fuzzy-matching nil
+        helm-recentf-fuzzy-match nil
+        helm-ag-fuzzy-match nil ;(ref: ag-fuzzy-match)
         projectile-enable-caching t; (ref:caching)
-        helm-locate-fuzzy-match t
+        helm-locate-fuzzy-match nil
         projectile-indexing-method 'alien); (ref:indexing)
   (helm-projectile-on)
 

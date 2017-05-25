@@ -19,8 +19,6 @@
  ;; If there is more than one, they won't work right.
  '(auto-indent-on-save-file t)
  '(company-go-gocode-command "/Users/danbarbarito/.go/bin/gocode")
- '(helm-locate-command "locate %s -e -A --regex %sy")
- '(helm-locate-fuzzy-match t)
  '(linum-relative-current-symbol "")
  '(package-selected-packages
    (quote
