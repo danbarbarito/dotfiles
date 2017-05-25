@@ -11,12 +11,8 @@
 
 * Theme
 
-tomorrow theme eighties
-
-[[https://github.com/purcell/color-theme-sanityinc-tomorrow]]
-
 #+BEGIN_SRC emacs-lisp
-  (load-theme 'sanityinc-tomorrow-eighties t)
+  (load-theme 'sanityinc-tomorrow-night t)
 #+END_SRC
 
 more themes here
