@@ -34,6 +34,7 @@
  '(projectile-globally-ignored-directories
    (quote
     (".idea" ".ensime_cache" ".eunit" ".git" ".hg" ".fslckout" "_FOSSIL_" ".bzr" "_darcs" ".tox" ".svn" ".stack-work" ".sass-cache")))
+ '(ring-bell-function (quote ignore))
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
    (quote
