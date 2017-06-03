@@ -711,7 +711,13 @@ Also Emacs should be able to kill processes without asking ([[(process-query)][l
    ("C-c c" . deft)
    ("C-S-s" . replace-string)
    ("C-x t" . org-capture)
-   ("C-c a" (lambda () (interactive) (org-agenda nil "n"))))
+   ("C-c a" (lambda () (interactive) (org-agenda nil "n")))
+   ("S-C-<left>" . shrink-window-horizontally)
+   ("S-C-<left>" . shrink-window-horizontally)
+   ("S-C-<right>" . enlarge-window-horizontally)
+   ("S-C-<down>" . shrink-window)
+   ("S-C-<up>" . enlarge-window))
+
 #+END_SRC  
 
 #+RESULTS:

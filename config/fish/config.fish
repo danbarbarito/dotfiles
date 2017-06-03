@@ -57,7 +57,6 @@ end
 
 # Environment
 set -x GOPATH "/Users/danbarbarito/.go"
-set -x NVM_DIR "$HOME/.nvm"
 set -x ANDROID_HOME "/usr/local/Cellar/android-sdk/24.4.1_1"
 set -x ALTERNATE_EDITOR "emacs"
 set -x EDITOR "emacs"
@@ -84,9 +83,6 @@ status --is-interactive; and . (rbenv init -|psub)
 
 # perlbrew
 . ~/perl5/perlbrew/etc/perlbrew.fish
-
-# nvm
-source ~/.config/fish/nvm-wrapper/nvm.fish
 
 # virtualfish
 eval (python -m virtualfish)
