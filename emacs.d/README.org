@@ -135,8 +135,7 @@ more themes here
 #+END_SRC
 
 ** company
-- State "DONE"       from ""           [2015-03-09 Mon 22:54]
-
+   
 Completion will start automatically after you type a few letters. Use M-n and M-p to select, <return> to complete or <tab> to complete the common part. Search through the completions with C-s, C-r and C-o. Press M-(digit) to quickly complete with one of the first 10 candidates.
 
 When the completion candidates are shown, press <f1> to display the documentation for the selected candidate, or C-w to see its source. Not all back-ends support this.
@@ -147,16 +146,20 @@ document
   (require 'company)
   (require 'company-tern)
   (require 'company-go)
-  ;; (require 'company-ispell)
+  (require 'company-web-html)                          ; load company mode html backend
+  (require 'company-web-jade)                          ; load company mode jade backend
+  (require 'company-web-slim)                          ; load company mode slim backend
+
   (add-to-list 'company-backends 'company-tern)
   (add-to-list 'company-backends 'company-go)
   (add-to-list 'company-backends 'company-yasnippet t)
-  (add-to-list 'company-backends 'company-robe)
-  ;; (add-to-list 'company-backends 'company-ispell)
-  ;; not always down case
+  (add-to-list 'company-backends 'company-web-html)
+  (add-to-list 'company-backends 'company-web-jade)
+  (add-to-list 'company-backends 'company-slim)
+
   (setq company-dabbrev-downcase 1)
   (setq company-tooltip-align-annotations t)
-  (setq company-idle-delay 0.1)
+  (setq company-idle-delay 0.3)
   (global-company-mode)
 
 #+END_SRC
@@ -164,6 +167,11 @@ document
 #+RESULTS:
 : t
 
+** emmet
+#+BEGIN_SRC emacs-lisp -n -r
+  (require 'emmet-mode)
+  (add-hook 'web-mode-hook 'emmet-mode)
+#+END_SRC
 ** deft
 #+BEGIN_SRC emacs-lisp
   (setq
@@ -566,6 +574,7 @@ C-c C-c
 C-c C-d
     Find docs of the thing under the cursor. Press again to open the associated URL (if any).
 #+END_EXAMPLE
+
 #+BEGIN_SRC emacs-lisp
   (add-hook 'js-mode-hook (lambda () (tern-mode t)))
   (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
@@ -640,6 +649,11 @@ Also Emacs should be able to kill processes without asking ([[(process-query)][l
   (global-set-key (kbd "C-?") 'redo)
 #+END_SRC
 * Key Bindings
+** tern
+#+BEGIN_SRC emacs-lisp
+  (bind-keys
+  ("C-c t r" . tern-rename-variable))
+#+END_SRC
 ** smartparens
 #+BEGIN_SRC emacs-lisp
   (bind-keys
@@ -702,7 +716,7 @@ Also Emacs should be able to kill processes without asking ([[(process-query)][l
 #+BEGIN_SRC emacs-lisp 
   (bind-keys
    ("M-x" . smex)
-   ("M-X" . smex-major-mode-commands)
+   ("M-S-x" . smex-major-mode-commands)
    ("M-c" . kill-ring-save)
    ("C-8" . er/expand-region)
    ("M-8" . er/contract-region)

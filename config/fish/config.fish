@@ -43,8 +43,6 @@ function mm           ; mpv --no-video --ytdl-format=bestaudio ytdl://ytsearch10
 function e        ; emacsclient -t -a "" $argv; end
 function emacs        ; emacsclient -t -a "" $argv; end
 
-launchctl setenv GOPATH $HOME/.go
-
 # PATH
 set -gx PATH ~/.bin $PATH
 set -gx PATH ~/.rakudobrew/bin $PATH
