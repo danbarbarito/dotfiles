@@ -70,7 +70,6 @@ more themes here
   ;; (global-prettify-symbols-mode 1)
 #+END_SRC
 
-
 * Global General Modes
 - =emacsclient=  [[(server)]]
 - Meta key =Command= [[(meta-key)]]
@@ -113,9 +112,14 @@ more themes here
 #+END_SRC
 
 * Modes
+** help
+#+BEGIN_SRC emacs-lisp
+  (require 'pp-c-l)
+  (add-hook 'help-mode-hook 'pretty-control-l-mode)
+#+END_SRC
 ** dot
 #+BEGIN_SRC emacs-lisp
-  (add-to-list 'org-src-lang-modes '("dot" . graphviz-dot))
+  ; (add-to-list 'org-src-lang-modes '("dot" . graphviz-dot))
 #+END_SRC
 
 ** cider
@@ -193,25 +197,6 @@ document
 : t
 
 ** helm
-#+BEGIN_SRC emacs-lisp -n -r
-  ;; (require 'helm-config)
-  ;; (require 'helm-git-grep)
-  ;; (helm-mode 1)
-  ;; (helm-autoresize-mode 1)
-  ;; (projectile-global-mode)
-  ;; (global-set-key (kbd "C-c h") 'helm-command-prefix)
-  ;; (global-unset-key (kbd "C-x c"))
-  ;; (setq projectile-completion-system 'helm
-  ;;       helm-M-x-fuzzy-match nil
-  ;;       helm-buffers-fuzzy-matching nil
-  ;;       helm-recentf-fuzzy-match nil
-  ;;       helm-ag-fuzzy-match nil ;(ref: ag-fuzzy-match)
-  ;;       projectile-enable-caching t; (ref:caching)
-  ;;       helm-locate-fuzzy-match nil
-  ;;       projectile-indexing-method 'alien); (ref:indexing)
-  ;; (helm-projectile-on)
-
-#+END_SRC
 
 ** projectile
 #+BEGIN_SRC emacs-lisp -n -r
@@ -620,9 +605,6 @@ Also Emacs should be able to kill processes without asking ([[(process-query)][l
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
-  (setq web-mode-content-types-alist
-        '(("jsx" . "\\.js[x]?\\'")))
 #+END_SRC
 
 ** yasnippet
@@ -649,11 +631,6 @@ Also Emacs should be able to kill processes without asking ([[(process-query)][l
   (global-set-key (kbd "C-?") 'redo)
 #+END_SRC
 * Key Bindings
-** tern
-#+BEGIN_SRC emacs-lisp
-  (bind-keys
-  ("C-c t r" . tern-rename-variable))
-#+END_SRC
 ** smartparens
 #+BEGIN_SRC emacs-lisp
   (bind-keys
@@ -712,6 +689,11 @@ Also Emacs should be able to kill processes without asking ([[(process-query)][l
 #+RESULTS:
 : mc/mark-all-like-this
 
+** company
+#+BEGIN_SRC emacs-lisp
+  (bind-keys
+  ("C-c TAB" . company-complete))
+#+END_SRC
 ** general
 #+BEGIN_SRC emacs-lisp 
   (bind-keys
