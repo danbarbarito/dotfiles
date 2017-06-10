@@ -112,13 +112,13 @@ more themes here
   (when (file-readable-p ".user.el") (load ".user.el"))
 #+END_SRC
 
-* Modes [50%]
+* Modes
 ** dot
 #+BEGIN_SRC emacs-lisp
   (add-to-list 'org-src-lang-modes '("dot" . graphviz-dot))
 #+END_SRC
 
-** IN PROGRESS cider
+** cider
 
 [[https://github.com/clojure-emacs/cider#keyboard-shortcuts]]
 
@@ -134,7 +134,7 @@ more themes here
   ;;       cider-overlays-use-font-lock t)
 #+END_SRC
 
-** DONE company
+** company
 - State "DONE"       from ""           [2015-03-09 Mon 22:54]
 
 Completion will start automatically after you type a few letters. Use M-n and M-p to select, <return> to complete or <tab> to complete the common part. Search through the completions with C-s, C-r and C-o. Press M-(digit) to quickly complete with one of the first 10 candidates.
@@ -164,7 +164,7 @@ document
 #+RESULTS:
 : t
 
-** DONE deft
+** deft
 #+BEGIN_SRC emacs-lisp
   (setq
    deft-extension "org"
@@ -184,31 +184,41 @@ document
 #+RESULTS:
 : t
 
-** IN PROGRESS helm
-
-this is worth reading when you just start using helm [[http://tuhdo.github.io/helm-intro.html]]
-
-helm
+** helm
 #+BEGIN_SRC emacs-lisp -n -r
-  (require 'helm-config)
-  (require 'helm-git-grep)
-  (helm-mode 1)
-  (helm-autoresize-mode 1)
-  (projectile-global-mode)
-  (global-set-key (kbd "C-c h") 'helm-command-prefix)
-  (global-unset-key (kbd "C-x c"))
-  (setq projectile-completion-system 'helm
-        helm-M-x-fuzzy-match nil
-        helm-buffers-fuzzy-matching nil
-        helm-recentf-fuzzy-match nil
-        helm-ag-fuzzy-match nil ;(ref: ag-fuzzy-match)
-        projectile-enable-caching t; (ref:caching)
-        helm-locate-fuzzy-match nil
-        projectile-indexing-method 'alien); (ref:indexing)
-  (helm-projectile-on)
+  ;; (require 'helm-config)
+  ;; (require 'helm-git-grep)
+  ;; (helm-mode 1)
+  ;; (helm-autoresize-mode 1)
+  ;; (projectile-global-mode)
+  ;; (global-set-key (kbd "C-c h") 'helm-command-prefix)
+  ;; (global-unset-key (kbd "C-x c"))
+  ;; (setq projectile-completion-system 'helm
+  ;;       helm-M-x-fuzzy-match nil
+  ;;       helm-buffers-fuzzy-matching nil
+  ;;       helm-recentf-fuzzy-match nil
+  ;;       helm-ag-fuzzy-match nil ;(ref: ag-fuzzy-match)
+  ;;       projectile-enable-caching t; (ref:caching)
+  ;;       helm-locate-fuzzy-match nil
+  ;;       projectile-indexing-method 'alien); (ref:indexing)
+  ;; (helm-projectile-on)
 
 #+END_SRC
 
+** projectile
+#+BEGIN_SRC emacs-lisp -n -r
+  (projectile-global-mode)
+  (setq projectile-completion-system 'ido
+    projectile-enable-caching t; (ref:caching)
+    projectile-indexing-method 'alien); (ref:indexing)
+
+#+END_SRC
+** ido
+#+BEGIN_SRC emacs-lisp -n -r
+  (ido-ubiquitous-mode)
+  (flx-ido-mode)
+  (ido-vertical-mode)
+#+END_SRC
 ** iedit
 #+BEGIN_SRC emacs-lisp
   (require 'iedit)
@@ -305,11 +315,11 @@ Got most of that from [[https://github.com/magnars/.emacs.d/blob/master/setup-js
 
 ** key chord
 #+BEGIN_SRC emacs-lisp
-  (key-chord-mode 1)
+  (key-chord-mode 0)
   (setq key-chord-two-keys-delay 0.03)
 #+END_SRC
 
-** TODO org
+** org
 
 *** latex
 #+BEGIN_SRC emacs-lisp
@@ -322,7 +332,7 @@ Got most of that from [[https://github.com/magnars/.emacs.d/blob/master/setup-js
                  ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
 #+END_SRC
 
-*** TODO Default Settings
+*** Default Settings
 =org-agenda-files= 
 [[(include-all)]]
 
@@ -374,7 +384,7 @@ Got most of that from [[https://github.com/magnars/.emacs.d/blob/master/setup-js
 #+RESULTS:
 | org-clock-save | ensime-kill-emacs-hook-function | recentf-save-list | pcache-kill-emacs-hook | ido-kill-emacs-hook | flycheck-global-teardown | bookmark-exit-hook-internal | company-clang-set-prefix | server-force-stop | org-babel-remove-temporary-directory |
 
-*** DONE Capture
+*** Capture
 #+BEGIN_SRC emacs-lisp
   ;;  (require 'org-trello)
   (setq org-default-notes-file (concat org-directory "/todo.org"))
@@ -407,7 +417,7 @@ Got most of that from [[https://github.com/magnars/.emacs.d/blob/master/setup-js
   (setq org-log-into-drawer t)
 #+END_SRC
 
-*** DONE Publish
+*** Publish
 #+BEGIN_SRC emacs-lisp
   (setq org-html-validation-link nil)
   (setq org-publish-project-alist
@@ -440,7 +450,7 @@ Got most of that from [[https://github.com/magnars/.emacs.d/blob/master/setup-js
 #+RESULTS:
 : <p>%t - %a</p>
 
-*** TODO Agenda
+*** Agenda
 #+BEGIN_SRC emacs-lisp
   ;; create the file for the agendas if it doesn't exist
   (appt-activate 0)              ; activate appt (appointment notification)
@@ -528,7 +538,7 @@ Got most of that from [[https://github.com/magnars/.emacs.d/blob/master/setup-js
   (add-to-list 'auto-mode-alist '("\\.scala$" . scala-mode))
   (add-hook 'scala-mode-hook 'ensime-mode)
 #+END_SRC
-** TODO tern
+** tern
 A JavaScript code analyzer
 
 definition, find type of, rename variable
@@ -630,9 +640,6 @@ Also Emacs should be able to kill processes without asking ([[(process-query)][l
   (global-set-key (kbd "C-?") 'redo)
 #+END_SRC
 * Key Bindings
-- State "IN PROGRESS" from ""           [2015-03-09 Mon 21:46]
-
-
 ** smartparens
 #+BEGIN_SRC emacs-lisp
   (bind-keys
@@ -661,19 +668,20 @@ Also Emacs should be able to kill processes without asking ([[(process-query)][l
 
 ** helm
 #+BEGIN_SRC emacs-lisp
-  (bind-keys
-   ("C-c h o" . helm-occur)
-   ("C-c h x" . helm-register)
-   ("M-x" . helm-M-x)
-   ("C-x b" . helm-mini)
-   ("M-y" . helm-show-kill-ring)
-   ("C-x C-f" . helm-find-files))
-  (bind-keys
-   :map helm-map
-   ("<tab>" . helm-execute-persistent-action) ; rebind tab to run persistent action
-   ("C-i" . helm-execute-persistent-action) ; make TAB works in terminal
-   ("C-c c-z" . helm-select-action) ; list actions using C-z
-   )
+  ;; (bind-keys
+  ;; ;
+                                          ;  ("C-c h o" . helm-occur)
+  ;;  ("C-c h x" . helm-register)
+  ;;  ("M-x" . helm-M-x)
+  ;;  ("C-x b" . helm-mini)
+  ;;  ("M-y" . helm-show-kill-ring)
+  ;;  ("C-x C-f" . helm-find-files))
+  ;; (bind-keys
+  ;;  :map helm-map
+  ;;  ("<tab>" . helm-execute-persistent-action) ; rebind tab to run persistent action
+  ;;  ("C-i" . helm-execute-persistent-action) ; make TAB works in terminal
+  ;;  ("C-c c-z" . helm-select-action) ; list actions using C-z
+  ;;  )
 #+END_SRC
 
 #+RESULTS:
@@ -693,6 +701,8 @@ Also Emacs should be able to kill processes without asking ([[(process-query)][l
 ** general
 #+BEGIN_SRC emacs-lisp 
   (bind-keys
+   ("M-x" . smex)
+   ("M-X" . smex-major-mode-commands)
    ("M-c" . kill-ring-save)
    ("C-8" . er/expand-region)
    ("M-8" . er/contract-region)
