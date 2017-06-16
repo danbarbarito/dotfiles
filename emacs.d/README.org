@@ -158,8 +158,6 @@
      (add-to-list 'company-backends 'company-go)
      (add-to-list 'company-backends 'company-yasnippet t)
      (add-to-list 'company-backends 'company-web-html)
-     (add-to-list 'company-backends 'company-web-jade)
-     (add-to-list 'company-backends 'company-slim)
 
      (setq company-dabbrev-downcase 1)
      (setq company-tooltip-align-annotations t)
@@ -180,10 +178,10 @@
    #+BEGIN_SRC emacs-lisp
      (setq
       deft-extension "org"
-      deft-directory "~/Dropbox/Notes/"
+      deft-directory "~/Dropbox/org/"
       deft-text-mode 'org-mode
       deft-recursive t
-      deft-use-filename-as-title nil
+      deft-use-filename-as-title t
       deft-file-naming-rules
       '((noslash . "-")
         (nospace . "-")
@@ -634,6 +632,19 @@
      (require 'redo+)
      (global-set-key (kbd "C-?") 'redo)
    #+END_SRC
+** smex
+   #+BEGIN_SRC emacs-lisp
+     (require 'smex)
+     (smex-initialize)
+     (defadvice smex (around space-inserts-hyphen activate compile)
+       (let ((ido-cannot-complete-command 
+              `(lambda ()
+                 (interactive)
+                 (if (string= " " (this-command-keys))
+                     (insert ?-)
+                   (funcall ,ido-cannot-complete-command)))))
+         ad-do-it))
+   #+END_SRC
 * Key Bindings
 ** smartparens
    #+BEGIN_SRC emacs-lisp
@@ -702,7 +713,7 @@
    #+BEGIN_SRC emacs-lisp 
   (bind-keys
    ("M-x" . smex)
-   ("M-S-x" . smex-major-mode-commands)
+   ("M-X" . smex-major-mode-commands)
    ("M-c" . kill-ring-save)
    ("C-8" . er/expand-region)
    ("M-8" . er/contract-region)

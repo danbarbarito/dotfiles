@@ -111,7 +111,6 @@
 (depends-on "smart-mode-line")
 (depends-on "smartparens")
 (depends-on "smartrep")
-(depends-on "smex")
 (depends-on "spinner")
 (depends-on "stylus-mode")
 (depends-on "tern")

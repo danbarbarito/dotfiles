@@ -4,6 +4,8 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+(add-to-list 'load-path "~/.emacs.d/vendor/")
+
 (require 'cask "/usr/local/Cellar/cask/0.8.1/cask.el")
 (cask-initialize)
 (require 'org)
@@ -12,6 +14,8 @@
 
 (org-babel-load-file "~/.emacs.d/README.org")
 (put 'dired-find-alternate-file 'disabled nil)
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -37,7 +41,7 @@
  '(linum-relative-current-symbol "")
  '(package-selected-packages
    (quote
-    (pp-c-l emmet-mode projectile company-web ido-vertical-mode ido-ubiquitous yasnippet lorem-ipsum redo+ auto-indent-mode stylus-mode go-autocomplete company-go go-mode yaml-mode web-mode visual-regexp use-package unicode-fonts textmate smex smartparens smart-mode-line slime sequential-command scss-mode robe rainbow-mode prodigy popwin pallet ox-pandoc ox-leanpub ox-asciidoc org-trello org-plus-contrib on-screen nyan-mode multiple-cursors moz markdown-mode magit lua-mode key-chord jsx-mode json-mode js2-mode iedit idle-highlight-mode htmlize howdoi highlight-symbol highlight-indentation haskell-mode graphviz-dot-mode gist geiser flycheck flx-ido fish-mode feature-mode expand-region epresent ensime editorconfig drag-stuff discover-my-major dired+ diff-hl deft company-tern company-emoji color-theme-sanityinc-tomorrow coffee-mode cider buffer-move back-button ag adoc-mode ace-jump-mode)))
+    (pp-c-l emmet-mode projectile company-web ido-vertical-mode ido-ubiquitous yasnippet lorem-ipsum redo+ auto-indent-mode stylus-mode go-autocomplete company-go go-mode yaml-mode web-mode visual-regexp use-package unicode-fonts textmate smartparens smart-mode-line slime sequential-command scss-mode robe rainbow-mode prodigy popwin pallet ox-pandoc ox-leanpub ox-asciidoc org-trello org-plus-contrib on-screen nyan-mode multiple-cursors moz markdown-mode magit lua-mode key-chord jsx-mode json-mode js2-mode iedit idle-highlight-mode htmlize howdoi highlight-symbol highlight-indentation haskell-mode graphviz-dot-mode gist geiser flycheck flx-ido fish-mode feature-mode expand-region epresent ensime editorconfig drag-stuff discover-my-major dired+ diff-hl deft company-tern company-emoji color-theme-sanityinc-tomorrow coffee-mode cider buffer-move back-button ag adoc-mode ace-jump-mode)))
  '(projectile-globally-ignored-directories
    (quote
     (".idea" ".ensime_cache" ".eunit" ".git" ".hg" ".fslckout" "_FOSSIL_" ".bzr" "_darcs" ".tox" ".svn" ".stack-work" ".sass-cache")))
