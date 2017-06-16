@@ -337,7 +337,7 @@
       (setq org-directory "~/Dropbox/org")
       (let ((todo "~/Dropbox/org/todo.org"))
         (when (file-readable-p todo)
-          (setq org-agenda-files (file-expand-wildcards "~/Dropbox/**/*.org")) (ref:include-all)
+          (setq org-agenda-files '("~/Dropbox/org/")) (ref:include-all)
           (setq initial-buffer-choice (lambda ()
                                         (org-agenda nil "n")
                                         (delete-other-windows)
