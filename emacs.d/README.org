@@ -325,6 +325,8 @@
 
 *** Default Settings
     :LOGBOOK:
+    - Note taken on [2017-06-16 Fri 01:21] \\
+      Cool note
     - Note taken on [2017-06-16 Fri 00:14] \\
       Add 'go-to org dir' key binding
     :END:
