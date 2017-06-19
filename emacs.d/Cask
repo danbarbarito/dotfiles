@@ -49,6 +49,7 @@
 (depends-on "go-mode")
 (depends-on "graphviz-dot-mode")
 (depends-on "haskell-mode")
+(depends-on "helm")
 (depends-on "highlight-indentation")
 (depends-on "highlight-symbol")
 (depends-on "howdoi")

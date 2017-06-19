@@ -390,7 +390,6 @@
       (setq org-capture-templates
             '(
               ("t" "Todo" entry (file org-default-notes-file) "* TODO %?\n  %u\n  %a")
-              ("s" "Simple Task" entry (file org-default-notes-file) "* TODO %?\n  %U\n")
               ))
       (setq org-todo-keywords
             '((sequence
@@ -676,20 +675,8 @@
 
 ** helm
    #+BEGIN_SRC emacs-lisp
-     ;; (bind-keys
-     ;; ;
-                                             ;  ("C-c h o" . helm-occur)
-     ;;  ("C-c h x" . helm-register)
-     ;;  ("M-x" . helm-M-x)
-     ;;  ("C-x b" . helm-mini)
-     ;;  ("M-y" . helm-show-kill-ring)
-     ;;  ("C-x C-f" . helm-find-files))
-     ;; (bind-keys
-     ;;  :map helm-map
-     ;;  ("<tab>" . helm-execute-persistent-action) ; rebind tab to run persistent action
-     ;;  ("C-i" . helm-execute-persistent-action) ; make TAB works in terminal
-     ;;  ("C-c c-z" . helm-select-action) ; list actions using C-z
-     ;;  )
+     (bind-keys
+           ("M-y" . helm-show-kill-ring))
    #+END_SRC
 
    #+RESULTS:
