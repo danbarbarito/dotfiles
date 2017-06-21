@@ -195,7 +195,6 @@
    : t
 
 ** helm
-
 ** projectile
    #+BEGIN_SRC emacs-lisp -n -r
      (projectile-global-mode)
@@ -674,9 +673,13 @@
    #+END_SRC
 
 ** helm
+** helm
    #+BEGIN_SRC emacs-lisp
      (bind-keys
-           ("M-y" . helm-show-kill-ring))
+      ("C-c h x" . helm-register)
+      ("M-x" . helm-M-x)
+      ("C-x b" . helm-mini)
+      ("M-y" . helm-show-kill-ring))
    #+END_SRC
 
    #+RESULTS:
@@ -700,43 +703,41 @@
    #+END_SRC
 ** general
    #+BEGIN_SRC emacs-lisp 
-  (bind-keys
-   ("M-x" . smex)
-   ("M-X" . smex-major-mode-commands)
-   ("M-c" . kill-ring-save)
-   ("C-8" . er/expand-region)
-   ("M-8" . er/contract-region)
-   ("C-x r" . vr/query-replace)
-   ("M--" . text-scale-decrease)
-   ("M-=" . text-scale-increase)
-   ("C-c i" . (lambda () (interactive) (indent-region (point-min) (point-max))))
-   ("M-<backspace>" . kill-whole-line)
-   ("C-c r" . revert-buffer)
-   ("C-3" . back-button-global-backward)
-   ("C-4" . back-button-global-forward)
-   ("C-c f" . ace-jump-mode)
-   ("M-k" . delete-other-windows)
-   ("<f7>" . toggle-window-split)
-   ("C-c c" . deft)
-   ("C-S-s" . replace-string)
-   ("C-x t" . org-capture)
-   ("C-c a" . org-agenda)
-   ("S-C-<left>" . shrink-window-horizontally)
-   ("S-C-<left>" . shrink-window-horizontally)
-   ("S-C-<right>" . enlarge-window-horizontally)
-   ("S-C-<down>" . shrink-window)
-   ("S-C-<up>" . enlarge-window))
+     (bind-keys
+      ("M-c" . kill-ring-save)
+      ("C-8" . er/expand-region)
+      ("M-8" . er/contract-region)
+      ("C-x r" . vr/query-replace)
+      ("M--" . text-scale-decrease)
+      ("M-=" . text-scale-increase)
+      ("C-c i" . (lambda () (interactive) (indent-region (point-min) (point-max))))
+      ("M-<backspace>" . kill-whole-line)
+      ("C-c r" . revert-buffer)
+      ("C-3" . back-button-global-backward)
+      ("C-4" . back-button-global-forward)
+      ("C-c f" . ace-jump-mode)
+      ("M-k" . delete-other-windows)
+      ("<f7>" . toggle-window-split)
+      ("C-c c" . deft)
+      ("C-S-s" . replace-string)
+      ("C-x t" . org-capture)
+      ("C-c a" . org-agenda)
+      ("S-C-<left>" . shrink-window-horizontally)
+      ("S-C-<left>" . shrink-window-horizontally)
+      ("S-C-<right>" . enlarge-window-horizontally)
+      ("S-C-<down>" . shrink-window)
+      ("S-C-<up>" . enlarge-window))
 
-#+END_SRC  
+   #+END_SRC  
 
-#+RESULTS:
-| lambda | nil | (interactive) | (org-agenda nil n) |
+   #+RESULTS:
+   | lambda | nil | (interactive) | (org-agenda nil n) |
 
 ** keychord
-#+BEGIN_SRC emacs-lisp
-  (key-chord-define-global "vr" 'vr/replace)
-  (key-chord-define-global "ln" 'linum-mode)
-#+END_SRC
+   #+BEGIN_SRC emacs-lisp
+     (key-chord-define-global "vr" 'vr/replace)
+     (key-chord-define-global "ln" 'linum-mode)
+   #+END_SRC
 
-#+RESULTS:
-: org-capture
+   #+RESULTS:
+   : org-capture
