@@ -27,7 +27,7 @@
     (require 'unicode-fonts)
     (unicode-fonts-setup)
     ;; (set-default-font "Monaco-12:width=normal:weight=light")
-    (set-default-font "Andale Mono-12:width=normal:weight=light")
+    (set-default-font "Fira Code")
 
     ;; (defun darwin-set-emoji-font (frame)
     ;;   "Adjust the font settings of FRAME so Emacs NS/Cocoa can display emoji properly."
@@ -247,6 +247,9 @@
      (setq js2-rebind-eol-bol-keys nil)
      (setq js2-mode-show-parse-errors t)
      (setq js2-mode-show-strict-warnings nil)
+     (require 'js2-refactor)
+     (add-hook 'js2-mode-hook #'js2-refactor-mode)
+     (js2r-add-keybindings-with-prefix "C-c C-m")
    #+END_SRC
 
    Got most of that from [[https://github.com/magnars/.emacs.d/blob/master/setup-js2-mode.el][Magnars' .emacs.d]].
@@ -621,6 +624,7 @@
 ** go
    #+BEGIN_SRC emacs-lisp
      (require 'go-autocomplete)
+     (add-hook 'before-save-hook #'gofmt-before-save)
    #+END_SRC
 ** magit
    #+BEGIN_SRC emacs-lisp
@@ -676,9 +680,7 @@
 ** helm
    #+BEGIN_SRC emacs-lisp
      (bind-keys
-      ("C-c h x" . helm-register)
       ("M-x" . helm-M-x)
-      ("C-x b" . helm-mini)
       ("M-y" . helm-show-kill-ring))
    #+END_SRC
 
