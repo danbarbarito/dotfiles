@@ -625,6 +625,7 @@
    #+BEGIN_SRC emacs-lisp
      (require 'go-autocomplete)
      (add-hook 'before-save-hook #'gofmt-before-save)
+     (setenv "GOPATH" "/Users/danbarbarito/.go")
    #+END_SRC
 ** magit
    #+BEGIN_SRC emacs-lisp
