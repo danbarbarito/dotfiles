@@ -35,6 +35,8 @@
  '(custom-safe-themes
    (quote
     ("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" default)))
+ '(elpy-rpc-backend "rope")
+ '(elpy-rpc-python-command "python3")
  '(exec-path-from-shell-check-startup-files nil)
  '(fci-rule-color "#373b41")
  '(gofmt-command "/Users/danbarbarito/.go/bin/goimports")
