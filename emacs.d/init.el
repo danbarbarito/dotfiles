@@ -26,7 +26,8 @@
  '(ansi-color-names-vector
    (vector "#c5c8c6" "#cc6666" "#b5bd68" "#f0c674" "#81a2be" "#b294bb" "#8abeb7" "#373b41"))
  '(auto-indent-on-save-file t)
- '(company-auto-complete (quote (quote company-explicit-action-p)))
+ '(company-auto-complete nil)
+ '(company-auto-complete-chars (quote (32 95 40 41 119 46 34 36 39 60 62 47 124 33)))
  '(company-begin-commands
    (quote
     (self-insert-command org-self-insert-command orgtbl-self-insert-command c-scope-operator c-electric-colon c-electric-lt-gt c-electric-slash)))
