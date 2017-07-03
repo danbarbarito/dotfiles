@@ -44,7 +44,7 @@ function e        ; emacsclient -t -a "" $argv; end
 function emacs        ; emacsclient -t -a "" $argv; end
 
 # PATH
-set -gx PATH ~/.bin $PATH
+set -gx PATH ~/.bin ~/.local/bin/ $PATH
 set -gx PATH ~/.rakudobrew/bin $PATH
 set -gx PATH $ANDROID_HOME/tools $PATH
 

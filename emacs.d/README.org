@@ -650,6 +650,15 @@
                    (funcall ,ido-cannot-complete-command)))))
          ad-do-it))
    #+END_SRC
+** exec-path-from-shell
+  #+BEGIN_SRC emacs-lisp
+  (when (memq window-system '(mac ns x))
+    (exec-path-from-shell-initialize))
+  #+END_SRC
+** elpy
+  #+BEGIN_SRC emacs-lisp
+    (elpy-enable)
+  #+END_SRC
 * Key Bindings
 ** smartparens
    #+BEGIN_SRC emacs-lisp
