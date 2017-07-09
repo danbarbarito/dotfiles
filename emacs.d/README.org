@@ -149,6 +149,7 @@
    #+BEGIN_SRC emacs-lisp -n -r
      (require 'company)
      (require 'company-tern)
+     (require 'company-quickhelp)
      (require 'company-go)
      (require 'company-web-html)                          ; load company mode html backend
      (require 'company-web-jade)                          ; load company mode jade backend
@@ -162,6 +163,7 @@
      (setq company-dabbrev-downcase 1)
      (setq company-tooltip-align-annotations t)
      (setq company-idle-delay 0.3)
+     (company-quickhelp-mode 1)
      (global-company-mode)
 
    #+END_SRC
@@ -569,6 +571,7 @@
      (add-hook 'js-mode-hook (lambda () (tern-mode t)))
      (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
      (add-hook 'web-mode-hook (lambda () (tern-mode t)))
+     (setq tern-command '("/usr/local/bin/tern" "--no-port-file"))
    #+END_SRC
 
    See the [[http://ternjs.net/][project homepage]] for more info.
@@ -712,6 +715,8 @@
    #+BEGIN_SRC emacs-lisp
      (bind-keys
       ("C-c TAB" . company-complete))
+     (eval-after-load 'company
+       '(define-key company-active-map (kbd "C-c h") #'company-quickhelp-manual-begin))
    #+END_SRC
 ** general
    #+BEGIN_SRC emacs-lisp 

@@ -18,6 +18,7 @@
 (depends-on "company")
 (depends-on "company-emoji")
 (depends-on "company-go")
+(depends-on "company-quickhelp")
 (depends-on "company-tern")
 (depends-on "company-web")
 (depends-on "dash")
