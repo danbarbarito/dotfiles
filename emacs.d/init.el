@@ -42,6 +42,8 @@
  '(fci-rule-color "#373b41")
  '(gofmt-command "/Users/danbarbarito/.go/bin/goimports")
  '(helm-grep-ag-command "ag --line-numbers -S --color %s %s %s")
+ '(ido-auto-merge-work-directories-length -1)
+ '(ido-everywhere t)
  '(js2-highlight-level 3)
  '(linum-relative-current-symbol "")
  '(package-selected-packages
