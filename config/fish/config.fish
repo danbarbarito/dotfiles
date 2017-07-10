@@ -45,7 +45,7 @@ function emacs        ; emacsclient -t -a "" $argv; end
 
 # PATH
 set -gx PATH ~/.bin ~/.local/bin/ $PATH
-set -gx PATH ~/.rakudobrew/bin $PATH
+# set -gx PATH ~/.rakudobrew/bin $PATH
 set -gx PATH $ANDROID_HOME/tools $PATH
 
 # OS specific
@@ -80,7 +80,7 @@ make_completion g 'git'
 status --is-interactive; and . (rbenv init -|psub)
 
 # perlbrew
-. ~/perl5/perlbrew/etc/perlbrew.fish
+# . ~/perl5/perlbrew/etc/perlbrew.fish
 
 # virtualfish
 eval (python -m virtualfish)
