@@ -12,7 +12,7 @@
 * Theme
 
   #+BEGIN_SRC emacs-lisp
-    (load-theme 'sanityinc-tomorrow-night t)
+    (load-theme 'tango-dark t)
   #+END_SRC
 
   more themes here
