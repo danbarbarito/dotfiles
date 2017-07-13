@@ -27,7 +27,7 @@
     (require 'unicode-fonts)
     (unicode-fonts-setup)
     ;; (set-default-font "Monaco-12:width=normal:weight=light")
-    (set-default-font "Fira Code")
+    (set-default-font "Meslo LG M for Powerline:width=normal:weight=normal")
 
     ;; (defun darwin-set-emoji-font (frame)
     ;;   "Adjust the font settings of FRAME so Emacs NS/Cocoa can display emoji properly."
