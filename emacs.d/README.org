@@ -103,6 +103,28 @@
     (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
     (setq create-lockfiles nil)
     (global-linum-mode 1)
+    ;; If the *scratch* buffer is killed, recreate it automatically
+    ;; FROM: Morten Welind
+    ;;http://www.geocrawler.com/archives/3/338/1994/6/0/1877802/
+    (save-excursion
+      (set-buffer (get-buffer-create "*scratch*"))
+      (lisp-interaction-mode)
+      (make-local-variable 'kill-buffer-query-functions)
+      (add-hook 'kill-buffer-query-functions 'kill-scratch-buffer))
+
+    (defun kill-scratch-buffer ()
+      ;; The next line is just in case someone calls this manually
+      (set-buffer (get-buffer-create "*scratch*"))
+      ;; Kill the current (*scratch*) buffer
+      (remove-hook 'kill-buffer-query-functions 'kill-scratch-buffer)
+      (kill-buffer (current-buffer))
+      ;; Make a brand new *scratch* buffer
+      (set-buffer (get-buffer-create "*scratch*"))
+      (lisp-interaction-mode)
+      (make-local-variable 'kill-buffer-query-functions)
+      (add-hook 'kill-buffer-query-functions 'kill-scratch-buffer)
+      ;; Since we killed it, don't let caller do that.
+      nil)
   #+END_SRC
 
 * User Settings
@@ -662,6 +684,12 @@
   #+BEGIN_SRC emacs-lisp
     (elpy-enable)
   #+END_SRC
+** rust
+  #+BEGIN_SRC emacs-lisp
+  (require 'rust-mode)
+  (require 'cargo)
+  (add-hook 'rust-mode-hook 'cargo-minor-mode)
+  #+END_SRC
 * Key Bindings
 ** smartparens
    #+BEGIN_SRC emacs-lisp
@@ -736,6 +764,7 @@
       ("M-k" . delete-other-windows)
       ("<f7>" . toggle-window-split)
       ("C-c c" . deft)
+      ("C-c t" . eshell)
       ("C-S-s" . replace-string)
       ("C-x t" . org-capture)
       ("C-c a" . org-agenda)
