@@ -55,6 +55,7 @@
  '(projectile-globally-ignored-directories
    (quote
     (".idea" ".ensime_cache" ".eunit" ".git" ".hg" ".fslckout" "_FOSSIL_" ".bzr" "_darcs" ".tox" ".svn" ".stack-work" ".sass-cache")))
+ '(projectile-track-known-projects-automatically nil)
  '(python-shell-interpreter "ipython")
  '(ring-bell-function (quote ignore))
  '(vc-annotate-background nil)
