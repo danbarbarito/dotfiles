@@ -42,6 +42,7 @@
  '(fci-rule-color "#373b41")
  '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
  '(gofmt-command "/Users/danbarbarito/.go/bin/goimports")
+ '(helm-M-x-fuzzy-match t)
  '(helm-grep-ag-command "ag --line-numbers -S --color %s %s %s")
  '(ido-auto-merge-work-directories-length -1)
  '(ido-everywhere t)
@@ -50,7 +51,7 @@
  '(linum-relative-current-symbol "")
  '(package-selected-packages
    (quote
-    (cargo rust-mode company-quickhelp exec-path-from-shell elpy js2-refactor helm pp-c-l emmet-mode projectile company-web ido-vertical-mode ido-ubiquitous yasnippet lorem-ipsum redo+ auto-indent-mode stylus-mode go-autocomplete company-go go-mode yaml-mode web-mode visual-regexp use-package unicode-fonts textmate smartparens smart-mode-line slime sequential-command scss-mode robe rainbow-mode prodigy popwin pallet ox-pandoc ox-leanpub ox-asciidoc org-trello org-plus-contrib on-screen nyan-mode multiple-cursors moz markdown-mode magit lua-mode key-chord jsx-mode json-mode js2-mode iedit idle-highlight-mode htmlize howdoi highlight-symbol highlight-indentation haskell-mode graphviz-dot-mode gist geiser flycheck flx-ido fish-mode feature-mode expand-region epresent ensime editorconfig drag-stuff discover-my-major dired+ diff-hl deft company-tern company-emoji color-theme-sanityinc-tomorrow coffee-mode cider buffer-move back-button ag adoc-mode ace-jump-mode)))
+    (helm-flx org-bullets web-beautify cargo rust-mode company-quickhelp exec-path-from-shell elpy js2-refactor helm pp-c-l emmet-mode projectile company-web ido-vertical-mode ido-ubiquitous yasnippet lorem-ipsum redo+ auto-indent-mode stylus-mode go-autocomplete company-go go-mode yaml-mode web-mode visual-regexp use-package unicode-fonts textmate smartparens smart-mode-line slime sequential-command scss-mode robe rainbow-mode prodigy popwin pallet ox-pandoc ox-leanpub ox-asciidoc org-trello org-plus-contrib on-screen nyan-mode multiple-cursors moz markdown-mode magit lua-mode key-chord jsx-mode json-mode js2-mode iedit idle-highlight-mode htmlize howdoi highlight-symbol highlight-indentation haskell-mode graphviz-dot-mode gist geiser flycheck flx-ido fish-mode feature-mode expand-region epresent ensime editorconfig drag-stuff discover-my-major dired+ diff-hl deft company-tern company-emoji color-theme-sanityinc-tomorrow coffee-mode cider buffer-move back-button ag adoc-mode ace-jump-mode)))
  '(projectile-globally-ignored-directories
    (quote
     (".idea" ".ensime_cache" ".eunit" ".git" ".hg" ".fslckout" "_FOSSIL_" ".bzr" "_darcs" ".tox" ".svn" ".stack-work" ".sass-cache")))
