@@ -12,7 +12,7 @@
 * Theme
 
   #+BEGIN_SRC emacs-lisp
-    (load-theme 'sanityinc-tomorrow-night t)
+    (load-theme 'base16-default-dark t)
   #+END_SRC
 
   more themes here
@@ -27,7 +27,7 @@
     (require 'unicode-fonts)
     (unicode-fonts-setup)
     ;; (set-default-font "Monaco-12:width=normal:weight=light")
-    (set-default-font "Meslo LG M for Powerline:width=normal:weight=normal")
+    (set-default-font "DejaVu Sans Mono:width=normal:weight=normal")
 
     ;; (defun darwin-set-emoji-font (frame)
     ;;   "Adjust the font settings of FRAME so Emacs NS/Cocoa can display emoji properly."
@@ -673,6 +673,9 @@
      (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
      (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
      (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+     (add-to-list 'auto-mode-alist '("\\.scss\\'" . web-mode))
+     (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
+     (add-to-list 'auto-mode-alist '("\\.sass\\'" . web-mode))
    #+END_SRC
 
 ** yasnippet
