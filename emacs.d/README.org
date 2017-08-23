@@ -813,6 +813,7 @@
       ("C-x t" . org-capture)
       ("C-c a" . org-agenda)
       ("C-x C-b" . ibuffer)
+      ("C-x w" . ack)
       ("S-C-<left>" . shrink-window-horizontally)
       ("S-C-<left>" . shrink-window-horizontally)
       ("S-C-<right>" . enlarge-window-horizontally)

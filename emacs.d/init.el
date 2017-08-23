@@ -44,7 +44,6 @@
  '(fci-rule-color "#373b41")
  '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
  '(gofmt-command "/Users/danbarbarito/.go/bin/goimports")
- '(grep-command "ack")
  '(helm-M-x-fuzzy-match t)
  '(helm-grep-ag-command "ag --line-numbers -S --color %s %s %s")
  '(ido-auto-merge-work-directories-length -1)
