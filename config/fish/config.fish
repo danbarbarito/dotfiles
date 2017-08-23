@@ -80,7 +80,7 @@ make_completion g 'git'
 status --is-interactive; and . (rbenv init -|psub)
 
 # perlbrew
-# . ~/perl5/perlbrew/etc/perlbrew.fish
+. ~/perl5/perlbrew/etc/perlbrew.fish
 
 # virtualfish
 # eval (python -m virtualfish)

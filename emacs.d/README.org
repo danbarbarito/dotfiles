@@ -27,7 +27,7 @@
     (require 'unicode-fonts)
     (unicode-fonts-setup)
     ;; (set-default-font "Monaco-12:width=normal:weight=light")
-    (set-default-font "DejaVu Sans Mono:width=normal:weight=normal")
+    ;; (set-default-font "DejaVu Sans Mono:width=normal:weight=normal")
 
     ;; (defun darwin-set-emoji-font (frame)
     ;;   "Adjust the font settings of FRAME so Emacs NS/Cocoa can display emoji properly."
@@ -731,7 +731,6 @@
   (require 'cargo)
   (add-hook 'rust-mode-hook 'cargo-minor-mode)
   #+END_SRC
-
 * Key Bindings
 ** smartparens
    #+BEGIN_SRC emacs-lisp
