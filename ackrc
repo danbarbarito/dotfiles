@@ -1,0 +1,19 @@
+# Always sort the files
+#--sort−files
+
+# Always color, even if piping to a another program
+--color
+
+--ignore-dir=.idea/
+--ignore-dir=node_modules/
+--ignore-dir=bower_components/
+--ignore-dir=dist/
+--ignore-dir=.cask/
+--ignore-dir=env/
+--ignore-dir=vendor/
+
+--type-add=css=scss
+--type-add=ruby=.haml,.rselm,.feature,.ru,.lock
+
+
+--type-set=json=.json
