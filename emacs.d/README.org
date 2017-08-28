@@ -731,6 +731,22 @@
   (require 'cargo)
   (add-hook 'rust-mode-hook 'cargo-minor-mode)
   #+END_SRC
+** vc
+#+BEGIN_SRC emacs-lisp
+(require 'vc-fossil)
+(autoload 'vc-fossil-registered "vc-fossil")
+(add-to-list 'vc-handled-backends 'Fossil)
+#+END_SRC
+** c/c++
+#+BEGIN_SRC emacs-lisp
+(require 'cmake-project)
+(defun maybe-cmake-project-hook ()
+  (if (file-exists-p "CMakeLists.txt") (cmake-project-mode)))
+(add-hook 'c-mode-hook 'maybe-cmake-project-hook)
+(add-hook 'c++-mode-hook 'maybe-cmake-project-hook)
+
+(require 'cmake-mode)
+#+END_SRC
 * Key Bindings
 ** smartparens
    #+BEGIN_SRC emacs-lisp

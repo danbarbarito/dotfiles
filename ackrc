@@ -3,6 +3,9 @@
 
 # Always color, even if piping to a another program
 --color
+--color-match=on_white
+--color-filename=red
+--color-lineno=magenta
 
 --ignore-dir=.idea/
 --ignore-dir=node_modules/
