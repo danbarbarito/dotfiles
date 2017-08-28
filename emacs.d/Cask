@@ -5,6 +5,7 @@
 (depends-on "ace-jump-mode")
 (depends-on "ack")
 (depends-on "adoc-mode")
+(depends-on "ag")
 (depends-on "async")
 (depends-on "auto-indent-mode")
 (depends-on "back-button")

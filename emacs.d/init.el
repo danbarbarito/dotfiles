@@ -21,6 +21,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ag-highlight-search t)
  '(ansi-color-faces-vector
    [default bold shadow italic underline bold bold-italic bold])
  '(ansi-color-names-vector
@@ -56,7 +57,7 @@
  '(linum-relative-current-symbol "")
  '(package-selected-packages
    (quote
-    (cmake-mode cmake-project vc-fossil projectile what-the-commit ack base16-theme function-args ggtags helm-flx org-bullets web-beautify cargo rust-mode company-quickhelp exec-path-from-shell elpy js2-refactor helm pp-c-l emmet-mode company-web ido-vertical-mode ido-ubiquitous lorem-ipsum redo+ auto-indent-mode stylus-mode go-autocomplete company-go go-mode yaml-mode web-mode visual-regexp unicode-fonts textmate smartparens smart-mode-line sequential-command robe rainbow-mode popwin pallet ox-leanpub ox-asciidoc org-trello on-screen nyan-mode multiple-cursors moz markdown-mode magit lua-mode key-chord jsx-mode json-mode js2-mode iedit idle-highlight-mode htmlize howdoi highlight-symbol highlight-indentation haskell-mode graphviz-dot-mode gist geiser flycheck flx-ido fish-mode feature-mode expand-region epresent ensime editorconfig drag-stuff discover-my-major dired+ diff-hl deft company-tern company-emoji color-theme-sanityinc-tomorrow coffee-mode cider buffer-move back-button adoc-mode ace-jump-mode)))
+    (ag cmake-mode cmake-project vc-fossil projectile what-the-commit ack base16-theme function-args ggtags helm-flx org-bullets web-beautify cargo rust-mode company-quickhelp exec-path-from-shell elpy js2-refactor helm pp-c-l emmet-mode company-web ido-vertical-mode ido-ubiquitous lorem-ipsum redo+ auto-indent-mode stylus-mode go-autocomplete company-go go-mode yaml-mode web-mode visual-regexp unicode-fonts textmate smartparens smart-mode-line sequential-command robe rainbow-mode popwin pallet ox-leanpub ox-asciidoc org-trello on-screen nyan-mode multiple-cursors moz markdown-mode magit lua-mode key-chord jsx-mode json-mode js2-mode iedit idle-highlight-mode htmlize howdoi highlight-symbol highlight-indentation haskell-mode graphviz-dot-mode gist geiser flycheck flx-ido fish-mode feature-mode expand-region epresent ensime editorconfig drag-stuff discover-my-major dired+ diff-hl deft company-tern company-emoji color-theme-sanityinc-tomorrow coffee-mode cider buffer-move back-button adoc-mode ace-jump-mode)))
  '(projectile-globally-ignored-directories
    (quote
     (".idea" ".ensime_cache" ".eunit" ".git" ".hg" ".fslckout" "_FOSSIL_" ".bzr" "_darcs" ".tox" ".svn" ".stack-work" ".sass-cache")))
