@@ -107,6 +107,7 @@
 (depends-on "popwin")
 (depends-on "pp-c-l")
 (depends-on "projectile")
+(depends-on "pyvenv")
 (depends-on "queue")
 (depends-on "rainbow-mode")
 (depends-on "redo+")

@@ -243,11 +243,11 @@
    : t
 
 ** helm
-#+BEGIN_SRC emacs-lisp
-(require 'helm)
-(define-key helm-map (kbd "C-s") 'helm-next-line)
-(define-key helm-map (kbd "C-r") 'helm-previous-line)
-#+END_SRC
+   #+BEGIN_SRC emacs-lisp
+     (require 'helm)
+     (define-key helm-map (kbd "C-s") 'helm-next-line)
+     (define-key helm-map (kbd "C-r") 'helm-previous-line)
+   #+END_SRC
 ** projectile
    #+BEGIN_SRC emacs-lisp -n -r
      (projectile-global-mode)
@@ -717,36 +717,36 @@
          ad-do-it))
    #+END_SRC
 ** exec-path-from-shell
-  #+BEGIN_SRC emacs-lisp
-  (when (memq window-system '(mac ns x))
-    (exec-path-from-shell-initialize))
-  #+END_SRC
+   #+BEGIN_SRC emacs-lisp
+     (when (memq window-system '(mac ns x))
+       (exec-path-from-shell-initialize))
+   #+END_SRC
 ** elpy
-  #+BEGIN_SRC emacs-lisp
-    (elpy-enable)
-  #+END_SRC
+   #+BEGIN_SRC emacs-lisp
+     (elpy-enable)
+   #+END_SRC
 ** rust
-  #+BEGIN_SRC emacs-lisp
-  (require 'rust-mode)
-  (require 'cargo)
-  (add-hook 'rust-mode-hook 'cargo-minor-mode)
-  #+END_SRC
+   #+BEGIN_SRC emacs-lisp
+     (require 'rust-mode)
+     (require 'cargo)
+     (add-hook 'rust-mode-hook 'cargo-minor-mode)
+   #+END_SRC
 ** vc
-#+BEGIN_SRC emacs-lisp
-(require 'vc-fossil)
-(autoload 'vc-fossil-registered "vc-fossil")
-(add-to-list 'vc-handled-backends 'Fossil)
-#+END_SRC
+   #+BEGIN_SRC emacs-lisp
+     (require 'vc-fossil)
+     (autoload 'vc-fossil-registered "vc-fossil")
+     (add-to-list 'vc-handled-backends 'Fossil)
+   #+END_SRC
 ** c/c++
-#+BEGIN_SRC emacs-lisp
-(require 'cmake-project)
-(defun maybe-cmake-project-hook ()
-  (if (file-exists-p "CMakeLists.txt") (cmake-project-mode)))
-(add-hook 'c-mode-hook 'maybe-cmake-project-hook)
-(add-hook 'c++-mode-hook 'maybe-cmake-project-hook)
+   #+BEGIN_SRC emacs-lisp
+     (require 'cmake-project)
+     (defun maybe-cmake-project-hook ()
+       (if (file-exists-p "CMakeLists.txt") (cmake-project-mode)))
+     (add-hook 'c-mode-hook 'maybe-cmake-project-hook)
+     (add-hook 'c++-mode-hook 'maybe-cmake-project-hook)
 
-(require 'cmake-mode)
-#+END_SRC
+     (require 'cmake-mode)
+   #+END_SRC
 * Key Bindings
 ** smartparens
    #+BEGIN_SRC emacs-lisp
@@ -780,9 +780,9 @@
      (bind-keys
       ("M-x" . helm-M-x)
       ("M-y" . helm-show-kill-ring))
-      (helm-flx-mode +1)
-      (setq helm-flx-for-helm-find-files t ;; t by default
-      helm-flx-for-helm-locate t) ;; nil by default
+     (helm-flx-mode +1)
+     (setq helm-flx-for-helm-find-files t ;; t by default
+           helm-flx-for-helm-locate t) ;; nil by default
    #+END_SRC
 
    #+RESULTS:
@@ -829,7 +829,7 @@
       ("C-x t" . org-capture)
       ("C-c a" . org-agenda)
       ("C-x C-b" . ibuffer)
-      ("C-x w" . ack)
+      ("C-x w" . ag)
       ("S-C-<left>" . shrink-window-horizontally)
       ("S-C-<left>" . shrink-window-horizontally)
       ("S-C-<right>" . enlarge-window-horizontally)

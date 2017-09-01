@@ -25,9 +25,9 @@
  '(ansi-color-faces-vector
    [default bold shadow italic underline bold bold-italic bold])
  '(ansi-color-names-vector
-   (vector "#c5c8c6" "#cc6666" "#b5bd68" "#f0c674" "#81a2be" "#b294bb" "#8abeb7" "#373b41"))
+   ["#1c2023" "#c7ae95" "#95c7ae" "#aec795" "#ae95c7" "#c795ae" "#ae95c7" "#c7ccd1"])
  '(ansi-term-color-vector
-   [unspecified "#19171c" "#be4678" "#2a9292" "#a06e3b" "#576ddb" "#955ae7" "#576ddb" "#8b8792"] t)
+   [unspecified "#1c2023" "#c7ae95" "#95c7ae" "#aec795" "#ae95c7" "#c795ae" "#ae95c7" "#c7ccd1"] t)
  '(auto-indent-on-save-file t)
  '(cmake-project-default-build-dir-name "")
  '(company-auto-complete nil)
@@ -48,6 +48,7 @@
  '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
  '(gofmt-command "/Users/danbarbarito/.go/bin/goimports")
  '(grep-command "grep  -nH -e ")
+ '(grep-find-template nil)
  '(helm-M-x-fuzzy-match t)
  '(helm-grep-ag-command "ag --line-numbers -S --color %s %s %s")
  '(ido-auto-merge-work-directories-length -1)
@@ -61,6 +62,9 @@
  '(projectile-globally-ignored-directories
    (quote
     (".idea" ".ensime_cache" ".eunit" ".git" ".hg" ".fslckout" "_FOSSIL_" ".bzr" "_darcs" ".tox" ".svn" ".stack-work" ".sass-cache")))
+ '(projectile-project-root-files
+   (quote
+    ("rebar.config" "build.boot" "SConstruct" "pom.xml" "build.sbt" "gradlew" "build.gradle" ".ensime" "Gemfile" "requirements.txt" "setup.py" "tox.ini" "composer.json" "Cargo.toml" "mix.exs" "stack.yaml" "info.rkt" "DESCRIPTION" "TAGS" "GTAGS")))
  '(projectile-track-known-projects-automatically t)
  '(python-shell-interpreter "ipython")
  '(ring-bell-function (quote ignore))
