@@ -56,9 +56,10 @@ end
 # Environment
 set -x GOPATH "/Users/danbarbarito/.go"
 set -x ANDROID_HOME "/usr/local/Cellar/android-sdk/24.4.1_1"
-set -x ALTERNATE_EDITOR "emacs"
-set -x EDITOR "emacs"
-set -x VISUAL_EDITOR "emacs"
+set -x ALTERNATE_EDITOR "/usr/local/bin/micro"
+set -x EDITOR "/usr/local/bin/micro"
+set -x VISUAL_EDITOR "/usr/local/bin/micro"
+set -x VISUAL "/usr/local/bin/micro"
 set -x PERL_LWP_SSL_VERIFY_HOSTNAME 0
 
 # Completions
