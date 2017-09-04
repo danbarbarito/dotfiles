@@ -676,6 +676,7 @@
      (add-to-list 'auto-mode-alist '("\\.scss\\'" . web-mode))
      (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
      (add-to-list 'auto-mode-alist '("\\.sass\\'" . web-mode))
+     (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
    #+END_SRC
 
 ** yasnippet
