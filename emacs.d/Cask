@@ -134,6 +134,7 @@
 (depends-on "use-package")
 (depends-on "vc-fossil")
 (depends-on "visual-regexp")
+(depends-on "vue-mode")
 (depends-on "web-beautify")
 (depends-on "web-mode")
 (depends-on "what-the-commit")
