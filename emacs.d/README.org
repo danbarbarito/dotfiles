@@ -250,6 +250,7 @@
    #+END_SRC
 ** projectile
    #+BEGIN_SRC emacs-lisp -n -r
+     (require 'projectile)
      (projectile-global-mode)
      (setq projectile-completion-system 'ido
            projectile-enable-caching t; (ref:caching)
