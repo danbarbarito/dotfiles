@@ -278,13 +278,22 @@
 ** flycheck
    #+BEGIN_SRC emacs-lisp
      (require 'flycheck)
-     (global-flycheck-mode)
      (setq-default flycheck-disabled-checkers
                    (append flycheck-disabled-checkers
                            '(javascript-jshint)))
      (setq-default flycheck-disabled-checkers
                    (append flycheck-disabled-checkers
                            '(json-jsonlist)))
+     (flycheck-define-checker my-php
+       "A PHP syntax checker using the PHP command line interpreter.
+
+          See URL `http://php.net/manual/en/features.commandline.php'."
+       :command ("php" "-l" "-d" "error_reporting=E_ALL" "-d" "display_errors=1"
+                 "-d" "log_errors=0" source)
+       :error-patterns
+       ((error line-start (or "Parse" "Fatal" "syntax") " error" (any ":" ",") " "
+               (message) " in " (file-name) " on line " line line-end))
+       :modes (php-mode php+-mode web-mode))
    #+END_SRC
 
 ** js2-mode
@@ -669,14 +678,14 @@
 ** [[http://web-mode.org/][web-mode]]
    #+BEGIN_SRC emacs-lisp
      (require 'editorconfig)
-     (editorconfig-mode 1)
      (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
      (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
      (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
-     (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
      (add-to-list 'auto-mode-alist '("\\.scss\\'" . web-mode))
      (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
      (add-to-list 'auto-mode-alist '("\\.sass\\'" . web-mode))
+     (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
+     (editorconfig-mode 1)
    #+END_SRC
 
 ** yasnippet
@@ -748,10 +757,25 @@
 
      (require 'cmake-mode)
    #+END_SRC
-** vue
-#+BEGIN_SRC emacs-lisp
-(require 'vue-mode)
-#+END_SRC
+** php
+   #+BEGIN_SRC emacs-lisp
+     (defun my-setup-php ()
+       ;; enable web mode
+       (web-mode)
+
+       ;; make these variables local
+       (make-local-variable 'web-mode-code-indent-offset)
+       (make-local-variable 'web-mode-markup-indent-offset)
+       (make-local-variable 'web-mode-css-indent-offset)
+
+       ;; set indentation, can set different indentation level for different code type
+       (setq web-mode-code-indent-offset 2)
+       (setq web-mode-css-indent-offset 2)
+       (setq web-mode-markup-indent-offset 2)
+       (flycheck-select-checker 'my-php)
+       (flycheck-mode t))
+     (add-to-list 'auto-mode-alist '("\\.php$" . my-setup-php))
+   #+END_SRC
 * Key Bindings
 ** smartparens
    #+BEGIN_SRC emacs-lisp
