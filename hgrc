@@ -8,3 +8,4 @@ pager = LESS='FRX' less
 hgext.bookmarks =
 color =
 pager =
+mercurial_keyring =
