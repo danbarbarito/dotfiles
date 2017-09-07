@@ -6,6 +6,5 @@ pager = LESS='FRX' less
 
 [extensions]
 hgext.bookmarks =
-hggit =
 color =
 pager =
