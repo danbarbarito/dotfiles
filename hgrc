@@ -5,7 +5,8 @@ username = danbarbarito <dan@barbarito.me>
 pager = LESS='FRX' less
 
 [extensions]
-hgext.bookmarks =
-color =
 pager =
 mercurial_keyring =
+rebase =
+gpg =
+histedit =

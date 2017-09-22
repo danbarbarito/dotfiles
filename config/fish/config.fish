@@ -40,8 +40,8 @@ function cde          ; cd ~/.dotfiles/emacs.d ; end
 function mm           ; mpv --no-video --ytdl-format=bestaudio ytdl://ytsearch10:"$argv" ; end
 
 # Text
-function e        ; emacsclient -t -a "" $argv; end
-function emacs        ; emacsclient -t -a "" $argv; end
+# function e        ; emacsclient -t -a "" $argv; end
+# function emacs        ; emacsclient -t -a "" $argv; end
 
 # PATH
 set -gx PATH ~/.bin ~/.local/bin/ $PATH

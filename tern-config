@@ -1,12 +1,12 @@
 {
-  "libs": [
-    "browser",
-    "jquery"
-  ],
-  "plugins": {
-    "requirejs": {
-      "baseURL": "./",
-      "paths": {}
+    "libs": [
+        "browser",
+        "jquery",
+        "react"
+    ],
+    "plugins": {
+        "doc_comment": null,
+        "angular": {},
+        "node": {}
     }
-  }
 }

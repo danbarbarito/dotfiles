@@ -4,4 +4,6 @@
 [push]
 	default = simple
 [core]
-	editor = emacsclient -t -a ''
+	editor = micro
+[cola]
+	spellcheck = false
