@@ -104,8 +104,11 @@
  '(vue-html-tab-width 0)
  '(web-mode-attr-indent-offset nil)
  '(web-mode-attr-value-indent-offset nil)
+ '(web-mode-auto-close-style 1)
  '(web-mode-block-padding 0)
  '(web-mode-code-indent-offset 2)
+ '(web-mode-commands-like-expand-region nil)
+ '(web-mode-enable-auto-closing nil)
  '(web-mode-enable-auto-indentation t)
  '(web-mode-jsx-depth-faces nil))
 (custom-set-faces
