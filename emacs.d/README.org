@@ -722,16 +722,12 @@
      (add-to-list 'auto-mode-alist '("\\.sass\\'" . web-mode))
      (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
 
-     (setq-default web-mode-comment-formats
-                   '(("java"       . "/*")
-                     ("javascript" . "//")
-                     ("php"        . "/*")))
-
      (add-hook 'web-mode-hook (lambda () (set (make-local-variable
                                                'company-backends) '((
                                                                      company-web-html
                                                                      company-css
                                                                      company-tern
+                                                                     company-dabbrev
                                                                      )))))
 
      (editorconfig-mode 1)

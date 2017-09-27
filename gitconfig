@@ -7,3 +7,5 @@
 	editor = micro
 [cola]
 	spellcheck = false
+[core "user"]
+	email = dan@barbarito.me
