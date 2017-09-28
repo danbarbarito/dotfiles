@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cd ~/.ledger
+
+git pull origin master
+
+git add -A
+
+git commit -m "sync-ledger commit"
+
+git push origin master

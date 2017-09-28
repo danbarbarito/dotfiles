@@ -447,7 +447,6 @@
                                         (current-buffer)
                                         ))
           ))
-      (setq org-default-notes-file "~/Dropbox/org/refile.org")
       (setq org-mobile-inbox-for-pull "~/Dropbox/org/flagged.org")
       (setq org-mobile-directory "~/Dropbox/org/mobile")
 
@@ -462,7 +461,6 @@
       (setq org-src-tab-acts-natively t)
       (setq org-confirm-babel-evaluate nil)
       (setq org-use-speed-commands t)
-      (setq org-default-notes-file (concat org-directory "/todo.org"))
       (setq org-show-notification-handler
             (lambda (msg) (timed-notification nil msg)))
     #+END_SRC
@@ -489,12 +487,13 @@
 *** Capture
     #+BEGIN_SRC emacs-lisp
       ;;  (require 'org-trello)
-      (setq org-default-notes-file (concat org-directory "/todo.org"))
+      (setq org-default-todo-file (concat org-directory "/todo.org"))
       ;; (custom-set-variables '(org-trello-files `(,org-default-notes-file)))
 
       (setq org-capture-templates
             '(
-              ("t" "Todo" entry (file org-default-notes-file) "* TODO %?\n  %u\n  %a")
+              ("t" "Todo" entry (file org-default-todo-file) "* TODO %?\n  %u\n  %a")
+
               ))
       (setq org-todo-keywords
             '((sequence
@@ -794,6 +793,13 @@
        (flycheck-mode t))
      (add-to-list 'auto-mode-alist '("\\.php$" . my-setup-php))
    #+END_SRC
+** ledger
+#+BEGIN_SRC emacs-lisp
+
+  (require 'ledger-mode)
+  (add-to-list 'auto-mode-alist '(".ledger$" . ledger-mode))
+
+#+END_SRC
 * Key Bindings
 ** smartparens
    #+BEGIN_SRC emacs-lisp
