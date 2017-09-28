@@ -24,8 +24,8 @@
   #+BEGIN_SRC emacs-lisp
 
     ;;      (set-fontset-font t 'han '("PingFang SC"))
-    (require 'unicode-fonts)
-    (unicode-fonts-setup)
+    ;;    (require 'unicode-fonts)
+    ;; (unicode-fonts-setup)
     ;; (set-default-font "Monaco-12:width=normal:weight=light")
     ;; (set-default-font "DejaVu Sans Mono:width=normal:weight=normal")
 
@@ -676,23 +676,6 @@
    #+END_SRC
 
    See the [[http://ternjs.net/][project homepage]] for more info.
-** textmate
-   #+BEGIN_SRC emacs-lisp
-     (require 'textmate)
-     (textmate-mode)
-     (bind-keys
-      :map *textmate-mode-map*
-      ("M-}" . textmate-shift-right)
-      ("M-{" . textmate-shift-left)
-      ("M-/" . comment-or-uncomment-region-or-line)
-      ("M-l" . textmate-select-line)
-      )
-
-   #+END_SRC
-
-   #+RESULTS:
-   : textmate-select-line
-
 ** Prompt Behavior
 
    #+BEGIN_SRC emacs-lisp -n -r

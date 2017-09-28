@@ -46,7 +46,8 @@ function mm           ; mpv --no-video --ytdl-format=bestaudio ytdl://ytsearch10
 # PATH
 set -gx PATH ~/.bin ~/.local/bin/ $PATH
 # set -gx PATH ~/.rakudobrew/bin $PATH
-set -gx PATH $ANDROID_HOME/tools $PATH
+# set -gx PATH $ANDROID_HOME/tools $PATH
+set -gx PATH ~/.cask/bin $PATH
 
 # OS specific
 switch (uname)
@@ -78,10 +79,10 @@ make_completion b 'bundle exec'
 make_completion g 'git'
 
 # rbenv
-status --is-interactive; and . (rbenv init -|psub)
+# status --is-interactive; and . (rbenv init -|psub)
 
 # perlbrew
-. ~/perl5/perlbrew/etc/perlbrew.fish
+# . ~/perl5/perlbrew/etc/perlbrew.fish
 
 # virtualfish
 # eval (python -m virtualfish)
