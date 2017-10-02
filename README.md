@@ -1,4 +1,4 @@
-My dotfiles are manages with RCM, Thoughtbot's rc file manager.
+My dotfiles are managed with RCM, Thoughtbot's rc file manager.
 
 # Usage
 
