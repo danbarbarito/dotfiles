@@ -79,10 +79,10 @@ make_completion b 'bundle exec'
 make_completion g 'git'
 
 # rbenv
-# status --is-interactive; and . (rbenv init -|psub)
+status --is-interactive; and . (rbenv init -|psub)
 
 # perlbrew
-# . ~/perl5/perlbrew/etc/perlbrew.fish
+. ~/perl5/perlbrew/etc/perlbrew.fish
 
 # virtualfish
 # eval (python -m virtualfish)
