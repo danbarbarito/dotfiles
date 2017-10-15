@@ -206,7 +206,7 @@
      (add-to-list 'company-backends 'company-go)
      (add-to-list 'company-backends 'company-web-html)
 
-     (setq company-dabbrev-downcase 0)
+     (setq company-dabbrev-downcase nil)
      (setq company-tooltip-align-annotations t)
      (setq company-idle-delay 0.3)
      (company-quickhelp-mode 1)
