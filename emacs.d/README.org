@@ -12,7 +12,7 @@
 * Theme
 
   #+BEGIN_SRC emacs-lisp
-    (load-theme 'base16-ashes t)
+    (load-theme 'deeper-blue t)
   #+END_SRC
 
   more themes here
