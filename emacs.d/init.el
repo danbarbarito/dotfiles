@@ -74,6 +74,7 @@
  '(projectile-project-root-files
    (quote
     ("rebar.config" "build.boot" "SConstruct" "pom.xml" "build.sbt" "gradlew" "build.gradle" ".ensime" "Gemfile" "requirements.txt" "setup.py" "tox.ini" "composer.json" "Cargo.toml" "mix.exs" "stack.yaml" "info.rkt" "DESCRIPTION" "TAGS" "GTAGS")))
+ '(projectile-track-known-projects-automatically nil)
  '(python-shell-interpreter "ipython")
  '(ring-bell-function (quote ignore))
  '(standard-indent 2)
@@ -106,7 +107,7 @@
  '(web-mode-attr-value-indent-offset nil)
  '(web-mode-auto-close-style 1)
  '(web-mode-block-padding 0)
- '(web-mode-code-indent-offset 2)
+ '(web-mode-code-indent-offset 2 t)
  '(web-mode-commands-like-expand-region nil)
  '(web-mode-enable-auto-closing nil)
  '(web-mode-enable-auto-indentation t)
