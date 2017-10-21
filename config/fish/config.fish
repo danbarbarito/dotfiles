@@ -46,6 +46,7 @@ function mm           ; mpv --no-video --ytdl-format=bestaudio ytdl://ytsearch10
 # PATH
 set -gx PATH ~/.bin ~/.local/bin/ $PATH
 # set -gx PATH ~/.rakudobrew/bin $PATH
+set -gx PATH ~/.rbenv/bin $PATH
 # set -gx PATH $ANDROID_HOME/tools $PATH
 set -gx PATH ~/.cask/bin $PATH
 
