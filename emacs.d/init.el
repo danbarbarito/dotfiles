@@ -66,7 +66,7 @@
  '(linum-relative-current-symbol "")
  '(package-selected-packages
    (quote
-    (bind-key ledger-mode ac-helm smart-tab find-file-in-project ivy org vue-html-mode ox-leanpub ag cmake-mode cmake-project vc-fossil what-the-commit ack base16-theme function-args ggtags helm-flx org-bullets web-beautify cargo rust-mode company-quickhelp exec-path-from-shell elpy js2-refactor helm pp-c-l emmet-mode company-web ido-vertical-mode ido-ubiquitous lorem-ipsum redo+ auto-indent-mode stylus-mode go-autocomplete company-go go-mode yaml-mode web-mode visual-regexp unicode-fonts smartparens smart-mode-line sequential-command robe rainbow-mode popwin pallet ox-asciidoc org-trello on-screen nyan-mode multiple-cursors moz markdown-mode magit lua-mode key-chord jsx-mode json-mode js2-mode iedit idle-highlight-mode htmlize howdoi highlight-symbol highlight-indentation haskell-mode graphviz-dot-mode gist geiser flycheck flx-ido fish-mode feature-mode expand-region epresent ensime editorconfig drag-stuff discover-my-major dired+ diff-hl deft company-tern company-emoji color-theme-sanityinc-tomorrow coffee-mode cider buffer-move back-button adoc-mode ace-jump-mode)))
+    (fzf bind-key ledger-mode ac-helm smart-tab find-file-in-project ivy org vue-html-mode ox-leanpub ag cmake-mode cmake-project vc-fossil what-the-commit ack base16-theme function-args ggtags helm-flx org-bullets web-beautify cargo rust-mode company-quickhelp exec-path-from-shell elpy js2-refactor helm pp-c-l emmet-mode company-web ido-vertical-mode ido-ubiquitous lorem-ipsum redo+ auto-indent-mode stylus-mode go-autocomplete company-go go-mode yaml-mode web-mode visual-regexp unicode-fonts smartparens smart-mode-line sequential-command robe rainbow-mode popwin pallet ox-asciidoc org-trello on-screen nyan-mode multiple-cursors moz markdown-mode magit lua-mode key-chord jsx-mode json-mode js2-mode iedit idle-highlight-mode htmlize howdoi highlight-symbol highlight-indentation haskell-mode graphviz-dot-mode gist geiser flycheck flx-ido fish-mode feature-mode expand-region epresent ensime editorconfig drag-stuff discover-my-major dired+ diff-hl deft company-tern company-emoji color-theme-sanityinc-tomorrow coffee-mode cider buffer-move back-button adoc-mode ace-jump-mode)))
  '(parse-sexp-ignore-comments t)
  '(projectile-globally-ignored-directories
    (quote
@@ -107,7 +107,7 @@
  '(web-mode-attr-value-indent-offset nil)
  '(web-mode-auto-close-style 1)
  '(web-mode-block-padding 0)
- '(web-mode-code-indent-offset 2 t)
+ '(web-mode-code-indent-offset 2)
  '(web-mode-commands-like-expand-region nil)
  '(web-mode-enable-auto-closing nil)
  '(web-mode-enable-auto-indentation t)

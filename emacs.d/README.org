@@ -671,7 +671,7 @@
      (add-hook 'js-mode-hook (lambda () (tern-mode t)))
      (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
      (add-hook 'web-mode-hook (lambda () (tern-mode t)))
-     (setq tern-command '("/usr/bin/tern" "--no-port-file"))
+     (setq tern-command '("/usr/local/bin/tern" "--no-port-file"))
    #+END_SRC
 
    See the [[http://ternjs.net/][project homepage]] for more info.
