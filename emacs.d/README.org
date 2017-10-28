@@ -714,15 +714,15 @@
    #+END_SRC
 ** php
    #+BEGIN_SRC emacs-lisp
-     (defun my-setup-php ()
-       ;; enable web mode
-       (php-mode)
-       (make-local-variable 'company-backends)
-       (add-to-list 'company-backends 'company-ac-php-backend)
-       (flycheck-select-checker 'my-php)
-       (flycheck-mode t))
-     (add-to-list 'auto-mode-alist '("\\.php$" . my-setup-php))
-     (add-to-list 'auto-mode-alist '("\\.theme$" . my-setup-php)) ;; Drupal 8 theme file
+          (defun my-setup-php ()
+            ;; enable web mode
+            (php-mode)
+            (make-local-variable 'company-backends)
+            (add-to-list 'company-backends 'company-ac-php-backend)
+            (flycheck-select-checker 'my-php)
+            (flycheck-mode t))
+          (add-to-list 'auto-mode-alist '("\\.php$" . my-setup-php))
+          (add-to-list 'auto-mode-alist '("\\.theme$" . my-setup-php)) ;; Drupal 8 theme file
    #+END_SRC
 ** ledger
    #+BEGIN_SRC emacs-lisp

@@ -37,7 +37,6 @@
 (depends-on "discover-my-major")
 (depends-on "drag-stuff")
 (depends-on "editorconfig")
-(depends-on "elpy")
 (depends-on "emmet-mode")
 (depends-on "ensime")
 (depends-on "epl")
