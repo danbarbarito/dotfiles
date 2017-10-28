@@ -24,8 +24,6 @@
  '(ag-highlight-search t)
  '(ansi-color-names-vector
    ["#1c2023" "#c7ae95" "#95c7ae" "#aec795" "#ae95c7" "#c795ae" "#ae95c7" "#c7ccd1"])
- ;;;; '(ansi-term-color-vector
- ;;;;  [unspecified "#1c2023" "#c7ae95" "#95c7ae" "#aec795" "#ae95c7" "#c795ae" "#ae95c7" "#c7ccd1"] t)
  '(auto-indent-on-save-file t)
  '(cmake-project-default-build-dir-name "")
  '(comment-padding 1)
@@ -65,7 +63,7 @@
  '(linum-relative-current-symbol "")
  '(package-selected-packages
    (quote
-    (fzf bind-key ledger-mode ac-helm smart-tab find-file-in-project ivy org vue-html-mode ox-leanpub ag cmake-mode cmake-project vc-fossil what-the-commit ack base16-theme function-args ggtags helm-flx org-bullets web-beautify cargo rust-mode company-quickhelp exec-path-from-shell elpy js2-refactor helm pp-c-l emmet-mode company-web ido-vertical-mode ido-ubiquitous lorem-ipsum redo+ auto-indent-mode stylus-mode go-autocomplete company-go go-mode yaml-mode web-mode visual-regexp unicode-fonts smartparens smart-mode-line sequential-command robe rainbow-mode popwin pallet ox-asciidoc org-trello on-screen nyan-mode multiple-cursors moz markdown-mode magit lua-mode key-chord jsx-mode json-mode js2-mode iedit idle-highlight-mode htmlize howdoi highlight-symbol highlight-indentation haskell-mode graphviz-dot-mode gist geiser flycheck flx-ido fish-mode feature-mode expand-region epresent ensime editorconfig drag-stuff discover-my-major dired+ diff-hl deft company-tern company-emoji color-theme-sanityinc-tomorrow coffee-mode cider buffer-move back-button adoc-mode ace-jump-mode)))
+    (company-php company-plsense yasnippet-snippets php-mode scss-mode fzf bind-key ledger-mode ac-helm smart-tab find-file-in-project ivy org vue-html-mode ox-leanpub ag cmake-mode cmake-project vc-fossil what-the-commit ack base16-theme function-args ggtags helm-flx org-bullets web-beautify cargo rust-mode company-quickhelp exec-path-from-shell elpy js2-refactor helm pp-c-l emmet-mode company-web ido-vertical-mode ido-ubiquitous lorem-ipsum redo+ auto-indent-mode stylus-mode go-autocomplete company-go go-mode yaml-mode web-mode visual-regexp unicode-fonts smartparens smart-mode-line sequential-command robe rainbow-mode popwin pallet ox-asciidoc org-trello on-screen nyan-mode multiple-cursors moz markdown-mode magit lua-mode key-chord jsx-mode json-mode js2-mode iedit idle-highlight-mode htmlize howdoi highlight-symbol highlight-indentation haskell-mode graphviz-dot-mode gist geiser flycheck flx-ido fish-mode feature-mode expand-region epresent ensime editorconfig drag-stuff discover-my-major dired+ diff-hl deft company-tern company-emoji color-theme-sanityinc-tomorrow coffee-mode cider buffer-move back-button adoc-mode ace-jump-mode)))
  '(parse-sexp-ignore-comments t)
  '(projectile-globally-ignored-directories
    (quote

@@ -4,7 +4,7 @@
 * Install
   #+BEGIN_SRC sh
     cd ~
-    git clone git@github.com:jcouyang/.emacs.d.git
+    git clone git@github.com:danielbarbarito/dotfiles.git
     cd .emacs.d
     cask install
   #+END_SRC
@@ -18,57 +18,6 @@
   more themes here
 
   [[http://emacsthemes.caisah.info/installed-emacs-themes/]]
-
-* Fonts
-
-  #+BEGIN_SRC emacs-lisp
-
-    ;;      (set-fontset-font t 'han '("PingFang SC"))
-    ;;    (require 'unicode-fonts)
-    ;; (unicode-fonts-setup)
-    ;; (set-default-font "Monaco-12:width=normal:weight=light")
-    ;; (set-default-font "DejaVu Sans Mono:width=normal:weight=normal")
-
-    ;; (defun darwin-set-emoji-font (frame)
-    ;;   "Adjust the font settings of FRAME so Emacs NS/Cocoa can display emoji properly."
-    ;;   (if (eq system-type 'darwin)
-    ;;       (set-fontset-font t 'symbol (font-spec :family "Apple Color Emoji") frame 'prepend)))
-    ;; ;; For when emacs is started with Emacs.app
-    ;; (darwin-set-emoji-font nil)
-    ;; ;; Hook for when a cocoa frame is created with emacsclient
-    ;; ;; see https://www.gnu.org/software/emacs/manual/html_node/elisp/Creating-Frames.html
-    ;; (add-hook 'after-make-frame-functions 'darwin-set-emoji-font)
-
-
-
-    (defun my-add-
-        pretty-lambda ()
-        "make some word or string show as pretty Unicode symbols"
-        (setq prettify-symbols-alist
-              '(
-                ("lambda" . ?λ)
-                ("->" . ?→)
-                ("=>" . ?⇒)
-                ("!=" . ?≠)
-                ("===" . ?≡)
-                ("!==" . ?≢)
-                (">=" . ?⩾)
-                ("<=" . ?⩽)
-                ("<|" . ?⊲)
-                ("|>" . ?⊳)
-                (">->" . ?↣)
-                ("~>" . ?↝)
-                (">=>" . ?⟾)
-                )))
-
-    ;; (add-hook 'clojure-mode-hook 'my-add-pretty-lambda)
-    ;; (add-hook 'haskell-mode-hook 'my-add-pretty-lambda)
-    ;; (add-hook 'js2-mode-hook 'my-add-pretty-lambda)
-    ;; (add-hook 'javascript-mode-hook 'my-add-pretty-lambda)
-    ;; (add-hook 'coffee-mode-hook 'my-add-pretty-lambda)
-
-    ;; (global-prettify-symbols-mode 1)
-  #+END_SRC
 
 * Global General Modes
   - =emacsclient=  [[(server)]]
@@ -163,27 +112,6 @@
      (require 'pp-c-l)
      (add-hook 'help-mode-hook 'pretty-control-l-mode)
    #+END_SRC
-** dot
-   #+BEGIN_SRC emacs-lisp
-                                             ; (add-to-list 'org-src-lang-modes '("dot" . graphviz-dot))
-   #+END_SRC
-
-** cider
-
-   [[https://github.com/clojure-emacs/cider#keyboard-shortcuts]]
-
-   #+BEGIN_SRC emacs-lisp
-     (require 'cider)
-     (setq org-babel-clojure-backend 'cider)
-     (add-hook 'cider-repl-mode-hook #'company-mode)
-     (add-hook 'cider-mode-hook #'company-mode)
-     ;; (setq nrepl-log-messages t
-     ;;       cider-repl-use-clojure-font-lock t
-     ;;       cider-font-lock-dynamically '(macro core function var)
-     ;;       nrepl-hide-special-buffers t
-     ;;       cider-overlays-use-font-lock t)
-   #+END_SRC
-
 ** company
    
    Completion will start automatically after you type a few letters. Use M-n and M-p to select, <return> to complete or <tab> to complete the common part. Search through the completions with C-s, C-r and C-o. Press M-(digit) to quickly complete with one of the first 10 candidates.
@@ -695,14 +623,10 @@
      (setq web-mode-code-indent-offset 2)
      (setq web-mode-css-indent-offset 2)
      (setq web-mode-markup-indent-offset 2)
-     (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
      (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
      (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
      (add-to-list 'auto-mode-alist '("\\.erb?\\'" . web-mode))
      (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
-     (add-to-list 'auto-mode-alist '("\\.scss\\'" . web-mode))
-     (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
-     (add-to-list 'auto-mode-alist '("\\.sass\\'" . web-mode))
      (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
      (add-to-list 'auto-mode-alist '("\\.twig\\'" . web-mode))
 
@@ -790,10 +714,11 @@
    #+BEGIN_SRC emacs-lisp
      (defun my-setup-php ()
        ;; enable web mode
-       (web-mode)
+       (php-mode)
        (flycheck-select-checker 'my-php)
        (flycheck-mode t))
      (add-to-list 'auto-mode-alist '("\\.php$" . my-setup-php))
+     (add-to-list 'auto-mode-alist '("\\.theme$" . my-setup-php)) ;; Drupal 8 theme file
    #+END_SRC
 ** ledger
 #+BEGIN_SRC emacs-lisp
@@ -802,6 +727,12 @@
   (add-to-list 'auto-mode-alist '(".ledger$" . ledger-mode))
 
 #+END_SRC
+** scss
+   #+BEGIN_SRC emacs-listp
+  (require 'scss-mode)
+  (add-to-list 'auto-mode-alist '(".scss$" . ledger-mode))
+  (add-to-list 'auto-mode-alist '(".sass$" . ledger-mode))
+   #+END_SRC
 * Key Bindings
 ** smartparens
    #+BEGIN_SRC emacs-lisp
