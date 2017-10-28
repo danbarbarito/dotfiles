@@ -121,8 +121,10 @@
    document
 
    #+BEGIN_SRC emacs-lisp -n -r
+     (require 'ac-php)
      (require 'company)
      (require 'company-tern)
+     (require 'company-php)
      (require 'company-quickhelp)
      (require 'company-go)
      (require 'company-tern)                         
@@ -130,11 +132,7 @@
      (require 'company-web-jade)                          ; load company mode jade backend
      (require 'company-web-slim)                          ; load company mode slim backend
 
-     (add-to-list 'company-backends 'company-tern)
-     (add-to-list 'company-backends 'company-go)
-     (add-to-list 'company-backends 'company-web-html)
 
-     (setq company-dabbrev-downcase nil)
      (setq company-tooltip-align-annotations t)
      (setq company-idle-delay 0.3)
      (company-quickhelp-mode 1)
@@ -277,6 +275,11 @@
      (setq js2-mode-show-strict-warnings nil)
      (require 'js2-refactor)
      (add-hook 'js2-mode-hook #'js2-refactor-mode)
+     (add-hook 'js2-mode-hook (lambda () (set (make-local-variable
+                                               'company-backends) '((
+                                                                     company-tern
+                                                                     company-dabbrev
+                                                                     )))))
      (js2r-add-keybindings-with-prefix "C-c C-m")
    #+END_SRC
 
@@ -634,7 +637,6 @@
                                                'company-backends) '((
                                                                      company-web-html
                                                                      company-css
-                                                                     company-tern
                                                                      company-dabbrev
                                                                      )))))
 
@@ -715,18 +717,20 @@
      (defun my-setup-php ()
        ;; enable web mode
        (php-mode)
+       (make-local-variable 'company-backends)
+       (add-to-list 'company-backends 'company-ac-php-backend)
        (flycheck-select-checker 'my-php)
        (flycheck-mode t))
      (add-to-list 'auto-mode-alist '("\\.php$" . my-setup-php))
      (add-to-list 'auto-mode-alist '("\\.theme$" . my-setup-php)) ;; Drupal 8 theme file
    #+END_SRC
 ** ledger
-#+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp
 
-  (require 'ledger-mode)
-  (add-to-list 'auto-mode-alist '(".ledger$" . ledger-mode))
+     (require 'ledger-mode)
+     (add-to-list 'auto-mode-alist '(".ledger$" . ledger-mode))
 
-#+END_SRC
+   #+END_SRC
 ** scss
    #+BEGIN_SRC emacs-listp
   (require 'scss-mode)

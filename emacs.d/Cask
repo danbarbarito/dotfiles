@@ -2,6 +2,7 @@
 (source melpa)
 (source org)
 
+(depends-on "ac-php")
 (depends-on "ace-jump-mode")
 (depends-on "ack")
 (depends-on "adoc-mode")
@@ -110,6 +111,7 @@
 (depends-on "pallet")
 (depends-on "pcache")
 (depends-on "persistent-soft")
+(depends-on "php-eldoc")
 (depends-on "php-mode")
 (depends-on "pkg-info")
 (depends-on "popup")
