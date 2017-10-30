@@ -147,6 +147,7 @@
    #+BEGIN_SRC emacs-lisp -n -r
      (require 'emmet-mode)
      (add-hook 'web-mode-hook 'emmet-mode)
+     (add-hook 'php-mode-hook 'emmet-mode)
    #+END_SRC
 ** deft
    #+BEGIN_SRC emacs-lisp
