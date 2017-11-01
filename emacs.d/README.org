@@ -735,8 +735,8 @@
 ** scss
    #+BEGIN_SRC emacs-listp
   (require 'scss-mode)
-  (add-to-list 'auto-mode-alist '(".scss$" . ledger-mode))
-  (add-to-list 'auto-mode-alist '(".sass$" . ledger-mode))
+  (add-to-list 'auto-mode-alist '(".scss$" . scss-mode))
+  (add-to-list 'auto-mode-alist '(".sass$" . scss-mode))
    #+END_SRC
 * Key Bindings
 ** smartparens

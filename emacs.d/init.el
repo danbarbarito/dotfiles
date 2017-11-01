@@ -51,7 +51,7 @@
  '(exec-path-from-shell-check-startup-files nil)
  '(fci-rule-color "#373b41")
  '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
- '(flycheck-scss-executable "sass-lint")
+ '(flycheck-scss-executable nil)
  '(gofmt-command "/Users/danbarbarito/.go/bin/goimports")
  '(grep-command "grep  -nH -e ")
  '(grep-find-template nil)
