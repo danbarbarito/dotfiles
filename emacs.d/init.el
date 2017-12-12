@@ -5,6 +5,8 @@
 
 (package-initialize)
 
+(setq warning-minimum-level :emergency)
+
 ;; Remove security vulnerability
 (eval-after-load "enriched"
   '(defun enriched-decode-display-prop (start end &optional param)
