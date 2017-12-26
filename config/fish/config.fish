@@ -124,11 +124,11 @@ set -x PERL_LWP_SSL_VERIFY_HOSTNAME 0
 # PATH
 set -gx PATH ~/.bin ~/.local/bin/ $PATH
 # set -gx PATH ~/.rakudobrew/bin $PATH
-set -gx PATH $ANDROID_HOME/tools $PATH
-set -gx PATH $ANDROID_HOME/tools/bin $PATH
-set -gx PATH ~/.pear/bin $PATH
-set -gx PATH ~/.composer/vendor/bin $PATH
-set -gx PATH ~/.cask/bin $PATH
+#set -gx PATH $ANDROID_HOME/tools $PATH
+#set -gx PATH $ANDROID_HOME/tools/bin $PATH
+#set -gx PATH ~/.pear/bin $PATH
+#set -gx PATH ~/.composer/vendor/bin $PATH
+#set -gx PATH ~/.cask/bin $PATH
 
 # OS specific
 switch (uname)
