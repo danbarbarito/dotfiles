@@ -9,3 +9,5 @@
 	spellcheck = false
 [core "user"]
 	email = dan@barbarito.me
+[diff]
+	renameLimit = 1264

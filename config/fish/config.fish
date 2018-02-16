@@ -111,13 +111,14 @@ end
 
 
 # Environment
-set -x GOPATH "/Users/danbarbarito/.go"
+set -x GOPATH "/Users/danbarbarito/.go:/Users/danbarbarito/Projects"
 set -x ANDROID_HOME "/usr/local/Cellar/android-sdk/24.4.1_1"
 set -x ALTERNATE_EDITOR "/usr/local/bin/micro"
 set -x EDITOR "/usr/local/bin/micro"
 set -x VISUAL_EDITOR "/usr/local/bin/micro"
 set -x VISUAL "/usr/local/bin/micro"
 set -x PERL_LWP_SSL_VERIFY_HOSTNAME 0
+set -x ERL_AFLAGS "-kernel shell_history enabled"
 
 
 
@@ -129,6 +130,7 @@ set -gx PATH $ANDROID_HOME/tools/bin $PATH
 set -gx PATH ~/.pear/bin $PATH
 set -gx PATH ~/.composer/vendor/bin $PATH
 set -gx PATH ~/.cask/bin $PATH
+set -gx PATH ~/.cargo/bin $PATH
 
 # OS specific
 switch (uname)
