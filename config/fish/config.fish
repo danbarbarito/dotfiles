@@ -125,6 +125,7 @@ set -x ERL_AFLAGS "-kernel shell_history enabled"
 # PATH
 set -gx PATH ~/.bin ~/.local/bin/ $PATH
 # set -gx PATH ~/.rakudobrew/bin $PATH
+
 set -gx PATH $ANDROID_HOME/tools $PATH
 set -gx PATH $ANDROID_HOME/tools/bin $PATH
 set -gx PATH ~/.pear/bin $PATH
