@@ -6,7 +6,8 @@ pager = LESS='FRX' less
 
 [extensions]
 pager =
-mercurial_keyring =
 rebase =
 gpg =
 histedit =
+hgext.bookmarks =
+hggit =  
