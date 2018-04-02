@@ -140,7 +140,6 @@
 (require 'setup-hippie)
 (require 'setup-yasnippet)
 (require 'setup-perspective)
-(require 'setup-ffip)
 (require 'setup-html-mode)
 (require 'setup-paredit)
 (beginend-global-mode)
