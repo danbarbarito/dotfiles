@@ -8,9 +8,6 @@
 (add-to-list 'auto-mode-alist '("Carton$" . emacs-lisp-mode))
 (add-to-list 'auto-mode-alist '("Cask$" . emacs-lisp-mode))
 
-;; CSS
-(add-to-list 'auto-mode-alist '("\\.scss$" . css-mode))
-
 ;; Restclient
 (add-to-list 'auto-mode-alist '("\\.restclient$" . restclient-mode))
 
@@ -27,12 +24,6 @@
 (autoload 'jade-mode "jade-mode")
 (add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
-
-;; HTML
-(add-to-list 'auto-mode-alist '("\\.html\\'" . crappy-jsp-mode))
-(add-to-list 'auto-mode-alist '("\\.tag$" . html-mode))
-(add-to-list 'auto-mode-alist '("\\.vm$" . html-mode))
-(add-to-list 'auto-mode-alist '("\\.ejs$" . html-mode))
 
 ;; JSP
 (autoload 'crappy-jsp-mode "crappy-jsp-mode")

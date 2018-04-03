@@ -116,6 +116,8 @@
      php-mode
      company
      js2-mode
+     scss-mode
+     emmet-mode
      )))
 
 (condition-case nil
@@ -260,3 +262,5 @@
 (require 'setup-projectile)
 (require 'setup-web-mode)
 (require 'setup-company-mode)
+(require 'setup-scss-mode)
+(require 'setup-emmet-mode)
