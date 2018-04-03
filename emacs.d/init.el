@@ -15,6 +15,11 @@
 ;; No splash screen please ... jeez
 (setq inhibit-startup-message t)
 
+;; disable backup
+(setq backup-inhibited t)
+;; disable auto save
+(setq auto-save-default nil)
+
 ;; Set path to dependencies
 (setq site-lisp-dir
       (expand-file-name "site-lisp" user-emacs-directory))
@@ -266,4 +271,3 @@
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
-
