@@ -10,7 +10,10 @@
                            (run-with-timer 0.05 nil 'invert-face 'mode-line)))
 
 ;; Highlight current line
-(global-hl-line-mode 1)
+;; (global-hl-line-mode 1)
+
+;; Show line numbers
+(global-linum-mode)
 
 ;; Set custom theme path
 (setq custom-theme-directory (concat user-emacs-directory "themes"))
