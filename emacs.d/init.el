@@ -115,6 +115,7 @@
      web-mode
      php-mode
      company
+     js2-mode
      )))
 
 (condition-case nil
