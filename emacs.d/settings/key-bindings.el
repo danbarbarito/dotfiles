@@ -311,6 +311,6 @@
 (define-key occur-mode-map (kbd "p") 'previous-line)
 
 ;; Emmet Mode
-(global-set-key (kbd "C-c e") 'emmet-expand)
+(global-set-key (kbd "C-c e") 'emmet-expand-line)
 
 (provide 'key-bindings)
