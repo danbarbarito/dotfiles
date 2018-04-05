@@ -313,4 +313,7 @@
 ;; Emmet Mode
 (global-set-key (kbd "C-c e") 'emmet-expand-line)
 
+;; Navigation (go-to's)
+(global-set-key (kbd "C-c g n") '(find-file org-default-notes-file)) ;; Go to Notes
+
 (provide 'key-bindings)
