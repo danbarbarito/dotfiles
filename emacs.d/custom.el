@@ -66,7 +66,8 @@
      (320 . "#732f2c")
      (340 . "#6b400c")
      (360 . "#23733c"))))
- '(vc-annotate-very-old-color "#23733c"))
+ '(vc-annotate-very-old-color "#23733c")
+ '(web-mode-code-indent-offset 2))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
