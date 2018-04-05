@@ -31,7 +31,7 @@
 
 (defun use-default-theme ()
   (interactive)
-  (load-theme 'misterioso)
+  (load-theme 'challenger-deep t)
   (set-cursor-color "LightBlue3")
   (when (boundp 'magnars/default-font)
     (set-face-attribute 'default nil :font magnars/default-font)))

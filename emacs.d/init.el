@@ -118,6 +118,8 @@
      js2-mode
      scss-mode
      emmet-mode
+     challenger-deep-theme
+     elixir-mode
      )))
 
 (condition-case nil
