@@ -121,6 +121,7 @@
      challenger-deep-theme
      elixir-mode
      helm
+     ledger-mode
      )))
 
 (condition-case nil
@@ -269,4 +270,5 @@
 (require 'setup-emmet-mode)
 (require 'setup-elixir-mode)
 (require 'setup-helm)
+(require 'setup-ledger-mode)
 

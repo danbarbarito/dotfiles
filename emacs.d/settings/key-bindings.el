@@ -314,6 +314,7 @@
 (global-set-key (kbd "C-c e") 'emmet-expand-line)
 
 ;; Navigation (go-to's)
-(global-set-key (kbd "C-c g n") '(find-file org-default-notes-file)) ;; Go to Notes
+(global-set-key (kbd "C-c g n") (lambda () (interactive) (find-file org-default-notes-file))) ;; Go to Notes
+(global-set-key (kbd "C-c g f") (lambda () (interactive) (dired ledger-source-directory))) ;; Go to Finance (ledger folder)
 
 (provide 'key-bindings)
