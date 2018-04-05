@@ -266,3 +266,5 @@
 (require 'setup-company-mode)
 (require 'setup-scss-mode)
 (require 'setup-emmet-mode)
+(require 'setup-elixir-mode)
+
