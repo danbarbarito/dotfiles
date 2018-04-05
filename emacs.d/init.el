@@ -120,6 +120,7 @@
      emmet-mode
      challenger-deep-theme
      elixir-mode
+     helm
      )))
 
 (condition-case nil
@@ -267,4 +268,5 @@
 (require 'setup-scss-mode)
 (require 'setup-emmet-mode)
 (require 'setup-elixir-mode)
+(require 'setup-helm)
 
