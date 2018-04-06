@@ -122,6 +122,8 @@
      elixir-mode
      helm
      ledger-mode
+     neotree
+     all-the-icons
      )))
 
 (condition-case nil
@@ -271,4 +273,5 @@
 (require 'setup-elixir-mode)
 (require 'setup-helm)
 (require 'setup-ledger-mode)
+(require 'setup-neotree)
 
