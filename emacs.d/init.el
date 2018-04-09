@@ -124,6 +124,8 @@
      ledger-mode
      neotree
      all-the-icons
+     d-mode
+     company-dcd
      )))
 
 (condition-case nil
@@ -274,4 +276,5 @@
 (require 'setup-helm)
 (require 'setup-ledger-mode)
 (require 'setup-neotree)
+(require 'setup-d-mode)
 
