@@ -126,6 +126,8 @@
      all-the-icons
      d-mode
      company-dcd
+     web-beautify
+     cmake-mode
      )))
 
 (condition-case nil
@@ -277,4 +279,5 @@
 (require 'setup-ledger-mode)
 (require 'setup-neotree)
 (require 'setup-d-mode)
+(require 'setup-cmake-mode)
 

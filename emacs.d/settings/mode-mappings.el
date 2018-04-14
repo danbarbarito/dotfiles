@@ -67,11 +67,11 @@
 (add-to-list 'auto-mode-alist '("\\.svg$" . image-mode))
 
 ;; JavaScript
-;; (autoload 'js2-mode "js2-mode" nil t)
-;; (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-;; (add-to-list 'auto-mode-alist '("\\.json$" . javascript-mode))
-;; (add-to-list 'auto-mode-alist '("\\.jshintrc$" . javascript-mode))
-;; (add-to-list 'magic-mode-alist '("#!/usr/bin/env node" . js2-mode))
+(autoload 'js2-mode "js2-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.json$" . javascript-mode))
+(add-to-list 'auto-mode-alist '("\\.jshintrc$" . javascript-mode))
+(add-to-list 'magic-mode-alist '("#!/usr/bin/env node" . js2-mode))
 
 ;; Configuration files
 (add-to-list 'auto-mode-alist '("\\.offlineimaprc$" . conf-mode))
@@ -112,10 +112,13 @@
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.sass\\'" . web-mode))
 
 ;; Ledger-mode
 (add-to-list 'auto-mode-alist '("\\.fin\\'" . ledger-mode))
 
+;; Cmake mode
+(add-to-list 'auto-mode-alist '("\\CMakeLists.txt\\'" . cmake-mode))
 
 (provide 'mode-mappings)

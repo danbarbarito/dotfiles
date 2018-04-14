@@ -17,15 +17,6 @@
 (create-simple-keybinding-command f11 "<f11>")
 (create-simple-keybinding-command f12 "<f12>")
 
-(defun goto-line-with-feedback ()
-  "Show line numbers temporarily, while prompting for the line number input"
-  (interactive)
-  (unwind-protect
-      (progn
-        (linum-mode 1)
-        (call-interactively 'goto-line))
-    (linum-mode -1)))
-
 (defun open-line-and-indent ()
   (interactive)
   (newline-and-indent)
