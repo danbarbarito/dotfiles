@@ -126,12 +126,10 @@ set -x ERL_AFLAGS "-kernel shell_history enabled"
 set -gx PATH ~/.bin ~/.local/bin/ $PATH
 # set -gx PATH ~/.rakudobrew/bin $PATH
 
-set -gx PATH $ANDROID_HOME/tools $PATH
-set -gx PATH $ANDROID_HOME/tools/bin $PATH
-set -gx PATH ~/.pear/bin $PATH
-set -gx PATH ~/.composer/vendor/bin $PATH
-set -gx PATH ~/.cask/bin $PATH
-set -gx PATH ~/.cargo/bin $PATH
+test -d "~/.composer/vendor/bing"; and set -gx PATH ~/.composer/vendor/bin $PATH
+test -d "$ANDROID_HOME/tools"; and set -gx PATH $ANDROID_HOME/tools $PATH; and set -gx PATH $ANDROID_HOME/tools/bin $PATH
+test -d "~/.pear"; and set -gx PATH ~/.pear/bin $PATH
+test -d "~/.cask"; and set -gx PATH ~/.cask/bin $PATH; and set -gx PATH ~/.cargo/bin $PATH
 
 # OS specific
 switch (uname)
@@ -158,7 +156,7 @@ status --is-interactive
 and . (rbenv init -|psub)
 
 # perlbrew
-. ~/perl5/perlbrew/etc/perlbrew.fish
+# . ~/perl5/perlbrew/etc/perlbrew.fish
 
 # virtualfish
 # eval (python -m virtualfish)

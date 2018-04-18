@@ -88,7 +88,6 @@
      flx
      f
      flx-ido
-     dired-details
      css-eldoc
      yasnippet
      smartparens
@@ -128,6 +127,7 @@
      company-dcd
      web-beautify
      cmake-mode
+     ox-twbs
      )))
 
 (condition-case nil
