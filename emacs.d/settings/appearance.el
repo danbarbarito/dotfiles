@@ -1,6 +1,5 @@
 (setq font-lock-maximum-decoration t
-      color-theme-is-global t
-      truncate-partial-width-windows nil)
+      color-theme-is-global t)
 
 ;; Don't beep. Don't visible-bell (fails on el capitan). Just blink the modeline on errors.
 

@@ -10,6 +10,7 @@
 
 ;; Restclient
 (add-to-list 'auto-mode-alist '("\\.restclient$" . restclient-mode))
+(add-to-list 'auto-mode-alist '("\\.http$" . restclient-mode))
 
 ;; Cucumber
 (autoload 'feature-mode "feature-mode")

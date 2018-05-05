@@ -193,7 +193,7 @@
 ;; Tern.JS
 (add-to-list 'load-path (expand-file-name "tern/emacs" site-lisp-dir))
 (autoload 'tern-mode "tern.el" nil t)
-;;(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
+(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
 (eval-after-load 'auto-complete
   '(eval-after-load 'tern
      '(progn

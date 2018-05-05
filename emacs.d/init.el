@@ -88,7 +88,6 @@
      flx
      f
      flx-ido
-     dired-details
      css-eldoc
      yasnippet
      smartparens
@@ -128,6 +127,10 @@
      company-dcd
      web-beautify
      cmake-mode
+     ox-twbs
+     elpy
+     nim-mode
+     company-anaconda
      )))
 
 (condition-case nil
@@ -280,4 +283,6 @@
 (require 'setup-neotree)
 (require 'setup-d-mode)
 (require 'setup-cmake-mode)
+(require 'setup-python)
+(require 'setup-nim-mode)
 
