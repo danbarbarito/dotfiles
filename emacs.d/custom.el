@@ -7,7 +7,8 @@
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
    ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
- '(company-minimum-prefix-length 3)
+ '(company-auto-complete-chars (quote (32 95 40 41 46)))
+ '(company-minimum-prefix-length 0)
  '(company-tooltip-idle-delay 1)
  '(custom-safe-themes
    (quote
@@ -20,7 +21,7 @@
  '(ido-use-filename-at-point nil)
  '(package-selected-packages
    (quote
-    (ox-twbs cmake-mode web-beautify company-dcd d-mode all-the-icons neotree ledger-mode helm elixir-mode challenger-deep-theme emmet-mode scss-mode js2-mode company company-mode web-mode ag projectile-ag projectile php-mode exec-path-from-shell beginend string-edit yesql-ghosts prodigy groovy-mode clojure-mode-extra-font-locking dockerfile-mode elisp-slime-nav whitespace-cleanup-mode highlight-escape-sequences restclient nodejs-repl guide-key simple-httpd ido-at-point ido-vertical-mode smartparens yasnippet css-eldoc dired-details flx-ido f flx flycheck-clojure flycheck-pos-tip flycheck fill-column-indicator markdown-mode visual-regexp htmlize gist move-text paredit hydra inflections edn wgrep magit)))
+    (vc-fossil ox-twbs cmake-mode web-beautify company-dcd d-mode all-the-icons neotree ledger-mode helm elixir-mode challenger-deep-theme emmet-mode scss-mode js2-mode company company-mode web-mode ag projectile-ag projectile php-mode exec-path-from-shell beginend string-edit yesql-ghosts prodigy groovy-mode clojure-mode-extra-font-locking dockerfile-mode elisp-slime-nav whitespace-cleanup-mode highlight-escape-sequences restclient nodejs-repl guide-key simple-httpd ido-at-point ido-vertical-mode smartparens yasnippet css-eldoc dired-details flx-ido f flx flycheck-clojure flycheck-pos-tip flycheck fill-column-indicator markdown-mode visual-regexp htmlize gist move-text paredit hydra inflections edn wgrep magit)))
  '(safe-local-variable-values
    (quote
     ((eval font-lock-add-keywords nil
