@@ -1,3 +1,1 @@
-function setenv
-    set -gx $argv
-end
+/Users/danbarbarito/.dotfiles/config/fish/functions/setenv.fish

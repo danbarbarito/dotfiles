@@ -105,11 +105,6 @@ function mm
     mpv --no-video --ytdl-format=bestaudio ytdl://ytsearch10:"$argv"
 end
 
-# Text
-# function e        ; emacsclient -t -a "" $argv; end
-# function emacs        ; emacsclient -t -a "" $argv; end
-
-
 # Environment
 set -x GOPATH "/Users/danbarbarito/.go:/Users/danbarbarito/Projects"
 set -x ANDROID_HOME "/usr/local/Cellar/android-sdk/24.4.1_1"
@@ -119,8 +114,6 @@ set -x VISUAL_EDITOR "/usr/local/bin/micro"
 set -x VISUAL "/usr/local/bin/micro"
 set -x PERL_LWP_SSL_VERIFY_HOSTNAME 0
 set -x ERL_AFLAGS "-kernel shell_history enabled"
-
-
 
 # PATH
 set -gx PATH ~/.bin ~/.local/bin/ $PATH
@@ -156,7 +149,7 @@ status --is-interactive
 and . (rbenv init -|psub)
 
 # perlbrew
-# . ~/perl5/perlbrew/etc/perlbrew.fish
+. ~/perl5/perlbrew/etc/perlbrew.fish
 
 # virtualfish
 # eval (python -m virtualfish)
