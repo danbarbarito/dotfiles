@@ -131,6 +131,7 @@
      elpy
      nim-mode
      company-anaconda
+     vc-fossil
      )))
 
 (condition-case nil
