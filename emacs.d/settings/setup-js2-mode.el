@@ -268,6 +268,6 @@
       (indent-line-to offset))))
 
 (add-hook 'js2-mode-hook (lambda ()
-                           (add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
+                           (add-hook 'before-save-hook (lambda () (delete-trailing-whitespace))))
 
 (provide 'setup-js2-mode)
