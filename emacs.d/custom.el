@@ -8,7 +8,7 @@
  '(ansi-color-names-vector
    ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
  '(company-auto-complete-chars (quote (32 95 40 41 46)))
- '(company-minimum-prefix-length 0)
+ '(company-minimum-prefix-length 3)
  '(company-tooltip-idle-delay 1)
  '(custom-safe-themes
    (quote
@@ -51,6 +51,7 @@
               (0
                (quote font-lock-keyword-face))))))
      (encoding . utf-8))))
+ '(tab-width 2)
  '(truncate-lines t)
  '(vc-annotate-background "#d4d4d4")
  '(vc-annotate-color-map

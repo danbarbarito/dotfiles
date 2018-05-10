@@ -193,7 +193,7 @@
 ;; Tern.JS
 (add-to-list 'load-path (expand-file-name "tern/emacs" site-lisp-dir))
 (autoload 'tern-mode "tern.el" nil t)
-(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
+;; (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
 (eval-after-load 'auto-complete
   '(eval-after-load 'tern
      '(progn
@@ -266,5 +266,8 @@
                     (:else 0)))))
     (unless first-line
       (indent-line-to offset))))
+
+(add-hook 'js2-mode-hook (lambda ()
+                           (add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))))
 
 (provide 'setup-js2-mode)

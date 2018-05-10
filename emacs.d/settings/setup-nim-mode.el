@@ -2,4 +2,4 @@
 
 (add-hook 'nim-mode-hook 'nimsuggest-mode)
 
-(provide 'nim-mode)
+(provide 'setup-nim-mode)
