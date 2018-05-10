@@ -122,4 +122,10 @@
 ;; Cmake mode
 (add-to-list 'auto-mode-alist '("\\CMakeLists.txt\\'" . cmake-mode))
 
+;; Perl
+(add-to-list 'auto-mode-alist '("\\.pl\\'" . cperl-mode))
+(add-to-list 'auto-mode-alist '("\\.pm\\'" . cperl-mode))
+(add-to-list 'auto-mode-alist '("\\.PL\\'" . cperl-mode))
+(add-to-list 'auto-mode-alist '("\\.PM\\'" . cperl-mode))
+
 (provide 'mode-mappings)
