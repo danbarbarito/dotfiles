@@ -286,4 +286,5 @@
 (require 'setup-cmake-mode)
 (require 'setup-python)
 (require 'setup-nim-mode)
+(require 'setup-perl)
 

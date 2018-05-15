@@ -122,11 +122,9 @@
 ;; Cmake mode
 (add-to-list 'auto-mode-alist '("\\CMakeLists.txt\\'" . cmake-mode))
 
-;; Perl mode
-(add-to-list 'auto-mode-alist '("\\.pl\\'" . cperl-mode))
-(add-to-list 'auto-mode-alist '("\\.pm\\'" . cperl-mode))
 
 ;; Fish mode
 (add-to-list 'auto-mode-alist '("\\.fish\\'" . fish-mode))
+
 
 (provide 'mode-mappings)
