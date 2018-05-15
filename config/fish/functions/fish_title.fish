@@ -1,1 +1,0 @@
-/Users/danbarbarito/.dotfiles/config/fish/functions/fish_title.fish

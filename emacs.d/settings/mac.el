@@ -68,8 +68,8 @@
 
 ;; mac friendly font
 (when window-system
-  (setq magnars/default-font "-apple-Monaco-medium-normal-normal-*-12-*-*-*-m-0-iso10646-1")
-  (setq magnars/presentation-font "-apple-Monaco-medium-normal-normal-*-16-*-*-*-m-0-iso10646-1")
+  (setq magnars/default-font "Fira Code")
+  (setq magnars/presentation-font "Fira Code")
   (set-face-attribute 'default nil :font magnars/default-font))
 
 ;; keybinding to toggle full screen mode

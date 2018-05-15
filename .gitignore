@@ -12,3 +12,4 @@ weechat/logs
 atom/packages
 atom/storage
 .cask
+emacs.d/site-lisp
