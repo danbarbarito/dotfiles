@@ -315,4 +315,7 @@
 (global-set-key (kbd "C-c g n") (lambda () (interactive) (find-file org-default-notes-file))) ;; Go to Notes
 (global-set-key (kbd "C-c g f") (lambda () (interactive) (dired ledger-source-directory))) ;; Go to Finance (ledger folder)
 
+;; Company
+(global-set-key (kbd "C-<tab>") 'company-complete)
+
 (provide 'key-bindings)

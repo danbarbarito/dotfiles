@@ -131,6 +131,7 @@
      elpy
      nim-mode
      company-anaconda
+     company-plsense
      vc-fossil
      )))
 
@@ -287,4 +288,3 @@
 (require 'setup-python)
 (require 'setup-nim-mode)
 (require 'setup-perl)
-

@@ -122,9 +122,7 @@
 ;; Cmake mode
 (add-to-list 'auto-mode-alist '("\\CMakeLists.txt\\'" . cmake-mode))
 
-
 ;; Fish mode
 (add-to-list 'auto-mode-alist '("\\.fish\\'" . fish-mode))
-
 
 (provide 'mode-mappings)
