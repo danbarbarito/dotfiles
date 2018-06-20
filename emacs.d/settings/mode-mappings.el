@@ -125,4 +125,8 @@
 ;; Fish mode
 (add-to-list 'auto-mode-alist '("\\.fish\\'" . fish-mode))
 
+;; Perl
+(add-to-list 'auto-mode-alist '("\\.pl\\'" . cperl-mode))
+(add-to-list 'auto-mode-alist '("\\.pm\\'" . cperl-mode))
+
 (provide 'mode-mappings)

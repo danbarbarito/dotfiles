@@ -9,5 +9,4 @@ pager =
 rebase =
 gpg =
 histedit =
-hgext.bookmarks =
-hggit =  
+hgext.bookmarks =  
