@@ -106,7 +106,7 @@ function mm
 end
 
 # Environment
-set -x GOPATH "/Users/danbarbarito/.go:/Users/danbarbarito/Projects"
+set -x GOPATH "$HOME/.go:$HOME/Projects"
 set -x ANDROID_HOME "/usr/local/Cellar/android-sdk/24.4.1_1"
 set -x ALTERNATE_EDITOR "/usr/local/bin/micro"
 set -x EDITOR "/usr/local/bin/micro"
@@ -119,10 +119,19 @@ set -x ERL_AFLAGS "-kernel shell_history enabled"
 set -gx PATH ~/.bin ~/.local/bin/ $PATH
 # set -gx PATH ~/.rakudobrew/bin $PATH
 
-test -d "~/.composer/vendor/bing"; and set -gx PATH ~/.composer/vendor/bin $PATH
-test -d "$ANDROID_HOME/tools"; and set -gx PATH $ANDROID_HOME/tools $PATH; and set -gx PATH $ANDROID_HOME/tools/bin $PATH
-test -d "~/.pear"; and set -gx PATH ~/.pear/bin $PATH
-test -d "~/.cask"; and set -gx PATH ~/.cask/bin $PATH; and set -gx PATH ~/.cargo/bin $PATH
+test -d "$HOME/.composer/vendor/bing"
+and set -gx PATH ~/.composer/vendor/bin $PATH
+test -d "$ANDROID_HOME/tools"
+and set -gx PATH $ANDROID_HOME/tools $PATH
+and set -gx PATH $ANDROID_HOME/tools/bin $PATH
+test -d "$HOME/.pear"
+and set -gx PATH ~/.pear/bin $PATH
+test -d "$HOME/.cask"
+and set -gx PATH ~/.cask/bin $PATH
+
+test -d "$HOME/.dub/packages/.bin"
+and set -gx PATH ~/.dub/packages/.bin $PATH
+
 
 # OS specific
 switch (uname)

@@ -133,6 +133,7 @@
      company-anaconda
      company-plsense
      vc-fossil
+     tide
      )))
 
 (condition-case nil
