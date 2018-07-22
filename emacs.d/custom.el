@@ -19,9 +19,10 @@
  '(helm-completion-in-region-fuzzy-match t)
  '(helm-mode-fuzzy-match t)
  '(ido-use-filename-at-point nil)
+ '(js-indent-level 4)
  '(package-selected-packages
    (quote
-    (tide company-anaconda nim-mode elpy vc-fossil ox-twbs cmake-mode web-beautify company-dcd d-mode all-the-icons neotree ledger-mode helm elixir-mode challenger-deep-theme emmet-mode scss-mode js2-mode company company-mode web-mode ag projectile-ag projectile php-mode exec-path-from-shell beginend string-edit yesql-ghosts prodigy groovy-mode clojure-mode-extra-font-locking dockerfile-mode elisp-slime-nav whitespace-cleanup-mode highlight-escape-sequences restclient nodejs-repl guide-key simple-httpd ido-at-point ido-vertical-mode smartparens yasnippet css-eldoc dired-details flx-ido f flx flycheck-clojure flycheck-pos-tip flycheck fill-column-indicator markdown-mode visual-regexp htmlize gist move-text paredit hydra inflections edn wgrep magit)))
+    (helm-perldoc perlbrew company-plsense lice fish-mode company-anaconda nim-mode elpy vc-fossil ox-twbs cmake-mode web-beautify company-dcd d-mode all-the-icons neotree ledger-mode helm elixir-mode challenger-deep-theme emmet-mode scss-mode js2-mode company company-mode web-mode ag projectile-ag projectile php-mode exec-path-from-shell beginend string-edit yesql-ghosts prodigy groovy-mode clojure-mode-extra-font-locking dockerfile-mode elisp-slime-nav whitespace-cleanup-mode highlight-escape-sequences restclient nodejs-repl guide-key simple-httpd ido-at-point ido-vertical-mode smartparens yasnippet css-eldoc dired-details flx-ido f flx flycheck-clojure flycheck-pos-tip flycheck fill-column-indicator markdown-mode visual-regexp htmlize gist move-text paredit hydra inflections edn wgrep magit)))
  '(safe-local-variable-values
    (quote
     ((eval font-lock-add-keywords nil
@@ -51,7 +52,7 @@
               (0
                (quote font-lock-keyword-face))))))
      (encoding . utf-8))))
- '(tab-width 2)
+ '(tab-width 4)
  '(truncate-lines t)
  '(vc-annotate-background "#d4d4d4")
  '(vc-annotate-color-map

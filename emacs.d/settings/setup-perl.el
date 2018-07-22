@@ -1,4 +1,4 @@
-(add-to-list 'load-path "~/.emacs.d/vendor/Emacs-PDE/lisp")
-(load "pde-load")
+(require 'perlbrew)
+(perlbrew-use "perl-5.26.2")
 
 (provide 'setup-perl)

@@ -11,6 +11,7 @@
 	email = dan@barbarito.me
 [diff]
 	renameLimit = 1264
+	tool = meld
 [color]
 	ui = true
 [color "diff-highlight"]
@@ -25,3 +26,7 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[pager]
+	color = true
+[merge]
+	tool = meld
