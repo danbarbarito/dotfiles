@@ -26,6 +26,6 @@ function  __fish_fossil_prompt --description "Prompt function for Fossil"
             set info "$separator+$extra"
         end
         
-        set_color normal; echo -n " on "; set_color $col; echo -n "$branch$info"
+        set_color normal; echo -n " on "; set_color $col; echo -n "$branch$info"; set_color normal;
     end
 end
