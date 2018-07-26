@@ -8,6 +8,7 @@ function  __fish_fossil_prompt --description "Prompt function for Fossil"
         set -l stash (command fossil stash list 2>/dev/null)
         set -l changes (command fossil changes 2>/dev/null | awk '{print $1}')
         set -l info_command (command fossil info 2>/dev/null | awk '/child: /{print $2}')
+        set -l info_command_checkout (command fossil info 2>/dev/null | awk '/checkout: /{print $2}')
         set -l extra (count (command fossil extra 2>/dev/null))
         
         if test "$stash" != 'empty stash'
@@ -33,8 +34,8 @@ function  __fish_fossil_prompt --description "Prompt function for Fossil"
         # end
 
         if test "$info_command" != ''
-            set info_command (string sub -s 1 -l 5 $info_command)
-            set branch "$info_command | $branch"
+            set info_command_checkout (string sub -s 1 -l 5 $info_command_checkout)
+            set branch "$info_command_checkout // $branch"
         end
         
         set_color normal; echo -n " on "; set_color $col; echo -n "$branch$info"; set_color red; echo -n "$merge_info"; set_color normal;
