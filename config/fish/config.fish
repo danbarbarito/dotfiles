@@ -128,6 +128,8 @@ test -d "$HOME/.pear"
 and set -gx PATH ~/.pear/bin $PATH
 test -d "$HOME/.cask"
 and set -gx PATH ~/.cask/bin $PATH
+test -d "$HOME/.cargo"
+and set -gx PATH ~/.cargo/bin $PATH
 
 test -d "$HOME/.dub/packages/.bin"
 and set -gx PATH ~/.dub/packages/.bin $PATH
