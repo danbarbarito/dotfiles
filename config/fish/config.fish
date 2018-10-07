@@ -134,6 +134,8 @@ and set -gx PATH ~/.cargo/bin $PATH
 test -d "$HOME/.dub/packages/.bin"
 and set -gx PATH ~/.dub/packages/.bin $PATH
 
+test -d "$HOME/.pyenv"
+and set -gx PATH ~/.pyenv/bin $PATH
 
 # OS specific
 switch (uname)
