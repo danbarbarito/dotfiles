@@ -1,2 +1,2 @@
-EXCLUDES="elpa/ README.md emacs.d/site-lisp"
+EXCLUDES="elpa/ README.md"
 SYMLINK_DIRS="password-store local/share/omf"

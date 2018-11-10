@@ -1,291 +1,182 @@
-;; Turn off mouse interface early in startup to avoid momentary display
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+;; -*- lexical-binding: t -*-
+(setq debug-on-error t)
 
-(package-initialize)
+;;; This file bootstraps the configuration, which is divided into
+;;; a number of other files.
 
-(setq warning-minimum-level :emergency)
+(let ((minver "24.4"))
+  (when (version< emacs-version minver)
+    (error "Your Emacs is too old -- this config requires v%s or higher" minver)))
+(when (version< emacs-version "25.1")
+  (message "Your Emacs is old, and some functionality in this config will be disabled. Please upgrade if possible."))
 
-;; Remove security vulnerability
-(eval-after-load "enriched"
-  '(defun enriched-decode-display-prop (start end &optional param)
-     (list start end)))
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(require 'init-benchmarking) ;; Measure startup time
 
-;; No splash screen please ... jeez
-(setq inhibit-startup-message t)
+(defconst *spell-check-support-enabled* nil) ;; Enable with t if you prefer
+(defconst *is-a-mac* (eq system-type 'darwin))
 
-;; disable backup
-(setq backup-inhibited t)
-;; disable auto save
-(setq auto-save-default nil)
+;;----------------------------------------------------------------------------
+;; Adjust garbage collection thresholds during startup, and thereafter
+;;----------------------------------------------------------------------------
+(let ((normal-gc-cons-threshold (* 20 1024 1024))
+      (init-gc-cons-threshold (* 128 1024 1024)))
+  (setq gc-cons-threshold init-gc-cons-threshold)
+  (add-hook 'emacs-startup-hook
+            (lambda () (setq gc-cons-threshold normal-gc-cons-threshold))))
 
-;; Set path to dependencies
-(setq site-lisp-dir
-      (expand-file-name "site-lisp" user-emacs-directory))
-
-(setq settings-dir
-      (expand-file-name "settings" user-emacs-directory))
-
-;; Set up load path
-(add-to-list 'load-path settings-dir)
-(add-to-list 'load-path site-lisp-dir)
-
-;; Keep emacs Custom-settings in separate file
+;;----------------------------------------------------------------------------
+;; Bootstrap config
+;;----------------------------------------------------------------------------
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file)
+(require 'init-utils)
+(require 'init-site-lisp) ;; Must come before elpa, as it may provide package.el
+;; Calls (package-initialize)
+(require 'init-elpa)      ;; Machinery for installing required packages
+(require 'init-exec-path) ;; Set up $PATH
 
-;; Set up appearance early
-(require 'appearance)
+;;----------------------------------------------------------------------------
+;; Allow users to provide an optional "init-preload-local.el"
+;;----------------------------------------------------------------------------
+(require 'init-preload-local nil t)
 
-;; Settings for currently logged in user
-(setq user-settings-dir
-      (concat user-emacs-directory "users/" user-login-name))
-(add-to-list 'load-path user-settings-dir)
+;;----------------------------------------------------------------------------
+;; Load configs for specific features and modes
+;;----------------------------------------------------------------------------
 
-;; Add external projects to load path
-(dolist (project (directory-files site-lisp-dir t "\\w+"))
-  (when (file-directory-p project)
-    (add-to-list 'load-path project)))
+(require-package 'wgrep)
+(require-package 'diminish)
+(require-package 'scratch)
+(require-package 'command-log-mode)
 
-;; Write backup files to own directory
-(setq backup-directory-alist
-      `(("." . ,(expand-file-name
-                 (concat user-emacs-directory "backups")))))
+(require 'init-frame-hooks)
+(require 'init-xterm)
+(require 'init-themes)
+(require 'init-osx-keys)
+(require 'init-gui-frames)
+(require 'init-dired)
+(require 'init-isearch)
+(require 'init-grep)
+(require 'init-uniquify)
+(require 'init-ibuffer)
+(require 'init-flycheck)
 
-;; Make backups of files, even when they're in version control
-(setq vc-make-backup-files t)
+(require 'init-recentf)
+(require 'init-smex)
+(require 'init-ivy)
+;;(require 'init-helm)
+(require 'init-hippie-expand)
+(require 'init-company)
+(require 'init-windows)
+(require 'init-sessions)
+(require 'init-mmm)
 
-;; Save point position between sessions
-(require 'saveplace)
-(setq-default save-place t)
-(setq save-place-file (expand-file-name ".places" user-emacs-directory))
+(require 'init-editing-utils)
+(require 'init-whitespace)
 
-;; Are we on a mac?
-(setq is-mac (equal system-type 'darwin))
+(require 'init-vc)
+(require 'init-darcs)
+(require 'init-git)
+(require 'init-github)
 
-;; Setup packages
-(require 'setup-package)
+(require 'init-projectile)
 
-;; Install extensions if they're missing
-(defun init--install-packages ()
-  (packages-install
-   '(magit
-     wgrep
-     edn
-     inflections
-     hydra
-     paredit
-     move-text
-     gist
-     htmlize
-     visual-regexp
-     markdown-mode
-     fill-column-indicator
-     flycheck
-     flycheck-pos-tip
-     flycheck-clojure
-     flx
-     f
-     flx-ido
-     css-eldoc
-     yasnippet
-     smartparens
-     ido-vertical-mode
-     ido-at-point
-     simple-httpd
-     guide-key
-     nodejs-repl
-     restclient
-     highlight-escape-sequences
-     whitespace-cleanup-mode
-     elisp-slime-nav
-     dockerfile-mode
-     clojure-mode
-     clojure-mode-extra-font-locking
-     groovy-mode
-     prodigy
-     cider
-     yesql-ghosts
-     string-edit
-     beginend
-     projectile
-     ag
-     web-mode
-     php-mode
-     company
-     js2-mode
-     scss-mode
-     emmet-mode
-     challenger-deep-theme
-     elixir-mode
-     helm
-     ledger-mode
-     neotree
-     all-the-icons
-     d-mode
-     company-dcd
-     web-beautify
-     cmake-mode
-     ox-twbs
-     elpy
-     nim-mode
-     company-anaconda
-     company-plsense
-     vc-fossil
-     tide
-     )))
+(require 'init-compile)
+;;(require 'init-crontab)
+(require 'init-textile)
+(require 'init-markdown)
+(require 'init-csv)
+(require 'init-erlang)
+(require 'init-javascript)
+(require 'init-php)
+(require 'init-org)
+(require 'init-nxml)
+(require 'init-html)
+(require 'init-css)
+(require 'init-haml)
+(require 'init-http)
+(require 'init-python)
+(require 'init-haskell)
+(require 'init-elm)
+(require 'init-purescript)
+(require 'init-ruby)
+(require 'init-rails)
+(require 'init-sql)
+(require 'init-rust)
+(require 'init-toml)
+(require 'init-yaml)
+(require 'init-docker)
+(require 'init-terraform)
+;;(require 'init-nix)
+(maybe-require-package 'nginx-mode)
 
-(condition-case nil
-    (init--install-packages)
-  (error
-   (package-refresh-contents)
-   (init--install-packages)))
+(require 'init-paredit)
+(require 'init-lisp)
+(require 'init-slime)
+(require 'init-clojure)
+(require 'init-clojure-cider)
+(require 'init-common-lisp)
 
-;; Lets start with a smattering of sanity
-(require 'sane-defaults)
+(when *spell-check-support-enabled*
+  (require 'init-spelling))
 
-;; Setup environment variables from the user's shell.
-(when is-mac
-  (require-package 'exec-path-from-shell)
-  (exec-path-from-shell-initialize))
+(require 'init-misc)
 
-;; guide-key
-(require 'guide-key)
-(setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-x v" "C-x 8" "C-x +"))
-(guide-key-mode 1)
-(setq guide-key/recursive-key-sequence-flag t)
-(setq guide-key/popup-window-position 'bottom)
+(require 'init-folding)
+(require 'init-dash)
 
-;; Setup extensions
-(eval-after-load 'ido '(require 'setup-ido))
-(eval-after-load 'org '(require 'setup-org))
-(eval-after-load 'dired '(require 'setup-dired))
-(eval-after-load 'magit '(require 'setup-magit))
-(eval-after-load 'shell '(require 'setup-shell))
+;;(require 'init-twitter)
+;; (require 'init-mu)
+(require 'init-ledger)
+;; Extra packages which don't require any configuration
 
-(require 'setup-rgrep)
-(require 'setup-hippie)
-(require 'setup-yasnippet)
-(require 'setup-perspective)
-(require 'setup-html-mode)
-(require 'setup-paredit)
-(beginend-global-mode)
+(require-package 'gnuplot)
+(require-package 'lua-mode)
+(require-package 'htmlize)
+(require-package 'dsvn)
+(when *is-a-mac*
+  (require-package 'osx-location))
+(unless (eq system-type 'windows-nt)
+  (maybe-require-package 'daemons))
+(maybe-require-package 'dotenv-mode)
 
-(require 'prodigy)
-(global-set-key (kbd "C-x M-m") 'prodigy)
-
-;; Font lock dash.el
-(eval-after-load "dash" '(dash-enable-font-lock))
-
-;; Default setup of smartparens
-(require 'smartparens-config)
-(setq sp-autoescape-string-quote nil)
-(--each '(css-mode-hook
-          restclient-mode-hook
-          js-mode-hook
-          java-mode
-          ruby-mode
-          markdown-mode
-          groovy-mode
-          scala-mode)
-  (add-hook it 'turn-on-smartparens-mode))
-
-;; Language specific setup files
-(eval-after-load 'js2-mode '(require 'setup-js2-mode))
-(eval-after-load 'ruby-mode '(require 'setup-ruby-mode))
-(eval-after-load 'clojure-mode '(require 'setup-clojure-mode))
-(eval-after-load 'markdown-mode '(require 'setup-markdown-mode))
-
-;; Load stuff on demand
-(autoload 'skewer-start "setup-skewer" nil t)
-(autoload 'skewer-demo "setup-skewer" nil t)
-(autoload 'auto-complete-mode "auto-complete" nil t)
-(eval-after-load 'flycheck '(require 'setup-flycheck))
-
-;; Map files to modes
-(require 'mode-mappings)
-
-;; Highlight escape sequences
-(require 'highlight-escape-sequences)
-(hes-mode)
-(put 'font-lock-regexp-grouping-backslash 'face-alias 'font-lock-builtin-face)
-
-;; Visual regexp
-(require 'visual-regexp)
-(define-key global-map (kbd "M-&") 'vr/query-replace)
-(define-key global-map (kbd "M-/") 'vr/replace)
-
-;; Functions (load all files in defuns-dir)
-(setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
-(dolist (file (directory-files defuns-dir t "\\w+"))
-  (when (file-regular-p file)
-    (load file)))
-
-(require 'expand-region)
-(require 'multiple-cursors)
-(require 'delsel)
-(require 'jump-char)
-(require 'smart-forward)
-(require 'change-inner)
-(require 'multifiles)
-
-;; Don't use expand-region fast keys
-(setq expand-region-fast-keys-enabled nil)
-
-;; Show expand-region command used
-(setq er--show-expansion-message t)
-
-;; Fill column indicator
-(require 'fill-column-indicator)
-(setq fci-rule-color "#111122")
-
-;; Browse kill ring
-(require 'browse-kill-ring)
-(setq browse-kill-ring-quit-action 'save-and-restore)
-
-;; Smart M-x is smart
-(require 'smex)
-(smex-initialize)
-
-;; Setup key bindings
-(require 'key-bindings)
-
-;; Misc
-(require 'project-archetypes)
-(require 'my-misc)
-(when is-mac (require 'mac))
-
-;; Elisp go-to-definition with M-. and back again with M-,
-(autoload 'elisp-slime-nav-mode "elisp-slime-nav")
-(add-hook 'emacs-lisp-mode-hook (lambda () (elisp-slime-nav-mode t) (eldoc-mode 1)))
-
-;; Emacs server
-(require 'server)
-(unless (server-running-p)
-  (server-start))
-
-;; Run at full power please
-(put 'downcase-region 'disabled nil)
-(put 'upcase-region 'disabled nil)
-(put 'narrow-to-region 'disabled nil)
-
-;; Conclude init by setting up specifics for the current user
-(when (file-exists-p user-settings-dir)
-  (mapc 'load (directory-files user-settings-dir nil "^[^#].*el$")))
+(when (maybe-require-package 'uptimes)
+  (setq-default uptimes-keep-count 200)
+  (add-hook 'after-init-hook (lambda () (require 'uptimes))))
 
 
-(require 'setup-projectile)
-(require 'setup-web-mode)
-(require 'setup-company-mode)
-(require 'setup-scss-mode)
-(require 'setup-emmet-mode)
-(require 'setup-elixir-mode)
-(require 'setup-helm)
-(require 'setup-ledger-mode)
-(require 'setup-neotree)
-(require 'setup-d-mode)
-(require 'setup-cmake-mode)
-(require 'setup-python)
-(require 'setup-nim-mode)
-(require 'setup-perl)
+;;----------------------------------------------------------------------------
+;; Allow access from emacsclient
+;;----------------------------------------------------------------------------
+(add-hook 'after-init-hook
+          (lambda ()
+            (require 'server)
+            (unless (server-running-p)
+              (server-start))))
+
+;;----------------------------------------------------------------------------
+;; Variables configured via the interactive 'customize' interface
+;;----------------------------------------------------------------------------
+(when (file-exists-p custom-file)
+  (load custom-file))
+
+
+;;----------------------------------------------------------------------------
+;; Locales (setting them earlier in this file doesn't work in X)
+;;----------------------------------------------------------------------------
+(require 'init-locales)
+
+
+;;----------------------------------------------------------------------------
+;; Allow users to provide an optional "init-local" containing personal settings
+;;----------------------------------------------------------------------------
+(require 'init-local nil t)
+
+
+
+(provide 'init)
+
+;; Local Variables:
+;; coding: utf-8
+;; no-byte-compile: t
+;; End:
