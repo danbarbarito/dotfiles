@@ -9,4 +9,6 @@
 
 (maybe-require-package 'browse-at-remote)
 
+(maybe-require-package 'vc-fossil)
+
 (provide 'init-vc)
