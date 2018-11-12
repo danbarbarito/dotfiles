@@ -87,12 +87,14 @@
 (unless (fboundp 'display-line-numbers-mode)
   (require-package 'nlinum))
 
+
+(global-linum-mode)
+
 
 (when (require-package 'rainbow-delimiters)
   (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
 
-
 (when (fboundp 'global-prettify-symbols-mode)
   (add-hook 'after-init-hook 'global-prettify-symbols-mode))
 

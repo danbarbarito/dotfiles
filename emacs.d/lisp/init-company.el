@@ -34,6 +34,13 @@
       (when sanityinc/page-break-lines-on-p
         (page-break-lines-mode 1)))
 
+    (when (maybe-require-package 'company-tern)
+
+      (setq company-tern-property-marker " <p>")
+      (setq company-tern-property-marker nil)
+
+      (add-to-list 'company-backends 'company-tern))
+
     (add-hook 'company-completion-started-hook 'sanityinc/page-break-lines-disable)
     (add-hook 'company-completion-finished-hook 'sanityinc/page-break-lines-maybe-reenable)
     (add-hook 'company-completion-cancelled-hook 'sanityinc/page-break-lines-maybe-reenable)))
