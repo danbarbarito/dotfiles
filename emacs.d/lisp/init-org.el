@@ -304,10 +304,10 @@ typical word processor."
 (when (and *is-a-mac* (file-directory-p "/Applications/org-clock-statusbar.app"))
   (add-hook 'org-clock-in-hook
             (lambda () (call-process "/usr/bin/osascript" nil 0 nil "-e"
-                                (concat "tell application \"org-clock-statusbar\" to clock in \"" org-clock-current-task "\""))))
+                                     (concat "tell application \"org-clock-statusbar\" to clock in \"" org-clock-current-task "\""))))
   (add-hook 'org-clock-out-hook
             (lambda () (call-process "/usr/bin/osascript" nil 0 nil "-e"
-                                "tell application \"org-clock-statusbar\" to clock out"))))
+                                     "tell application \"org-clock-statusbar\" to clock out"))))
 
 
 
@@ -378,6 +378,10 @@ typical word processor."
      (,(if (locate-library "ob-sh") 'sh 'shell) . t)
      (sql . nil)
      (sqlite . t))))
+
+
+(when (maybe-require-package 'org-bullets)
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
 
 (provide 'init-org)
