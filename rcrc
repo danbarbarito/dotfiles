@@ -1,2 +1,0 @@
-EXCLUDES="elpa/ README.md"
-SYMLINK_DIRS="password-store local/share/omf"
