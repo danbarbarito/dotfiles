@@ -7,6 +7,6 @@
 
   (set 'flycheck-clang-language-standard "c++14")
 
-  (set 'flycheck-clang-include-path  (quote ("thirdparty/"))))
+  (set 'flycheck-clang-include-path  (quote ("thirdparty/" "../thirdparty/"))))
 
 (provide 'init-flycheck)
