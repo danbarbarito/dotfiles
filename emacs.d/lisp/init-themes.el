@@ -2,7 +2,7 @@
 (require-package 'color-theme-sanityinc-tomorrow)
 
 ;; If you don't customize it, this is the theme you get.
-(setq-default custom-enabled-themes '(deeper-blue))
+(setq-default custom-enabled-themes '(base16-spacemacs))
 
 ;; Ensure that themes will be applied even if they have not been customized
 (defun reapply-themes ()
@@ -12,7 +12,8 @@
       (load-theme theme)))
   (custom-set-variables `(custom-enabled-themes (quote ,custom-enabled-themes))))
 
-(add-hook 'after-init-hook 'reapply-themes)
+(when (maybe-require-package 'base16-theme)
+  (add-hook 'after-init-hook 'reapply-themes))
 
 
 ;;------------------------------------------------------------------------------
@@ -21,13 +22,13 @@
 (defun light ()
   "Activate a light color theme."
   (interactive)
-  (setq custom-enabled-themes '(adwaita))
+  (setq custom-enabled-themes '(base16-summerfruit-light))
   (reapply-themes))
 
 (defun dark ()
   "Activate a dark color theme."
   (interactive)
-  (setq custom-enabled-themes '(deeper-blue))
+  (setq custom-enabled-themes '(base16-spacemacs))
   (reapply-themes))
 
 
