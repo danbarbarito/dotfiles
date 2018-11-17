@@ -91,7 +91,7 @@
 (require 'init-php)
 (require 'init-org)
 (require 'init-nxml)
-(require 'init-html)
+;; (require 'init-html)
 (require 'init-css)
 (require 'init-haml)
 (require 'init-http)
@@ -110,6 +110,7 @@
 (require 'init-nim)
 (require 'init-cmake-ide)
 (require 'init-perl)
+(require 'init-web)
 ;;(require 'init-nix)
 (maybe-require-package 'nginx-mode)
 
