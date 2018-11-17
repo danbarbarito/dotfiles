@@ -108,7 +108,8 @@
 (require 'init-docker)
 (require 'init-terraform)
 (require 'init-nim)
-(require 'init-ggtags)
+(require 'init-irony)
+(require 'init-cmake)
 ;;(require 'init-nix)
 (maybe-require-package 'nginx-mode)
 
