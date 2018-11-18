@@ -109,7 +109,7 @@
 (require 'init-terraform)
 (require 'init-nim)
 (require 'init-cmake-ide)
-;; (require 'init-perl)
+(require 'init-perl)
 (require 'init-web)
 ;;(require 'init-nix)
 (maybe-require-package 'nginx-mode)
