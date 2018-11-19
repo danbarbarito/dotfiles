@@ -27,10 +27,7 @@
     (interactive)
     (require-package 'flx)
     (setq-default ivy-re-builders-alist
-                  '((t . ivy--regex-fuzzy))))
-
-
-  (sanityinc/enable-ivy-flx-matching))
+                  '((t . ivy--regex-fuzzy)))))
 
 (when (maybe-require-package 'ivy-historian)
   (add-hook 'after-init-hook 'ivy-historian-mode))
