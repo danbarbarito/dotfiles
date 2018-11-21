@@ -112,6 +112,7 @@
 (require 'init-perl)
 (require 'init-web)
 (require 'init-fish)
+(require 'init-restclient)
 ;;(require 'init-nix)
 (maybe-require-package 'nginx-mode)
 
