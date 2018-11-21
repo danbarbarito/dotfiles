@@ -111,6 +111,7 @@
 (require 'init-cmake-ide)
 (require 'init-perl)
 (require 'init-web)
+(require 'init-fish)
 ;;(require 'init-nix)
 (maybe-require-package 'nginx-mode)
 
