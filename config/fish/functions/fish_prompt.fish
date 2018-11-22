@@ -254,7 +254,11 @@ function prompt_fossil -d "Display the current fossil state"
             set col green
         end
 
-        if [ "$changes" != "" ]; or [ "$extra" != 0 ]
+        if test "$extra" = 0
+            set extra ''
+        end
+
+        if [ "$changes" != "" ]; or [ "$extra" != '' ]
             prompt_segment $color_git_dirty_bg $color_git_dirty_str "$branch $extra"
         else
             prompt_segment $color_git_bg $color_git_str "$branch"
