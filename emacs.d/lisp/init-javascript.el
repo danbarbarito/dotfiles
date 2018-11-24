@@ -40,6 +40,8 @@
 
   (add-hook 'js2-mode-hook (lambda () (setq mode-name "JS2")))
 
+  (add-hook 'js2-mode-hook (lambda () (tern-mode)))
+
   (js2-imenu-extras-setup))
 
 ;; js-mode
