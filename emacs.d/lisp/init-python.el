@@ -5,6 +5,10 @@
 
 (require-package 'pip-requirements)
 
+(require-package 'elpy)
+
+(elpy-enable)
+
 (when (maybe-require-package 'anaconda-mode)
   (after-load 'python
     (add-hook 'python-mode-hook 'anaconda-mode)
