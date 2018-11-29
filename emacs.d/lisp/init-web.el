@@ -9,6 +9,10 @@
   (add-to-list 'auto-mode-alist '("\\.tt\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.ep\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.scss\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.sass\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.less\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode)))
 
 (provide 'init-web)
