@@ -7,6 +7,13 @@
 
   (set 'flycheck-clang-language-standard "c++14")
 
-  (set 'flycheck-clang-include-path  (quote ("thirdparty/" "../thirdparty/"))))
+  (set 'flycheck-clang-include-path  (quote ("thirdparty/" "../thirdparty/")))
+  ;; disable jshint since we prefer eslint checking
+  (setq-default flycheck-disabled-checkers
+                (append flycheck-disabled-checkers
+                        '(javascript-jshint)))
+
+  ;; use eslint with web-mode for jsx files
+  (flycheck-add-mode 'javascript-eslint 'web-mode))
 
 (provide 'init-flycheck)
