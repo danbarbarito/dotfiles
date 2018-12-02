@@ -4,8 +4,10 @@
 (when (fboundp 'electric-pair-mode)
   (add-hook 'after-init-hook 'electric-pair-mode))
 (when (eval-when-compile (version< "24.4" emacs-version))
-  (add-hook 'after-init-hook 'electric-indent-mode)
+  ;; (add-hook 'after-init-hook 'electric-indent-mode)
   (when (fboundp 'electric-indent-mode) (electric-indent-mode -1)))
+
+(electric-indent-mode -1)
 
 (maybe-require-package 'list-unicode-display)
 
