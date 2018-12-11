@@ -40,9 +40,7 @@
     (define-key slime-repl-mode-map (read-kbd-macro paredit-backward-delete-key) nil))
 
   ;; Bind TAB to `indent-for-tab-command', as in regular Slime buffers.
-  (define-key slime-repl-mode-map (kbd "TAB") 'indent-for-tab-command)
-
-  (add-hook 'slime-repl-mode-hook 'sanityinc/slime-repl-setup))
+  (define-key slime-repl-mode-map (kbd "TAB") 'indent-for-tab-command))
 
 
 (provide 'init-slime)

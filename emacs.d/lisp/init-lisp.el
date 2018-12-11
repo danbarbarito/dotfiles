@@ -126,14 +126,9 @@
   (add-hook 'after-save-hook #'check-parens nil t))
 
 (defvar sanityinc/lispy-modes-hook
-  '(enable-paredit-mode
-    turn-on-eldoc-mode
+  '(turn-on-eldoc-mode
     sanityinc/enable-check-parens-on-save)
   "Hook run in all Lisp modes.")
-
-
-(when (maybe-require-package 'aggressive-indent)
-  (add-to-list 'sanityinc/lispy-modes-hook 'aggressive-indent-mode))
 
 (defun sanityinc/lisp-setup ()
   "Enable features useful in any Lisp mode."
