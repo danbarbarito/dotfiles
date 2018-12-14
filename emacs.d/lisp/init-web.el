@@ -16,6 +16,7 @@
   (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.marko\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.tag?\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.eex\\'" . web-mode)))
 
 (provide 'init-web)
