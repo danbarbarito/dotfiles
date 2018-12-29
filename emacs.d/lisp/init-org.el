@@ -383,5 +383,8 @@ typical word processor."
 (when (maybe-require-package 'org-bullets)
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
+(add-to-list 'auto-mode-alist '("\.notes" . org-mode))
+
+(setq org-agenda-files (list "~/org/home.org"))
 
 (provide 'init-org)
