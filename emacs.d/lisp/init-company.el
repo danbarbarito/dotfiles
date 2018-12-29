@@ -41,6 +41,10 @@
 
       (add-to-list 'company-backends 'company-tern))
 
+    (when (maybe-require-package 'company-dcd)
+
+      (add-to-list 'company-backends 'company-dcd))
+
     (add-hook 'company-completion-started-hook 'sanityinc/page-break-lines-disable)
     (add-hook 'company-completion-finished-hook 'sanityinc/page-break-lines-maybe-reenable)
     (add-hook 'company-completion-cancelled-hook 'sanityinc/page-break-lines-maybe-reenable)))
