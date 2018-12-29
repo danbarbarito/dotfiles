@@ -114,6 +114,7 @@
 (require 'init-fish)
 (require 'init-restclient)
 (require 'init-elixir)
+(require 'init-dmode)
 ;;(require 'init-nix)
 (maybe-require-package 'nginx-mode)
 
