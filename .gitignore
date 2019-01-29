@@ -28,7 +28,6 @@ CVS
 .cvsignore
 .*.lock
 tramp
-TODO
 .org-id-locations
 cookies
 newsticker
