@@ -139,6 +139,11 @@ and set -gx PATH ~/.dub/packages/.bin $PATH
 test -d "$HOME/.pyenv"
 and set -gx PATH ~/.pyenv/bin $PATH
 
+
+# Alias
+
+alias t="todo.sh"
+
 # OS specific
 switch (uname)
     case Darwin
