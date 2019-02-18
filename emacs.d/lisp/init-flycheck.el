@@ -61,6 +61,12 @@
                                             (bound-and-true-p lsp-ui-flycheck-enable))
                                  (flycheck-popup-tip-mode 1))))))
 
+  ;; disable jshint since we prefer eslint checking
+  (setq-default flycheck-disabled-checkers
+                (append flycheck-disabled-checkers
+                        '(javascript-jshint)))
+  ;; use eslint with web-mode for jsx files
+  (flycheck-add-mode 'javascript-eslint 'js2-mode)
   ;; Jump to and fix syntax errors via `avy'
   (use-package avy-flycheck
     :hook (global-flycheck-mode . avy-flycheck-setup)))
