@@ -1,125 +1,209 @@
-[![Build Status](https://travis-ci.org/purcell/emacs.d.png?branch=master)](https://travis-ci.org/purcell/emacs.d)
-<a href="https://www.patreon.com/sanityinc"><img alt="Support me" src="https://img.shields.io/badge/Support%20Me-%F0%9F%92%97-ff69b4.svg"></a>
+# Centaur Emacs
 
-# A reasonable Emacs config
+[![Build Status](https://travis-ci.org/seagle0128/.emacs.d.svg?branch=master)](https://travis-ci.org/seagle0128/.emacs.d)
+[![Release Tag](https://img.shields.io/github/tag/seagle0128/.emacs.d.svg?label=release)](https://github.com/seagle0128/.emacs.d/releases/latest)
+[![License](http://img.shields.io/:license-gpl3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0.html)
 
-This is my emacs configuration tree, continually used and tweaked
-since 2000, and it may be a good starting point for other Emacs
-users, especially web developers. These days it's
-somewhat geared towards OS X, but it is known to also work on Linux
-and Windows.
+![Centaur Emacs](logo.png)
 
-Emacs itself comes with support for many programming languages. This
-config adds improved defaults and extended support for the following, listed
-in the approximate order of how much I use them, from most to least:
+This is an Emacs distribution that aims to enhance the default
+Emacs experience. It alters a lot of the default settings,
+bundles a plethora of additional packages and adds its own core
+library to the mix. The final product offers an easy to use Emacs
+configuration for Emacs newcomers and lots of additional power for
+Emacs power users.
 
-* Haskell / Elm
-* Ruby / Ruby on Rails
-* CSS / LESS / SASS / SCSS
-* Javascript / Typescript / Coffeescript
-* HTML / HAML / Markdown / Textile / ERB
-* Rust
-* Python
-* Clojure (with Cider and nRepl)
-* Common Lisp (with Slime)
-* PHP
-* Erlang
+It's able to run on Windows, GNU Linux and macOS. It is compatible **ONLY with
+GNU Emacs 25.1 and above**. In general you're advised to always run with the
+latest stable release - currently **26.1**.
 
-In particular, there's a nice config for *autocompletion* with
-[company](https://company-mode.github.io/), and
-[flycheck](http://www.flycheck.org) is used to immediately highlight
-syntax errors in Ruby, Python, Javascript, Haskell and a number of
-other languages.
+## Features
 
-## Supported Emacs versions
+- Out of box.
+- Clean and Fast.
+- Quick fuzzy search.
+- Better Org support.
+- Support multiple programming languages
+  - C/C++/C#/Java
+  - Ruby/Python/Perl/PHP/Shell/Powershell
+  - Javascript/Typescript/JSON/YAML
+  - HTML/CSS/XML
+  - Golang/Swift
+  - Markdown
+  - ...
+- Auto completion.
+- Fly syntax check.
+- Fly spell check.
+- Git/SVN integration.
+- Projectile integration.
+- Workspace integration.
+- Pomodor integration.
+- Youdao dictionary integration.
+- Support Chinese fonts and calendar.
+- Support Pinyin search.
 
-The config should run on Emacs 24.4 or greater and is designed to
-degrade smoothly - see the Travis build - but note that much newer
-versions are required for an increasing number of key packages, so to
-get full functionality you should use the latest Emacs version
-available to you.
+## Prerequiste
 
-Some Windows users might need to follow
-[these instructions](http://xn--9dbdkw.se/diary/how_to_enable_GnuTLS_for_Emacs_24_on_Windows/index.en.html)
-to get TLS (ie. SSL) support included in their Emacs.
+### OS
 
-## Other requirements
+- GNU Linux
+- macOS
+- Windows (Cygwin)
 
-To make the most of the programming language-specific support in this
-config, further programs will likely be required, particularly those
-that [flycheck](https://github.com/flycheck/flycheck) uses to provide
-on-the-fly syntax checking.
+### GNU Emacs
 
-## Installation
+Please refer to [Installing Emacs](http://wikemacs.org/index.php/Installing_Emacs).
 
-To install, clone this repo to `~/.emacs.d`, i.e. ensure that the
-`init.el` contained in this repo ends up at `~/.emacs.d/init.el`:
+### Dotfiles
 
-```
-git clone https://github.com/purcell/emacs.d.git ~/.emacs.d
-```
+Recommend to use [Centaur Dotfiles](https://github.com/seagle0128/dotfiles).
 
-Upon starting up Emacs for the first time, further third-party
-packages will be automatically downloaded and installed. If you
-encounter any errors at that stage, try restarting Emacs, and possibly
-running `M-x package-refresh-contents` before doing so.
+## Quick Start
 
+### Install
 
-## Updates
-
-Update the config with `git pull`. You'll probably also want/need to update
-the third-party packages regularly too:
-
-<kbd>M-x package-list-packages</kbd>, then <kbd>U</kbd> followed by <kbd>x</kbd>.
-
-You should usually restart Emacs after pulling changes or updating
-packages so that they can take effect. Emacs should usually restore
-your working buffers when you restart due to this configuration's use
-of the `desktop` and `session` packages.
-
-## Changing themes and adding your own customization
-
-To add your own customization, use <kbd>M-x customize</kbd>, <kbd>M-x
-customize-themes</kbd> etc. and/or create a file
-`~/.emacs.d/lisp/init-local.el` which looks like this:
-
-```el
-... your code here ...
-
-(provide 'init-local)
+``` shell
+mv ~/.emacs.d ~/.emacs.d.bak
+git clone --depth 1 https://github.com/seagle0128/.emacs.d.git ~/.emacs.d
 ```
 
-If you need initialisation code which executes earlier in the startup process,
-you can also create an `~/.emacs.d/lisp/init-preload-local.el` file.
+or download the [zip
+package](https://github.com/seagle0128/.emacs.d/archive/master.zip) directly and
+extract to `~/.emacs.d`.
 
-If you plan to customize things more extensively, you should probably
-just fork the repo and hack away at the config to make it your own!
-Remember to regularly merge in changes from this repo, so that your
-config remains compatible with the latest package and Emacs versions.
+Then start emacs. Wait for a while to install packages at the first startup.
+Enjoy!
 
-*Please note that I cannot provide support for customised versions of
-this configuration.*
+### Update
 
-## Similar configs
+``` emacs-lisp
+# Update Centaur Emacs (then restart), including configurations and packages
+M-x centaur-update
+M-x centaur-update-and-restart
 
-You might also want to check out `emacs-starter-kit` and `prelude`.
+# Update Emacs configurations only
+M-x centaur-update-config
 
-## Support / issues
+# Update ~/.dotfiles if it exists
+M-x centaur-update-dotfiles
 
-If you hit any problems, please first ensure that you are using the latest version
-of this code, and that you have updated your packages to the most recent available
-versions (see "Updates" above). If you still experience problems, go ahead and
-[file an issue on the github project](https://github.com/purcell/emacs.d).
+# Update packages only (then restart)
+M-x centaur-update-packages
+M-x centaur-update-packages-and-restart
 
--Steve Purcell
+# Update all including configurations, packages and dotfiles
+M-x centuar-update-all
+```
 
-<hr>
+### Docker
 
+``` shell
+cd ~/.emacs.d/Dockerfile
+docker build -t centaur/emacs .
+docker run -it centaur/emacs bash
+```
 
-[💝 Support this project and my other Open Source work](https://www.patreon.com/sanityinc)
+## Customization
 
-[💼 LinkedIn profile](https://uk.linkedin.com/in/stevepurcell)
+### Customize-group
 
-[✍ sanityinc.com](http://www.sanityinc.com/)
+`M-x customize-group` and select `centaur`. Set and save the configurations,
+then restart Emacs.
 
-[🐦 @sanityinc](https://twitter.com/sanityinc)
+### Manual
+
+Copy `custom-template.el` to `custom.el` and change the configurations, then
+restart Emacs.
+
+For Example:
+
+``` emacs-lisp
+(setq centaur-logo nil)                        ; Logo file or nil (official logo)
+(setq centaur-full-name "user name")           ; User full name
+(setq centaur-mail-address "user@email.com")   ; Email address
+(setq centaur-proxy "127.0.0.1:1080")          ; Network proxy
+(setq centaur-package-archives 'emacs-china)   ; Package repo: melpa, melpa-mirror, emacs-china, netease or tuna
+(setq centaur-theme classic)                   ; Color theme: default, classic, dark, light or daylight
+(setq centaur-dashboard nil)                   ; Use dashboard at startup or not: t or nil
+(setq centaur-lsp nil)                         ; Set LSP client: lsp-mode, eglot or nil
+(setq centaur-benchmark t)                     ; Enable initialization benchmark or not: t or nil
+```
+
+The default pacakge archives is `melpa`. You can change it in `custom.el`, or
+switch manually via `M-x switch-package-archives` anytime.
+
+For the personal configurations, you could put to `~/.emacs.d/custom-post.el`.
+
+## Screenshots
+
+![Dashboard](https://user-images.githubusercontent.com/140797/49697925-400f3600-fbf8-11e8-8781-2e2ee6cd90c9.png
+"Dashboard (default theme)")
+
+![markdown_magit](https://user-images.githubusercontent.com/140797/49694620-8ba9eb80-fbc8-11e8-9800-f2486ab41991.png
+"Markdown and Magit")
+
+![org](https://user-images.githubusercontent.com/140797/49694696-a761c180-fbc9-11e8-9edc-0199f4ea7ca0.png
+"Org (classic theme)")
+
+![main](https://user-images.githubusercontent.com/140797/49694704-cfe9bb80-fbc9-11e8-9506-df9fee48e304.png
+"Main (light theme)")
+
+## FAQ
+
+1. Why is the modline messy?
+
+    Powerline fonts or all-the-icons are missing on your system. Please install
+    [powerline-fonts](https://github.com/powerline/fonts) for `telephone-line` or
+    run `M-x all-the-icons-install-fonts` for `doom-modeline`.
+
+1. How to search Chinese via pinyin?
+
+    In Emacs, `C-s :`. If you just want to search `:`, use `C-s \:`.
+
+1. How to use the Centaur Dashboard?
+
+    Set `(setq centaur-dashboard t)` in `~/.emacs.d/custom.el`. Dashboard will
+    be opened at startup. After startup, you could use `F2` to reopen it anytime.
+    In the dashboard, you could easily jump to Homepage(`H`), Restore
+    Session(`R`), Edit Config (`E`), Update(`U`), Recent Files (`r`),
+    Bookmarks(`m`) and Projects(`p`).
+
+1. Does Centaur Emacs support Language Server Protocol (LSP)?
+
+    LSP is supported and enabled by default in Centuar Emacs now. `eglot` is the
+    default client, and `lsp-mode` is another choice. Before use it you should
+    install language servers as below. Use `(setq centaur-lsp nil)` to disable
+    `LSP` if you don't like it.
+    - Golang: `go get -u github.com/sourcegraph/go-langserver`
+    - Python: `pip install python-language-server`
+    - Ruby:  `gem install solargraph`
+    - Javascript/Typescript: `npm i -g javascript-typescript-langserver`
+    - CSS: `npm i -g vscode-css-languageserver-bin`
+    - HTML: `npm i -g vscode-html-languageserver-bin`
+    - Bash/Shell: `npm i -g bash-language-server`. Require Python2.5+, use
+      `--python` to specify.
+    - C/C++/Objective-C : `brew install cquery` or dwonload binary from
+      [here](https://github.com/cquery-project/cquery/releases).
+    - Rust: `rustup component add rls-preview rust-analysis rust-src`
+    - Java:
+      ``` shell
+      wget http://download.eclipse.org/jdtls/snapshots/jdt-language-server-latest.tar.gz
+      tar jdt-language-server-latest.tar.gz -C ~/.emacs.d/eclipse.jdt.ls/server/
+      ```
+    - PHP: refer to the [installation
+      guide](https://github.com/felixfbecker/php-language-server#installation).
+      ``` shell
+      composer require felixfbecker/language-server
+      composer run-script --working-dir=vendor/felixfbecker/language-server parse-stubs
+      ```
+
+1. How to enable `plantuml` in `org-mode`?
+
+    Put `(setq org-plantuml-jar-path "<path of plantumx.x.x.jar>")` in `custom.el`.
+
+1. Why the Emacs environment variables and `exec-path` are different between GUI
+   and terminal?
+
+    Please refer to #33. You should instead set environment variables in startup
+    files like .profile, .bash_profile or .zshenv, then `Centaur Emacs` is able
+    to recoginze and import the environment variables.

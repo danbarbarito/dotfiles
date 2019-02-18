@@ -1,136 +1,93 @@
-;;; Basic ruby setup
-(require-package 'ruby-mode)
-(require-package 'ruby-hash-syntax)
+;; init-ruby.el --- Initialize ruby configurations.	-*- lexical-binding: t -*-
 
-(add-auto-mode 'ruby-mode
-               "Rakefile\\'" "\\.rake\\'" "\\.rxml\\'"
-               "\\.rjs\\'" "\\.irbrc\\'" "\\.pryrc\\'" "\\.builder\\'" "\\.ru\\'"
-               "\\.gemspec\\'" "Gemfile\\'" "Kirkfile\\'")
-(add-auto-mode 'conf-mode "Gemfile\\.lock\\'")
+;; Copyright (C) 2019 Vincent Zhang
 
-(setq-default
- ruby-use-encoding-map nil
- ruby-insert-encoding-magic-comment nil)
+;; Author: Vincent Zhang <seagle0128@gmail.com>
+;; URL: https://github.com/seagle0128/.emacs.d
 
-(after-load 'ruby-mode
-  ;; Stupidly the non-bundled ruby-mode isn't a derived mode of
-  ;; prog-mode: we run the latter's hooks anyway in that case.
-  (add-hook 'ruby-mode-hook
-            (lambda ()
-              (unless (derived-mode-p 'prog-mode)
-                (run-hooks 'prog-mode-hook)))))
+;; This file is not part of GNU Emacs.
+;;
+;; This program is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU General Public License as
+;; published by the Free Software Foundation; either version 2, or
+;; (at your option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with this program; see the file COPYING.  If not, write to
+;; the Free Software Foundation, Inc., 51 Franklin Street, Fifth
+;; Floor, Boston, MA 02110-1301, USA.
+;;
 
-(add-hook 'ruby-mode-hook 'subword-mode)
+;;; Commentary:
+;;
+;; Ruby configurations.
+;;
 
-(after-load 'page-break-lines
-  (push 'ruby-mode page-break-lines-modes))
+;;; Code:
 
-(require-package 'rspec-mode)
+(eval-when-compile
+  (require 'init-custom))
 
-
-(define-derived-mode brewfile-mode ruby-mode "Brewfile"
-  "A major mode for Brewfiles, used by homebrew-bundle on MacOS.")
+(use-package ruby-mode
+  :ensure nil
+  :mode "\\.\\(rb\\|rake\\|\\gemspec\\|ru\\|\\(Rake\\|Gem\\|Guard\\|Cap\\|Vagrant\\)file\\)$"
+  :interpreter "ruby"
+  :config
+  ;; Code navigation, documentation lookup and completion for Ruby
+  (unless centaur-lsp
+    (use-package robe
+      :diminish robe-mode
+      :defines company-backends
+      :hook (ruby-mode . robe-mode)
+      :config
+      (with-eval-after-load 'company
+        (cl-pushnew 'company-robe company-backends))))
 
-(add-auto-mode 'brewfile-mode "Brewfile\\'")
+  ;; Ruby refactoring helpers
+  (use-package ruby-refactor
+    :diminish ruby-refactor-mode
+    :hook (ruby-mode . ruby-refactor-mode-launch))
 
-
-;;; Inferior ruby
-(require-package 'inf-ruby)
+  ;; Run a Ruby process in a buffer
+  (use-package inf-ruby
+    :hook ((ruby-mode . inf-ruby-minor-mode)
+           (compilation-filter . inf-ruby-auto-enter)))
 
+  ;; Rubocop
+  ;; Install: gem install rubocop
+  (use-package rubocop
+    :diminish rubocop-mode
+    :hook (ruby-mode . rubocop-mode))
 
-
-;;; Ruby compilation
-(require-package 'ruby-compilation)
+  ;; RSpec
+  (use-package rspec-mode
+    :diminish rspec-mode
+    :commands rspec-install-snippets
+    :hook (dired-mode . rspec-dired-mode)
+    :config (with-eval-after-load 'yasnippet
+              (rspec-install-snippets)))
 
-(after-load 'ruby-mode
-  (let ((m ruby-mode-map))
-    (define-key m [S-f7] 'ruby-compilation-this-buffer)
-    (define-key m [f7] 'ruby-compilation-this-test)))
+  ;; Coverage for SimpleCov
+  (use-package coverage)
 
-(after-load 'ruby-compilation
-  (defalias 'rake 'ruby-compilation-rake))
+  ;; Yet Another RI interface for Emacs
+  (use-package yari
+    :bind (:map ruby-mode-map ([f1] . yari)))
 
+  ;; Ruby YARD comments
+  (use-package yard-mode
+    :diminish yard-mode
+    :hook (ruby-mode . yard-mode)))
 
-
-;;; Robe
-(when (maybe-require-package 'robe)
-  (after-load 'ruby-mode
-    (add-hook 'ruby-mode-hook 'robe-mode))
-  (after-load 'robe
-    (after-load 'company
-      (push 'company-robe company-backends))))
-
-
-
-;;; ri support
-(require-package 'yari)
-(defalias 'ri 'yari)
-
-
-
-(require-package 'goto-gem)
-
-
-(require-package 'bundler)
-
-
-(when (maybe-require-package 'yard-mode)
-  (add-hook 'ruby-mode-hook 'yard-mode)
-  (after-load 'yard-mode
-    (diminish 'yard-mode)))
-
-
-;;; ERB
-(require-package 'mmm-mode)
-
-(require 'derived)
-
-(defun sanityinc/set-up-mode-for-erb (mode)
-  (add-hook (derived-mode-hook-name mode) (lambda () (require 'mmm-erb)))
-  (mmm-add-mode-ext-class mode "\\.erb\\'" 'erb))
-
-(let ((html-erb-modes '(html-mode html-erb-mode nxml-mode)))
-  (dolist (mode html-erb-modes)
-    (sanityinc/set-up-mode-for-erb mode)
-    (mmm-add-mode-ext-class mode "\\.r?html\\(\\.erb\\)?\\'" 'html-js)
-    (mmm-add-mode-ext-class mode "\\.r?html\\(\\.erb\\)?\\'" 'html-css)))
-
-(mapc 'sanityinc/set-up-mode-for-erb
-      '(coffee-mode js-mode js2-mode js3-mode markdown-mode textile-mode))
-
-(mmm-add-mode-ext-class 'html-erb-mode "\\.jst\\.ejs\\'" 'ejs)
-
-(add-auto-mode 'html-erb-mode "\\.rhtml\\'" "\\.html\\.erb\\'")
-(add-to-list 'auto-mode-alist '("\\.jst\\.ejs\\'"  . html-erb-mode))
-
-(mmm-add-mode-ext-class 'yaml-mode "\\.yaml\\(\\.erb\\)?\\'" 'erb)
-(sanityinc/set-up-mode-for-erb 'yaml-mode)
-
-(dolist (mode (list 'js-mode 'js2-mode 'js3-mode))
-  (mmm-add-mode-ext-class mode "\\.js\\.erb\\'" 'erb))
-
-
-;;----------------------------------------------------------------------------
-;; Ruby - my convention for heredocs containing SQL
-;;----------------------------------------------------------------------------
-
-;; Needs to run after rinari to avoid clobbering font-lock-keywords?
-
-;; (require-package 'mmm-mode)
-;; (eval-after-load 'mmm-mode
-;;   '(progn
-;;      (mmm-add-classes
-;;       '((ruby-heredoc-sql
-;;          :submode sql-mode
-;;          :front "<<-?[\'\"]?\\(end_sql\\)[\'\"]?"
-;;          :save-matches 1
-;;          :front-offset (end-of-line 1)
-;;          :back "^[ \t]*~1$"
-;;          :delimiter-mode nil)))
-;;      (mmm-add-mode-ext-class 'ruby-mode "\\.rb\\'" 'ruby-heredoc-sql)))
-
-;(add-to-list 'mmm-set-file-name-for-modes 'ruby-mode)
-
-
+;; YAML mode
+(use-package yaml-mode)
 
 (provide 'init-ruby)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; init-ruby.el ends here
