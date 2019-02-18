@@ -120,7 +120,7 @@
     :hook (after-init . dashboard-setup-startup-hook)
     :config
     (setq initial-buffer-choice (lambda () (get-buffer dashboard-buffer-name)))
-    (setq dashboard-banner-logo-title "CENTAUR EMACS - Enjoy programming and writing")
+    (setq dashboard-banner-logo-title "EMACS - Enjoy programming and writing")
     (setq dashboard-startup-banner (or centaur-logo 'official))
     (setq dashboard-items '((recents  . 10)
                             (bookmarks . 5)
