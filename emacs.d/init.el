@@ -119,6 +119,7 @@
 (require 'init-go)
 (require 'init-python)
 (require 'init-ruby)
+(require 'init-perl)
 (require 'init-web)
 (require 'init-prog)
 
