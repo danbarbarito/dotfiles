@@ -120,6 +120,7 @@
 (require 'init-python)
 (require 'init-ruby)
 (require 'init-perl)
+(require 'init-d)
 (require 'init-web)
 (require 'init-prog)
 
