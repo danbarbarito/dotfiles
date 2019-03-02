@@ -1,1 +1,1 @@
-'(erc-nick "Fricks")
+(setq erc-nick "Fricks")
