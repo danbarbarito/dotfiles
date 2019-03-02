@@ -70,5 +70,7 @@
   (add-hook 'web-mode-hook (lambda ()
                              (run-hooks 'prelude-web-mode-hook))))
 
+(setq web-mode-markup-indent-offset 2)
+
 (provide 'prelude-web)
 ;;; prelude-web.el ends here
