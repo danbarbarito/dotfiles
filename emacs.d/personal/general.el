@@ -1,1 +1,1 @@
-(linum-mode)
+(global-linum-mode)
