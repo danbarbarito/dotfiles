@@ -17,7 +17,10 @@
            :tls t
            :realname "Fricks"
            :nick "Fricks"
-           :channels ()
+           :channels ("#perl" "#git" "#startups" "##webdev")
            :nickserv-password my-nickserv-password
            )
           )))
+
+
+(setq circe-server-auto-join-default-type :after-auth)
