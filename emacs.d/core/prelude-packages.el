@@ -74,6 +74,7 @@
     guru-mode
     hl-todo
     imenu-anywhere
+    irony
     projectile
     magit
     move-text
