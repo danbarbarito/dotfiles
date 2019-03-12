@@ -95,6 +95,6 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
+source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source $HOME/perl5/perlbrew/etc/bashrc
