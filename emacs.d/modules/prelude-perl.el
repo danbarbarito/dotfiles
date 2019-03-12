@@ -54,6 +54,7 @@
   (setq cperl-lazy-help-time 3)
   (setq cperl-indent-parens-as-block t)
   (setq cperl-close-paren-offset -4)
+  (define-key cperl-mode-map "{" 'nil)
 
   ;; if you want all the bells and whistles
   ;; (setq cperl-hairy)
