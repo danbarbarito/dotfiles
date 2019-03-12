@@ -74,6 +74,7 @@
     guru-mode
     hl-todo
     imenu-anywhere
+    irony
     projectile
     magit
     move-text
@@ -82,6 +83,7 @@
     smartrep
     super-save
     undo-tree
+    use-package
     volatile-highlights
     which-key
     zenburn-theme
