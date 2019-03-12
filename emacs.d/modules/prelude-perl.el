@@ -53,6 +53,7 @@
   (setq cperl-clobber-lisp-bindings t)
   (setq cperl-lazy-help-time 3)
   (setq cperl-indent-parens-as-block t)
+  (setq cperl-close-paren-offset -4)
 
   ;; if you want all the bells and whistles
   ;; (setq cperl-hairy)
