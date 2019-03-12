@@ -6,4 +6,6 @@
 ;; active Babel languages
 (org-babel-do-load-languages
  'org-babel-load-languages
- '((sql . t)))
+ '((sql . t)
+   (shell . t)
+   (perl . t)))
