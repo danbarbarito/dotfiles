@@ -89,7 +89,9 @@
     zenburn-theme
     zop-to-char
     ledger-mode
-    vc-fossil)
+    vc-fossil
+    yasnippet
+    yasnippet-snippets)
   "A list of packages to ensure are installed at launch.")
 
 (defun prelude-packages-installed-p ()
