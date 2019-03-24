@@ -1,4 +1,4 @@
-(setq org-directory "~/Box Sync/org")
+(setq org-directory "~/org")
 
 ;; Go to Org Directory
 (defun go-to-org-directory () (interactive) (dired org-directory))
