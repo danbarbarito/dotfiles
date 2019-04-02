@@ -1,3 +1,7 @@
+(setq org-modules
+  (quote
+   (org-bbdb org-bibtex org-docview org-gnus org-info org-irc org-mhe org-rmail org-w3m org-collector)))
+
 (setq org-directory "~/org")
 
 ;; Go to Org Directory
