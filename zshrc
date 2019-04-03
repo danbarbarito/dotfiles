@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/opt/llvm/bin:/usr/local/bin:$HOME/perl5/perlbrew/bin/:/usr/local/Cellar/node/11.9.0/bin:$PATH
+export PATH=$HOME/bin:/usr/local/opt/llvm/bin:/usr/local/bin:$HOME/perl5/perlbrew/bin/:/usr/local/Cellar/node/11.13.0/bin:$PATH
 # export PATH=$HOME/bin:/usr/local/bin:$HOME/perl5/perlbrew/bin/:$HOME/.cargo/env:$PATH
 
 # Path to your oh-my-zsh installation.
