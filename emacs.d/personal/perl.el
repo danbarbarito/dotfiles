@@ -2,4 +2,4 @@
 
 (add-hook 'cperl-mode-hook
           (lambda ()
-            (add-hook 'after-save-hook #'perltidy-buffer nil t)))
+            (add-hook 'before-save-hook #'perltidy-buffer nil t)))
