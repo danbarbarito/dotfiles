@@ -1,5 +1,4 @@
 ;;; runs eslint --fix on the current file after save
-;;; alpha quality -- use at your own risk
 
 (defun eslint-fix-file ()
   (interactive)
