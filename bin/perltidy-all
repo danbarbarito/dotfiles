@@ -1,0 +1,9 @@
+#!/usr/bin/env perl
+
+my $filesToTidy = `fossil ls | ag -i "\.pl\$|\.pm\$"`;
+
+my @fileNames = split('\n', $filesToTidy);
+
+for my $filename (@fileNames) {
+  print($filename . "\n");
+}
