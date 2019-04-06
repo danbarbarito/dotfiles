@@ -4,4 +4,4 @@
 
 (add-hook 'js2-mode-hook
           (lambda ()
-            (add-hook 'after-save-hook #'eslint-fix-file-and-revert)))
+            (add-hook 'after-save-hook #'eslint-fix-file-and-revert nil t)))
