@@ -102,3 +102,5 @@ fi
 source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source $HOME/perl5/perlbrew/etc/bashrc
+
+eval "$(rbenv init -)"
