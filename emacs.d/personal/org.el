@@ -20,5 +20,4 @@
                              ;; make the lines in the buffer wrap around the edges of the screen.
                              
                              ;; to press C-c q  or fill-paragraph ever again!
-                             (visual-line-mode)
-                             (org-indent-mode)))
+                             (visual-line-mode)))
