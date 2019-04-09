@@ -103,4 +103,14 @@ source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source $HOME/perl5/perlbrew/etc/bashrc
 
+# Better up/down line search
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
+bindkey "^P" up-line-or-beginning-search # Ctrl + P
+bindkey "^N" down-line-or-beginning-search # Ctrl + N
+
 eval "$(rbenv init -)"
