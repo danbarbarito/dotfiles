@@ -60,6 +60,7 @@
     browse-kill-ring
     company-dcd
     crux
+    copy-as-format
     discover-my-major
     diff-hl
     diminish
