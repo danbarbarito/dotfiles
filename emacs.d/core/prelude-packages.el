@@ -93,6 +93,7 @@
     zop-to-char
     ledger-mode
     vc-fossil
+    tomatinho
     yasnippet
     yasnippet-snippets)
   "A list of packages to ensure are installed at launch.")
