@@ -55,6 +55,7 @@
 (defvar prelude-packages
   '(ace-window
     avy
+    ace-jump-mode
     anzu
     beacon
     browse-kill-ring
