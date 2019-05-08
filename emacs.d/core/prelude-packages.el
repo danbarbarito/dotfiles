@@ -56,6 +56,7 @@
   '(ace-window
     avy
     ace-jump-mode
+    ace-window
     anzu
     beacon
     browse-kill-ring
