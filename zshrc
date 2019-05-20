@@ -6,7 +6,7 @@ export PATH=$HOME/bin:$HOME/.bin:/usr/local/opt/llvm/bin:/usr/local/bin:/usr/loc
 export ZSH="$HOME/.oh-my-zsh"
 
 # Ledger file
-export LEDGER_FILE="$HOME/.ledger/ledger.journal"
+export LEDGER_FILE="$HOME/.ledger/personal.ledger"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
