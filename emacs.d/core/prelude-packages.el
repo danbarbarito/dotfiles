@@ -92,6 +92,7 @@
     which-key
     zenburn-theme
     zop-to-char
+    format-all
     ledger-mode
     vc-fossil
     tomatinho
