@@ -148,12 +148,13 @@ This is DEPRECATED, use %s instead." prelude-modules-file))
 ;; config changes made through the customize UI will be stored here
 (setq custom-file (expand-file-name "custom.el" prelude-personal-dir))
 
+(load custom-file)
+
 ;; preload the personal settings from `prelude-personal-preload-dir'
 (when (file-exists-p prelude-personal-preload-dir)
   (message "Loading personal configuration files in %s..." prelude-personal-preload-dir)
   (mapc 'load (directory-files prelude-personal-preload-dir 't "^[^#\.].*el$")))
 
-(load custom-file)
 
 
 (message "Prelude is ready to do thy bidding, Master %s!" current-user)
