@@ -1,4 +1,4 @@
 (global-linum-mode)
 (scroll-bar-mode -1)
 
-(setq electric-indent-mode nil)
+;; (setq electric-indent-mode nil)
