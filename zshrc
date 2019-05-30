@@ -116,3 +116,5 @@ bindkey "^P" up-line-or-beginning-search # Ctrl + P
 bindkey "^N" down-line-or-beginning-search # Ctrl + N
 
 eval "$(rbenv init -)"
+
+eval "$(pyenv init -)"
