@@ -97,7 +97,8 @@
     vc-fossil
     tomatinho
     yasnippet
-    yasnippet-snippets)
+    yasnippet-snippets
+    base16-theme)
   "A list of packages to ensure are installed at launch.")
 
 (defun prelude-packages-installed-p ()
