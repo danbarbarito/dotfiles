@@ -36,10 +36,7 @@
 (prelude-require-packages '(js2-mode json-mode))
 
 (require 'js2-mode)
-
-(add-to-list 'auto-mode-alist '("\\.js\\'"    . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.pac\\'"   . js2-mode))
-(add-to-list 'interpreter-mode-alist '("node" . js2-mode))
+(require 'rjsx-mode)
 
 (with-eval-after-load 'js2-mode
   (defun prelude-js-mode-defaults ()
@@ -52,6 +49,11 @@
 
   (add-hook 'js2-mode-hook (lambda () (run-hooks 'prelude-js-mode-hook))))
 
+(add-to-list 'auto-mode-alist '("\\.js\\'"    . rjsx-mode))
+(add-to-list 'auto-mode-alist '("\\.pac\\'"   . rjsx-mode))
+(add-to-list 'interpreter-mode-alist '("node" . rjsx-mode))
+
 (provide 'prelude-js)
 
 ;;; prelude-js.el ends here
+

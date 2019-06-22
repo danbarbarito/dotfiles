@@ -93,6 +93,7 @@
     zenburn-theme
     zop-to-char
     format-all
+    rjsx-mode
     ledger-mode
     vc-fossil
     tomatinho
