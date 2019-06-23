@@ -37,6 +37,9 @@
 
 (require 'js2-mode)
 (require 'rjsx-mode)
+(require 'prettier-js)
+
+(add-hook 'js2-mode-hook 'prettier-js-mode)
 
 (with-eval-after-load 'js2-mode
   (defun prelude-js-mode-defaults ()

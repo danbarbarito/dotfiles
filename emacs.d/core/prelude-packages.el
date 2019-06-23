@@ -94,6 +94,7 @@
     zop-to-char
     format-all
     rjsx-mode
+    prettier-js
     ledger-mode
     vc-fossil
     tomatinho
