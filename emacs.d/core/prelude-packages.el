@@ -85,7 +85,6 @@
     operate-on-number
     smartparens
     smartrep
-    super-save
     undo-tree
     use-package
     volatile-highlights
