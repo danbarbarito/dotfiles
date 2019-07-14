@@ -5,5 +5,4 @@
   (add-hook 'before-save-hook #'perltidy-buffer nil t))
 
 (setq prelude-cperl-mode-hook '(prelude-cperl-mode-defaults
-                                my-perl-hook
-                                ))
+                                my-perl-hook))

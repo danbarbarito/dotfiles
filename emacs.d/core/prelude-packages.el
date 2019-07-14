@@ -95,6 +95,7 @@
     rjsx-mode
     prettier-js
     ledger-mode
+    carbon-now-sh
     vc-fossil
     tomatinho
     yasnippet
