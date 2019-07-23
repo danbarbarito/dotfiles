@@ -1,3 +1,4 @@
+
 (setq org-modules
   (quote
    (org-bbdb org-bibtex org-docview org-gnus org-info org-irc org-mhe org-rmail org-w3m org-collector)))
@@ -13,6 +14,7 @@
  'org-babel-load-languages
  '((sql . t)
    (shell . t)
+   (python . t)
    (perl . t)))
 
 (add-hook 'org-mode-hook #'(lambda ()
