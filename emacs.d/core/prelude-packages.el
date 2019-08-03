@@ -77,6 +77,7 @@
     gitignore-mode
     guru-mode
     hl-todo
+    hydra
     imenu-anywhere
     irony
     projectile
