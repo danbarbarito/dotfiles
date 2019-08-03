@@ -95,6 +95,8 @@
     rjsx-mode
     prettier-js
     ledger-mode
+    react-snippets
+    ggtags
     vc-fossil
     tomatinho
     yasnippet
