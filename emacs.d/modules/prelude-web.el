@@ -52,8 +52,6 @@
 (add-to-list 'auto-mode-alist
 '("/\\(views\\|html\\|theme\\|templates\\)/.*\\.php\\'" . web-mode))
 
-(add-hook 'web-mode-hook 'prettier-js-mode)
-
 ;; make web-mode play nice with smartparens
 (setq web-mode-enable-auto-pairing nil)
 
