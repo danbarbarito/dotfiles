@@ -102,6 +102,7 @@
     tomatinho
     yasnippet
     yasnippet-snippets
+    web-beautify
     base16-theme)
   "A list of packages to ensure are installed at launch.")
 
