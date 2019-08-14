@@ -75,7 +75,8 @@
                              (setq web-mode-markup-indent-offset 2)
                              (setq web-mode-css-indent-offset 2)
                              (setq web-mode-code-indent-offset 2)
-                             (setq web-mode-enable-auto-indentation nil))))
+                             (setq web-mode-enable-auto-indentation nil)))
+  (remove-hook 'web-mode-hook 'prettier-js-mode))
 
 (provide 'prelude-web)
 ;;; prelude-web.el ends here
