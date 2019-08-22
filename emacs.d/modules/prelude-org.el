@@ -53,6 +53,9 @@
 
 (add-hook 'org-mode-hook (lambda () (run-hooks 'prelude-org-mode-hook)))
 
+(require 'org-bullets)
+(add-hook 'org-mode-hook 'org-bullets-mode)
+
 (provide 'prelude-org)
 
 ;;; prelude-org.el ends here
