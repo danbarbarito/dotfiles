@@ -103,7 +103,8 @@
     yasnippet
     yasnippet-snippets
     web-beautify
-    base16-theme)
+    base16-theme
+    org-bullets)
   "A list of packages to ensure are installed at launch.")
 
 (defun prelude-packages-installed-p ()
