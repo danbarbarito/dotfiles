@@ -53,7 +53,8 @@
 (package-initialize)
 
 (defvar prelude-packages
-  '(ace-window
+  '(alchemist
+    ace-window
     avy
     ace-jump-mode
     ace-window
