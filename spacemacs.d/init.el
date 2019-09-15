@@ -318,7 +318,10 @@ you should place your code here."
 
   ;; Prettier
   (add-hook 'js2-mode-hook 'prettier-js-mode)
-  (add-hook 'web-mode-hook 'prettier-js-mode)
+  (defun my-vue-prettier-hook ()
+    (when (string= (file-name-extension buffer-file-name) "vue")
+      (prettier-js-mode)))
+  (add-hook 'find-file-hook 'my-vue-prettier-hook)
 
   )
 
