@@ -355,6 +355,7 @@ This function is called at the very end of Spacemacs initialization."
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(css-indent-offset 2)
+ '(delete-selection-mode t)
  '(evil-want-Y-yank-to-eol nil)
  '(js-indent-level 2)
  '(ns-command-modifier (quote meta))
