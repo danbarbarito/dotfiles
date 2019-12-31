@@ -50,6 +50,12 @@
              (lambda nil (perltidy-buffer))
              nil 'local)))
 
+;; Webpaste
+(use-package webpaste
+  :ensure t
+  :bind (("C-c C-p C-b" . webpaste-paste-buffer)
+         ("C-c C-p C-r" . webpaste-paste-region)))
+
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
