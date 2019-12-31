@@ -40,6 +40,15 @@
       mac-command-modifier 'meta
       mac-option-modifier 'none)
 
+;; Perltidy
+(load! "vendor/perltidy.el")
+(use-package perltidy)
+(add-hook
+ 'perl-mode-hook
+ (lambda nil
+   (add-hook 'after-save-hook
+             (lambda nil (perltidy-buffer))
+             nil 'local)))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
