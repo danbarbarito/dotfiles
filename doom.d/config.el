@@ -6,8 +6,8 @@
 
 ;; These are used for a number of things, particularly for GPG configuration,
 ;; some email clients, file templates and snippets.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+(setq user-full-name "Dan Barbarito"
+      user-mail-address "dan@barbarito.me")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -20,7 +20,7 @@
 ;; font string. You generally only need these two:
 ;; test
 (setq doom-font (font-spec :family "monospace" :size 14)
-      doom-variable-pitch-font (font-spec :family "sans"))
+      doom-variable-pitch-font (font-spec :family "Fira Code"))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -33,6 +33,12 @@
 ;; If you want to change the style of line numbers, change this to `relative' or
 ;; `nil' to disable it:
 (setq display-line-numbers-type t)
+
+;; Mac OS modifier
+(setq mac-option-key-is-meta nil
+      mac-command-key-is-meta t
+      mac-command-modifier 'meta
+      mac-option-modifier 'none)
 
 
 ;; Here are some additional functions/macros that could help you configure Doom:
