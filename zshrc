@@ -79,7 +79,7 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-export EDITOR='emacsclient'
+export EDITOR="emacsclient"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -95,7 +95,7 @@ export EDITOR='emacsclient'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ec="emacsclient""
+alias ec="emacsclient"
 
 source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
