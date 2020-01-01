@@ -3,6 +3,7 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; refresh' after modifying this file!
 
+(package-initialize)
 
 ;; These are used for a number of things, particularly for GPG configuration,
 ;; some email clients, file templates and snippets.
