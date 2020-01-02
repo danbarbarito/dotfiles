@@ -62,6 +62,9 @@
   :ensure t
   :hook (js2-mode))
 
+;; Web mode
+(setq web-mode-code-indent-offset 2)
+
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
