@@ -57,6 +57,11 @@
   :bind (("C-c C-p C-b" . webpaste-paste-buffer)
          ("C-c C-p C-r" . webpaste-paste-region)))
 
+;; Prettier
+(use-package prettier-js
+  :ensure t
+  :hook (js2-mode))
+
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
