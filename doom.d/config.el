@@ -64,6 +64,7 @@
 
 ;; Web mode
 (setq web-mode-code-indent-offset 2)
+(add-to-list 'auto-mode-alist '("\\.tt\\'" . web-mode))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
