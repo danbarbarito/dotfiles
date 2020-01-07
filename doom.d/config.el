@@ -81,6 +81,9 @@
 (setq web-mode-code-indent-offset 2)
 (add-to-list 'auto-mode-alist '("\\.tt\\'" . web-mode))
 
+;; JS2
+(setq js2-basic-offset 2)
+
 ;; Magit
 (use-package magit-todos
   :ensure t)
