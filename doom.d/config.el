@@ -67,19 +67,26 @@
 
 ;; Prettier
 (use-package prettier-js
-  :ensure t
-  :hook (js2-mode))
+  :ensure t)
 (add-hook 'web-mode-hook #'(lambda ()
                             (enable-minor-mode
                              '("\\.jsx?\\'" . prettier-js-mode))))
 (add-hook 'web-mode-hook #'(lambda ()
                             (enable-minor-mode
                              '("\\.vue?\\'" . prettier-js-mode))))
+(add-hook 'js2-mode-hook 'prettier-js-mode)
 
 ;; Web mode
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-code-indent-offset 2)
 (add-to-list 'auto-mode-alist '("\\.tt\\'" . web-mode))
+
+;; Magit
+(use-package magit-todos
+  :ensure t)
+
+;; SQL Oneline
+(load! "vendor/sqloneline.el")
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
