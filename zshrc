@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=/Applications/Emacs.app/Contents/MacOS:/Applications/Emacs.app/Contents/MacOS/bin:$HOME/bin:$HOME/.bin:/usr/local/opt/llvm/bin:/usr/local/bin:/usr/local/sbin:$HOME/perl5/perlbrew/bin/:/usr/local/Cellar/node/11.13.0/bin:$HOME/go/bin:$PATH
+export PATH=$HOME/bin:$HOME/.bin:/usr/local/opt/llvm/bin:/usr/local/bin:/usr/local/sbin:$HOME/perl5/perlbrew/bin/:/usr/local/Cellar/node/11.13.0/bin:$HOME/go/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -67,6 +67,7 @@ ZSH_THEME="cloud"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
+    fossil
 )
 
 source $ZSH/oh-my-zsh.sh
