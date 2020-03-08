@@ -1,9 +1,10 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$HOME/.bin:/usr/local/opt/llvm/bin:/usr/local/bin:/usr/local/sbin:$HOME/perl5/perlbrew/bin/:/usr/local/Cellar/node/11.13.0/bin:$HOME/go/bin:$PATH
-export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
-export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
-export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
+
+export OPENSSL_ROOT_DIR=$(brew --prefix openssl)
+export OPENSSL_LIB_DIR=$(brew --prefix openssl)"/lib"
+export OPENSSL_INCLUDE_DIR=$(brew --prefix openssl)"/include"
+
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
