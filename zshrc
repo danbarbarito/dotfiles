@@ -1,9 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$HOME/.bin:/usr/local/opt/llvm/bin:/usr/local/bin:/usr/local/sbin:$HOME/perl5/perlbrew/bin/:/usr/local/Cellar/node/11.13.0/bin:$HOME/go/bin:$PATH
 
-export OPENSSL_ROOT_DIR=$(brew --prefix openssl)
-export OPENSSL_LIB_DIR=$(brew --prefix openssl)"/lib"
-export OPENSSL_INCLUDE_DIR=$(brew --prefix openssl)"/include"
+# export OPENSSL_ROOT_DIR=$(brew --prefix openssl)
+# export OPENSSL_LIB_DIR=$(brew --prefix openssl)"/lib"
+# export OPENSSL_INCLUDE_DIR=$(brew --prefix openssl)"/include"
 
 
 # Path to your oh-my-zsh installation.
@@ -116,5 +116,3 @@ bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 bindkey "^P" up-line-or-beginning-search # Ctrl + P
 bindkey "^N" down-line-or-beginning-search # Ctrl + N
-
-eval "$(rbenv init -)"
