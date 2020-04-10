@@ -64,3 +64,4 @@ rake.cache
 plantuml.jar
 magithub
 gitconfig
+.DS_Store
