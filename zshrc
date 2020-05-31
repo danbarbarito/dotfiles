@@ -4,6 +4,7 @@ export PATH=$HOME/bin:$HOME/.bin:/usr/local/opt/llvm/bin:/usr/local/bin:/usr/loc
 export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
+export SDKROOT="$(xcrun --sdk macosx --show-sdk-path)"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
