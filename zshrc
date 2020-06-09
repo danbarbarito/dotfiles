@@ -1,10 +1,10 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$HOME/.bin:/usr/local/opt/llvm/bin:/usr/local/bin:/usr/local/sbin:$HOME/perl5/perlbrew/bin/:/usr/local/Cellar/node/11.13.0/bin:$HOME/go/bin:$PATH
 
-# export OPENSSL_ROOT_DIR=$(brew --prefix openssl)
-# export OPENSSL_LIB_DIR=$(brew --prefix openssl)"/lib"
-# export OPENSSL_INCLUDE_DIR=$(brew --prefix openssl)"/include"
-
+export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
+export SDKROOT="$(xcrun --sdk macosx --show-sdk-path)"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -72,7 +72,6 @@ ZSH_THEME="cloud"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
-    fossil
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -116,7 +115,3 @@ bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 bindkey "^P" up-line-or-beginning-search # Ctrl + P
 bindkey "^N" down-line-or-beginning-search # Ctrl + N
-
-
-eval "$(rbenv init -)"
-export PATH="/usr/local/opt/postgresql@11/bin:$PATH"
