@@ -85,7 +85,7 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-export EDITOR="emacsclient -t"
+export EDITOR="micro"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -119,3 +119,4 @@ bindkey "^N" down-line-or-beginning-search # Ctrl + N
 
 
 eval "$(rbenv init -)"
+export PATH="/usr/local/opt/postgresql@11/bin:$PATH"
