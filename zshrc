@@ -72,7 +72,6 @@ ZSH_THEME="cloud"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
-    fossil
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -102,6 +101,7 @@ export EDITOR="micro"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ec="emacsclient -t"
+alias ecg="emacsclient --c"
 
 source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
