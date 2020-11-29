@@ -1,11 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$HOME/.bin:/usr/local/opt/llvm/bin:/usr/local/bin:/usr/local/sbin:$HOME/perl5/perlbrew/bin/:/usr/local/Cellar/node/11.13.0/bin:$HOME/go/bin:$PATH
 
-export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
-export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
-export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
-export SDKROOT="$(xcrun --sdk macosx --show-sdk-path)"
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -84,7 +79,7 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-export EDITOR="micro"
+export EDITOR="nano"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -116,12 +111,3 @@ bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 bindkey "^P" up-line-or-beginning-search # Ctrl + P
 bindkey "^N" down-line-or-beginning-search # Ctrl + N
-
-export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
-export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
-export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
-export PATH="/usr/local/opt/mysql-client/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/mysql-client/lib"
-export CPPFLAGS="-I/usr/local/opt/mysql-client/include"
-export PKG_CONFIG_PATH="/usr/local/opt/mysql-client/lib/pkgconfig"
