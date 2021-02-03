@@ -67,6 +67,7 @@ ZSH_THEME="cloud"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
+    fossil
 )
 
 source $ZSH/oh-my-zsh.sh
