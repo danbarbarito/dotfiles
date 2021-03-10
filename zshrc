@@ -96,8 +96,10 @@ export EDITOR="nano"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ec="emacsclient -t"
-alias ecg="emacsclient --c"
+
+alias e='emacsclient --no-wait'
+alias ew='emacsclient --create-frame --no-wait'
+alias et='emacsclient --tty'
 
 source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -112,3 +114,8 @@ bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 bindkey "^P" up-line-or-beginning-search # Ctrl + P
 bindkey "^N" down-line-or-beginning-search # Ctrl + N
+
+export SDKROOT="$(xcrun --sdk macosx --show-sdk-path)"
+export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
