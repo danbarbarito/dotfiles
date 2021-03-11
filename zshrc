@@ -97,9 +97,8 @@ export EDITOR="nano"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias e='emacsclient --no-wait'
-alias ew='emacsclient --create-frame --no-wait'
-alias et='emacsclient --tty'
+alias e="emacsclient -t -a ''"
+alias eg="emacsclient -c -n -a ''"
 
 source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
