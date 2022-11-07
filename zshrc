@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:$HOME/.bin:/usr/local/opt/llvm/bin:/usr/local/bin:/usr/local/sbin:$HOME/perl5/perlbrew/bin/:/usr/local/Cellar/node/11.13.0/bin:$HOME/go/bin:$HOME/.emacs.d/bin:$PATH
+export 
+PATH=$HOME/bin:$HOME/.bin:/usr/local/opt/llvm/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/sqlite/bin:$HOME/perl5/perlbrew/bin/:/usr/local/Cellar/node/11.13.0/bin:$HOME/go/bin:$HOME/.emacs.d/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
