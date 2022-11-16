@@ -1,6 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export 
-PATH=$HOME/bin:$HOME/.bin:/usr/local/opt/llvm/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/sqlite/bin:$HOME/perl5/perlbrew/bin/:/usr/local/Cellar/node/11.13.0/bin:$HOME/go/bin:$HOME/.emacs.d/bin:$PATH
+export PATH=$HOME/bin:$HOME/.bin:/usr/local/opt/llvm/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/sqlite/bin:$HOME/perl5/perlbrew/bin/:/usr/local/Cellar/node/11.13.0/bin:$HOME/go/bin:$HOME/.emacs.d/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -98,12 +97,12 @@ export EDITOR="nano"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias e="emacsclient -t -a ''"
-alias eg="emacsclient -c -n -a ''"
+#alias e="emacsclient -t -a ''"
+#alias eg="emacsclient -c -n -a ''"
 
 source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-source $HOME/perl5/perlbrew/etc/bashrc
+#source $HOME/perl5/perlbrew/etc/bashrc
 
 # Better up/down line search
 autoload -U up-line-or-beginning-search
@@ -119,6 +118,3 @@ export SDKROOT="$(xcrun --sdk macosx --show-sdk-path)"
 export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
-
-# heroku autocomplete setup
-HEROKU_AC_ZSH_SETUP_PATH=/Users/danbarbarito/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
