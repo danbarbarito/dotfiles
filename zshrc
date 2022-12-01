@@ -102,7 +102,10 @@ export EDITOR="nano"
 
 source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-#source $HOME/perl5/perlbrew/etc/bashrc
+PERLBREW=$HOME/perl5/perlbrew/etc/bashrc
+if [[ -f "$PERLBREW" ]]; then
+  source $PERLBREW
+fi
 
 # Better up/down line search
 autoload -U up-line-or-beginning-search
@@ -118,3 +121,5 @@ export SDKROOT="$(xcrun --sdk macosx --show-sdk-path)"
 export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
+
+[[ $TERM == "tramp" ]] && unsetopt zle && PS1='$ ' && return
